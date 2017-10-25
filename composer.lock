@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1b5ff0df08886d292c29ff14e0c165c",
+    "content-hash": "2411eb7aafc2b44889cbeba516ba28ec",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -64,63 +64,6 @@
                 "tls"
             ],
             "time": "2017-09-11T07:24:36+00:00"
-        },
-        {
-            "name": "coresphere/console-bundle",
-            "version": "0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/CoreSphere/ConsoleBundle.git",
-                "reference": "7761030372974d890bc19cee38f23a6f43c2d974"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/CoreSphere/ConsoleBundle/zipball/7761030372974d890bc19cee38f23a6f43c2d974",
-                "reference": "7761030372974d890bc19cee38f23a6f43c2d974",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5|^7.0",
-                "symfony/console": "~2.7|~3.0",
-                "symfony/dependency-injection": "~2.7|~3.0",
-                "symfony/event-dispatcher": "~2.7|~3.0",
-                "symfony/framework-bundle": "~2.7|~3.0",
-                "symfony/http-kernel": "~2.7|~3.0"
-            },
-            "require-dev": {
-                "doctrine/doctrine-fixtures-bundle": "^2.2",
-                "doctrine/doctrine-migrations-bundle": "^1.0",
-                "phpunit/phpunit": "^4.8",
-                "symfony/finder": "^2.7",
-                "symfony/templating": "^3.2"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "CoreSphere\\ConsoleBundle\\": "."
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Laszlo Korte",
-                    "email": "coresphere@laszlokorte.de"
-                },
-                {
-                    "name": "Marmus Ullman",
-                    "email": "mail@markus-ullmann.de"
-                }
-            ],
-            "description": "This bundle allows you accessing the symfony2 console via your browser",
-            "keywords": [
-                "console",
-                "javascript",
-                "symfony"
-            ],
-            "time": "2017-02-22T13:12:30+00:00"
         },
         {
             "name": "doctrine/annotations",
