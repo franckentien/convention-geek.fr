@@ -1,0 +1,43 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="mdl-cell mdl-cell--12-col ">
+
+    <h2>Saisissez votre nouveau mot de passe</h2>
+
+    <div class="my-card-wide mdl-card mdl-card-smallheight mdl-shadow--6dp">
+
+    {{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+        <fieldset>
+
+            <div class="mdl-card__supporting-text">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    {{ form_label(form.plainPassword.first, "", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                    <div class="form_errors">
+                        {{ form_errors(form.plainPassword.first, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+                </div>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                    <div class="form_errors">
+                        {{ form_errors(form.plainPassword.second, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+                    {{ form_label(form.plainPassword.second, "", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+                </div>
+
+                {{ form_rest(form) }}
+
+                {{ form_errors(form) }}
+            </div>
+        <div class="mdl-card__actions mdl-card--border">
+            <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" value="{{ 'resetting.reset.submit'|trans }}" />
+        </div>
+
+        </fieldset>
+    {{ form_end(form) }}
+
+    </div>
+
+</div>
+

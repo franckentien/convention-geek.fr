@@ -1,0 +1,188 @@
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px;}
+.material-icons.md-24 { font-size: 24px;}
+.material-icons.md-36 { font-size: 36px;}
+.material-icons.md-48 { font-size: 48px;}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons{
+    margin-right: 32px;
+}
+
+html body{
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+}
+
+h1{
+    font-size: 24px!important;
+    font-weight: bold;
+}
+
+h2{
+    font-size: 22px!important;
+    font-weight: bold;
+
+}
+
+h3{
+    font-size: 20px!important;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+    font-family: 'Analecta';
+}
+
+/*#region menu*/
+
+.menuWelcomeUser{
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+}
+
+.mdl-navigation__link{
+    color: white!important;
+    opacity: inherit;
+}
+
+.mdl-layout__drawer-button{
+    background-color: #780A0A!important;
+}
+
+.mdl-layout__header-row{
+    background-color: #780A0A ;
+}
+
+.mdl-layout__drawer{
+    background-color: #780A0A;
+    border: inherit ;
+}
+
+/*endregion*/
+
+/*#region formulaire*/
+
+.mdl-textfield{
+    width: 85%;
+    max-width: 500px;
+}
+
+.form_errors{
+    color: red;
+}
+
+.form_errors ul {
+    margin:0;
+}
+
+/*#endregion formulaire*/
+
+/*region table*/
+
+.table100
+{
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.mdl-data-table__cell--non-numeric.mdl-data-table__cell--non-numeric{
+    text-align: center;
+}
+
+caption{
+    font-family: 'Analecta';
+    margin-bottom: 1%;
+    font-size: 18px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+/*endregion table*/
+
+/*#region carte*/
+
+.mdl-card-smallheight{
+    min-height: inherit;
+}
+
+.my-card-wide.mdl-card {
+    width: 90%;
+    margin: auto;
+}
+
+.part-card{
+    border: solid gray 1px;
+    min-width: 255px;
+}
+
+.mdl-card__media{
+    background-color: inherit;
+}
+
+.mdl-card__media img{
+
+    margin: 0;
+    max-width: 90%;
+}
+
+.mdl-card__actions{
+    text-align: right;
+}
+/*#endregion carte*/
+
+@media (max-width: 1024px){
+
+    /*#region table */
+    .mdl-data-table th{
+        height: inherit;
+    }
+
+    .mdl-data-table td:first-of-type, .mdl-data-table th:first-of-type{
+        padding-left: 18px;
+    }
+
+    td,th{width: 100%; display: block; border-style: none;}
+    .mdl-data-table td{
+        height: inherit;
+        border: none;
+    }
+    tr{
+        border-top: 1px solid rgba(0,0,0,.12);
+        border-bottom: 1px solid rgba(0,0,0,.12);
+    }
+    /*#endregion table*/
+}
+
+/*region aboutPage */
+.about-img-contener{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img{
+    max-width: 100%; max-height: 400px;
+}
+
+.conteneur-about-partenaire{
+    display: flex;
+    justify-content: space-around;
+}
+
+@media (max-width: 840px){
+    .about-img{
+        display: none;
+    }
+}
+
+/*endregion aboutPage */
+

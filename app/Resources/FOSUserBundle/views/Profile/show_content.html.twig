@@ -1,0 +1,24 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+<h2>{{ user.username }}</h2>
+
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Mes informations</h3><br>
+
+        <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+        <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+    </div>
+
+    <div class="mdl-cell mdl-cell--12-col">
+        <h3>Gestion de compte</h3><br>
+
+        <p><a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a></p>
+        <p><a href="">Supprimer votre compte</a></p>
+        <!-- TODO suprimer compte et changer le mdp  -->
+    </div>
+
+
+</div>

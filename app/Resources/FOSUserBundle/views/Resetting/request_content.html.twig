@@ -1,0 +1,24 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="mdl-cell mdl-cell--12-col ">
+
+    <h2>Réinitialisation du mot de passe</h2>
+
+    <p>Si vous avez perdu votre mot de passe vous pouvez le reinitialiser avec le formulaire si dessous.</p>
+
+    <div class="my-card-wide mdl-card mdl-card-smallheight mdl-shadow--6dp">
+        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+            <fieldset>
+                <div class="mdl-card__supporting-text">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label class="mdl-textfield__label" for="username">{{ 'resetting.request.username'|trans }}</label>
+                        <input class="mdl-textfield__input" type="text" id="username" name="username" required="required" />
+                    </div>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" value="{{ 'resetting.request.submit'|trans }}" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

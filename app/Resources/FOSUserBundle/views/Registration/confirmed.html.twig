@@ -1,0 +1,17 @@
+{% extends '::menu.html.twig' %}
+
+{% block metaMore %}<meta name="robots" content="noindex">{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block pageContent %}
+
+<div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col">
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <p>Vosu pouvez maintenant <a href="{{ path('fos_user_profile_show') }}">consulter votre profil</a> ou retourner sur la <a href="{{ path('App_home') }}" >page d'accueil</a>.</p>
+    </div>
+</div>
+{% endblock pageContent %}
+
+<!-- TODO Complete this page -->

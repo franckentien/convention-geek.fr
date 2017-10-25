@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping http://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+
+    <class name="FOS\UserBundle\Model\User">
+        <property name="username">
+            <constraint name="Regex">
+                <option name="pattern">/^[a-zA-Z0-9]+$/</option>
+                <option name="match">true</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Length">
+                <option name="min">2</option>
+                <option name="minMessage">fos_user.username.short</option>
+                <option name="max">50</option>
+                <option name="maxMessage">fos_user.username.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+        <property name="email">
+            <constraint name="Email">
+                <option name="message">fos_user.email.invalid</option>
+                <option name="checkMX">true</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+    </class>
+</constraint-mapping>
