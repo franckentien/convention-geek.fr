@@ -6,6 +6,10 @@ App_about:
   path: /about
   defaults: { _controller: AppBundle:Default:about}
 
+App_irlEvent:
+  path: /TGS2017
+  defaults: { _controller: AppBundle:Default:irlEvent}
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 
