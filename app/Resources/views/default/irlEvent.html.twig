@@ -1,24 +1,17 @@
-{% extends '::menu.html.twig' %}
+{% extends '::default/irlEventLayout.html.twig' %}
 
-{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
-{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
-{% block metaTitle %}Convention Geek: TGS 2017{% endblock %}
+{% block title %}Bienvenue au TGS 2017{% endblock %}
+{% block logoSrc %}{{ asset('images/other/tgs.png') }}{% endblock %}
+{% block logoAlt %}Bannière du Toulouse Game show{% endblock %}
 
-{% block metaMore %}<meta name="robots" content="noindex">{% endblock %}
+{% block presentation %}
+    <p><strong>Convention Geek</strong> est un site web qui rassembles les dates des différents évènements geek et otaku en France.</p>
 
-{% block pageContent %}
+    <p>Sur <strong>Convention Geek</strong>, vous pouvez retrouver les dates des prochains évènements, mais aussi un annuaire de toutes les conventions en France, et des retours sur les festivals où je suis présent.<br>
+        Si vous ne connaissez pas, je vous invite à faire un tour sur
+        <a href="{{ path('App_home') }}">convention-geek.fr</a> , vous pouvez toujours me suivre sur les réseaux sociaux pour être au courant de l’actualité du site et des évènements, mais aussi ne pas manquer les articles et les photos que je fais en festival.</p>
 
-
-    <h1 style="margin: auto">Bienvenue au TGS 2017</h1>
-
-    <img style="margin: 5% auto; height: 100%; width: 100%;" src="{{ asset('images/other/tgs.png') }}" alt="Bannière du Toulouse Game show"/>
-
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sapien ex, mattis at placerat quis, dignissim luctus nisi. Ut vulputate magna augue, et porta neque accumsan nec. Fusce aliquet augue eget blandit congue. Sed elementum quam cursus nisi ornare, sit amet finibus lorem accumsan. Nulla facilisi. Vivamus sed rutrum nisi, vitae facilisis ligula. Pellentesque lacinia, felis ut volutpat maximus, diam nibh lobortis augue, non lacinia diam ex nec nibh. Nullam fringilla eros id augue rhoncus, sed maximus massa elementum. Suspendisse hendrerit dolor ligula, quis molestie elit aliquam vel. In est est, hendrerit sed nisl eget, sollicitudin ultricies nulla. Ut vitae odio tempus, fringilla sem vel, aliquet ante. Nam mattis suscipit posuere. Vivamus vehicula magna consectetur est rutrum maximus.</p>
-
-    <div class="mdl<p>yrdy</p>-cell mdl-cell--12-col mdl-shadow--2dp">
-        TWITTER FACEBOOK YOTUBE
-    </div>
-
-
+    <p>Les photos du <strong>TGS</strong> seront disponibles en fin de week-end et l’article un peu plus tard.</p>
+    <p>Bon festival à tous, et à plus sur les internets.</p>
 {% endblock %}
+
