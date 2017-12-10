@@ -32,3 +32,4 @@ fos_user_change_password:
 fos_user_delete_account:
   path: /profile/delete/
   defaults: { _controller: ConventionGeekUserBundle:User:deleteUser }
+
