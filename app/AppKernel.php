@@ -13,14 +13,23 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-            new AppBundle\AppBundle(),
+
             new FOS\UserBundle\FOSUserBundle(),
+
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+
+            new AppBundle\AppBundle(),
+
             new ConventionGeek\UserBundle\ConventionGeekUserBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
