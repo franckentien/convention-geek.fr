@@ -15,10 +15,9 @@
     <div class="mdl-cell mdl-cell--12-col">
         <h3>Gestion de compte</h3><br>
 
-        <p><a href="{{ path('fos_user_profile_edit') }}">Modifier votre profils</a></p>
+        <p><a href="{{ path('fos_user_profile_edit') }}">Modifier votre profil</a></p>
         <p><a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a></p>
-        <p><a href="">Supprimer votre compte</a></p>
-        <!-- TODO manage page up add link and complete profile   -->
+        <p><a href="{{ path('fos_user_delete_account') }}">Supprimer votre compte</a></p>
     </div>
 
     <!-- TODO ADD My event list-->
