@@ -7,7 +7,6 @@
             "AppBundle\\": "src/AppBundle",
             "ConventionGeek\\UserBundle\\": "src/ConventionGeek/UserBundle",
             "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle"
-
         },
         "classmap": [
             "app/AppKernel.php",
@@ -44,6 +43,7 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
+        "sonata-project/easy-extends-bundle": "^2.3",
         "symfony/phpunit-bridge": "^3.0"
     },
     "scripts": {
