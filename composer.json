@@ -1,6 +1,7 @@
 {
-    "name": "franc/convention-geek.fr",
-    "license": "proprietary",
+    "name": "convention_geek",
+    "description": "The source of the web site www.convention-geek.fr.",
+    "license": "apache-2.0",
     "type": "project",
     "autoload": {
         "psr-4": {
