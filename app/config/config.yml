@@ -91,10 +91,16 @@ doctrine_migrations:
 fos_user:
     db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
-    user_class:    ConventionGeek\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
+    user_class:    Application\Sonata\UserBundle\Entity\User #ConventionGeek\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager
 
 sonata_block:
     default_contexts: [cms]
@@ -105,6 +111,8 @@ sonata_block:
         #sonata.admin_doctrine_orm.block.audit:
         #    contexts:   [admin]
 
+        sonata.user.block.menu:    # used to display the menu in profile pages
+        sonata.user.block.account: # used to display menu option (login option)
         sonata.block.service.text:
         sonata.block.service.rss:
 
@@ -148,3 +156,13 @@ sonata_media:
         local:
             directory:  "%kernel.root_dir%/../web/uploads/media"
             create:     false
+
+sonata_user:
+    security_acl: true
+    manager_type: orm # can be orm or mongodb
+    class:
+        user: Application\Sonata\UserBundle\Entity\User
+        group: Application\Sonata\UserBundle\Entity\Group
+
+
+

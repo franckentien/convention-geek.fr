@@ -26,22 +26,20 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-
-            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-
             new Sonata\MediaBundle\SonataMediaBundle(),
-
-            new JMS\SerializerBundle\JMSSerializerBundle(),
-
-
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
-            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new Sonata\UserBundle\SonataUserBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 
+            new JMS\SerializerBundle\JMSSerializerBundle(),
+
+            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+
             new AppBundle\AppBundle(),
 
-            new ConventionGeek\UserBundle\ConventionGeekUserBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
 
         ];

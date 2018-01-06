@@ -6,6 +6,7 @@
 {# Dans notre layout, il faut définir le block body #}
 {% block pageContent %}
 
+
     {# On affiche les messages flash que définissent les contrôleurs du bundle #}
     {% for key, messages in app.session.flashbag.all() %}
         {% for message in messages %}

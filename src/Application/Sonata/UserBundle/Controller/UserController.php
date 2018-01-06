@@ -1,6 +1,6 @@
 <?php
 
-namespace ConventionGeek\UserBundle\Controller;
+namespace Application\Sonata\UserBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

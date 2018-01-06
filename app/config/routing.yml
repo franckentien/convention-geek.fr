@@ -31,7 +31,15 @@ fos_user_change_password:
 
 fos_user_delete_account:
   path: /profile/delete/
-  defaults: { _controller: ConventionGeekUserBundle:User:deleteUser }
+  defaults: { _controller: ApplicationSonataUserBundle:User:deleteUser }
+
+sonata_user_admin_security:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_admin_resetting:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_resetting.xml'
+    prefix: /admin/resetting
 
 admin_area:
     resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
@@ -40,6 +48,8 @@ admin_area:
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
+
+
 
 _sonata_admin:
     resource: .
