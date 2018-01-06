@@ -6,8 +6,10 @@
     "autoload": {
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
+            "Application\\": "src/Application",
             "ConventionGeek\\UserBundle\\": "src/ConventionGeek/UserBundle",
             "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle"
+
         },
         "classmap": [
             "app/AppKernel.php",
@@ -24,6 +26,7 @@
     },
     "require": {
         "php": ">=7.0.0",
+        "cocur/slugify": "^2.0",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "doctrine/orm": "^2.5",
@@ -34,6 +37,7 @@
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^3.0.2",
         "sonata-project/block-bundle": "^3.8",
+        "sonata-project/classification-bundle": "^3.5",
         "sonata-project/doctrine-orm-admin-bundle": "^3.2",
         "symfony/assetic-bundle": "^2.8",
         "symfony/monolog-bundle": "^3.1.0",
