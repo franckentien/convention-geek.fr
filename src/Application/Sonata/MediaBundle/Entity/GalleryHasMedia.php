@@ -29,3 +29,4 @@ class GalleryHasMedia extends BaseGalleryHasMedia
         return $this->id;
     }
 }
+

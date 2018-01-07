@@ -29,3 +29,4 @@ class Gallery extends BaseGallery
         return $this->id;
     }
 }
+

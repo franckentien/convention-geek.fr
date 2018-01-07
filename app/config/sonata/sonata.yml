@@ -5,4 +5,3 @@ imports:
     - { resource: sonata_media.yml}
     - { resource: sonata_formatter.yml }
     - { resource: sonata_user.yml}
-

@@ -29,3 +29,4 @@ class Tag extends BaseTag
         return $this->id;
     }
 }
+

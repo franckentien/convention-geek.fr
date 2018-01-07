@@ -29,3 +29,4 @@ class Category extends BaseCategory
         return $this->id;
     }
 }
+
