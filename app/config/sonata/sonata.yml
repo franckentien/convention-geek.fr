@@ -1,0 +1,8 @@
+imports:
+    - { resource: sonata_news.yml }
+    - { resource: sonata_classification.yml }
+    - { resource: sonata_block.yml }
+    - { resource: sonata_media.yml}
+    - { resource: sonata_formatter.yml }
+    - { resource: sonata_user.yml}
+
