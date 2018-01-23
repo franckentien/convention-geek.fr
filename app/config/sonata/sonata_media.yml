@@ -3,7 +3,6 @@ sonata_media:
     class:
         media:              Application\Sonata\MediaBundle\Entity\Media
         gallery:            Application\Sonata\MediaBundle\Entity\Gallery
-        gallery_item:       Application\Sonata\MediaBundle\Entity\GalleryItem
         category:           Application\Sonata\ClassificationBundle\Entity\Category
     category_manager:       sonata.media.manager.category.default
     default_context: default # you need to set a context
