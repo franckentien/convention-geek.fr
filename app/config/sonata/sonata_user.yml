@@ -22,4 +22,3 @@ sonata_user:
 
     profile:
         default_avatar: 'bundles/sonatauser/default_avatar.png' # Default avatar displayed if user doesn't have one
-

@@ -26,7 +26,3 @@ sonata_news:
             class:       Sonata\NewsBundle\Admin\CommentAdmin
             controller:  SonataNewsBundle:CommentAdmin
             translation: SonataNewsBundle
-
-
-
-
