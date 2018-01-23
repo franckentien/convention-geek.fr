@@ -1,5 +1,7 @@
 imports:
     - { resource: ivory_ck_editor.yml }
+    - { resource: sonata_admin.yml }
+    - { resource: sonata_doctrine_orm_admin.yml }
     - { resource: sonata_news.yml }
     - { resource: sonata_classification.yml }
     - { resource: sonata_block.yml }
