@@ -1,0 +1,93 @@
+sonata_media:
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr it is mandatory to choose one here
+    class:
+        media:              Application\Sonata\MediaBundle\Entity\Media
+        gallery:            Application\Sonata\MediaBundle\Entity\Gallery
+        category:           Application\Sonata\ClassificationBundle\Entity\Category
+    category_manager:       sonata.media.manager.category.default
+    default_context: default # you need to set a context
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                #- sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                #- sonata.media.provider.file
+                #- sonata.media.provider.vimeo
+
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+        news:
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 150 , quality: 95}
+                big:   { width: 500 , quality: 90}
+
+        sonata_collection:
+            providers:
+              - sonata.media.provider.image
+
+            formats:
+                preview: { width: 100, quality: 100}
+                wide:    { width: 820, quality: 100}
+
+        sonata_category:
+            providers:
+              - sonata.media.provider.image
+
+            formats:
+                preview: { width: 100, quality: 100}
+                wide:    { width: 820, quality: 100}
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  "%kernel.root_dir%/../web/uploads/media"
+            create:     false
+
+    providers:
+          file:
+              service:    sonata.media.provider.file
+              resizer:    false
+              filesystem: sonata.media.filesystem.local
+              cdn:        sonata.media.cdn.server
+              generator:  sonata.media.generator.default
+              thumbnail:  sonata.media.thumbnail.format
+              allowed_extensions: ['pdf', 'txt', 'rtf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pttx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml']
+              allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain']
+
+          image:
+              service:    sonata.media.provider.image
+              resizer:    sonata.media.resizer.simple # sonata.media.resizer.square
+              filesystem: sonata.media.filesystem.local
+              cdn:        sonata.media.cdn.server
+              generator:  sonata.media.generator.default
+              thumbnail:  sonata.media.thumbnail.format
+              allowed_extensions: ['jpg', 'png', 'jpeg']
+              allowed_mime_types: ['image/pjpeg', 'image/jpeg', 'image/png', 'image/x-png']
+
+          youtube:
+              service:    sonata.media.provider.youtube
+              resizer:    sonata.media.resizer.simple
+              filesystem: sonata.media.filesystem.local
+              cdn:        sonata.media.cdn.server
+              generator:  sonata.media.generator.default
+              thumbnail:  sonata.media.thumbnail.format
+              html5: false
+
+          dailymotion:
+              service:    sonata.media.provider.dailymotion
+              resizer:    sonata.media.resizer.simple
+              filesystem: sonata.media.filesystem.local
+              cdn:        sonata.media.cdn.server
+              generator:  sonata.media.generator.default
+              thumbnail:  sonata.media.thumbnail.format

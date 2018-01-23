@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: sonata/sonata.yml}
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -37,6 +38,8 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'SonataFormatterBundle:Form:formatter.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -54,10 +57,11 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #path: '%database_path%'
+        types:
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
-        auto_generate_proxy_classes: '%kernel.debug%'
-        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
 
 # Swiftmailer Configuration
@@ -87,7 +91,20 @@ doctrine_migrations:
 fos_user:
     db_driver:     orm                       # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                      # Le nom du firewall derrière lequel on utilisera ces utilisateurs
-    user_class:    ConventionGeek\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
+    user_class:    Application\Sonata\UserBundle\Entity\User #ConventionGeek\UserBundle\Entity\User # La classe de l'entité User que nous utilisons
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager                    # If you're using doctrine orm (use sonata.user.mongodb.group_manager for mongodb)
+
+    service:
+        user_manager: sonata.user.orm.user_manager
+
+    profile:
+        # Authentication Form
+        form:
+            type:               fos_user_profile
+            name:               fos_user_profile_form
+            validation_groups:  [Authentication] # Please note : this is not the default value

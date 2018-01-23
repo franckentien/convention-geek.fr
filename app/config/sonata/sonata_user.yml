@@ -1,0 +1,24 @@
+sonata_user:
+    security_acl: true
+    manager_type: orm      # can be orm or mongodb
+
+    table:
+        user_group: "my_custom_user_group_association_table_name"
+
+    class:                  # Entity Classes
+        user:               Application\Sonata\UserBundle\Entity\User
+        group:              Application\Sonata\UserBundle\Entity\Group
+
+    admin:                  # Admin Classes
+        user:
+            class:          Sonata\UserBundle\Admin\Entity\UserAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
+
+        group:
+            class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
+
+    profile:
+        default_avatar: 'bundles/sonatauser/default_avatar.png' # Default avatar displayed if user doesn't have one
