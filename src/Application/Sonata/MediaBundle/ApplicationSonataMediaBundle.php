@@ -22,3 +22,4 @@ class ApplicationSonataMediaBundle extends Bundle
         return 'SonataMediaBundle';
     }
 }
+

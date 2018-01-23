@@ -15,3 +15,4 @@ use Sonata\MediaBundle\PHPCR\BaseMediaRepository;
 class MediaRepository extends BaseMediaRepository
 {
 }
+
