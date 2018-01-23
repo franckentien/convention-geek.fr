@@ -5,10 +5,6 @@ sonata_user:
     table:
         user_group: "my_custom_user_group_association_table_name"
 
-    impersonating:
-        route:                page_slug
-        parameters:           { path: / }
-
     class:                  # Entity Classes
         user:               Application\Sonata\UserBundle\Entity\User
         group:              Application\Sonata\UserBundle\Entity\Group
