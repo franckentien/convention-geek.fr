@@ -13,3 +13,7 @@ sonata_core:
     form:
         mapping:
             enabled: false
+
+twig:
+    form_themes:
+        - '@SonataCore/Form/datepicker.html.twig'
