@@ -3,14 +3,10 @@
 // src/Admin/ContactAdmin.php
 namespace ConventionGeek\EventBundle\Admin;
 
-
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Form\Type\ModelAutocompleteType;
-use Sonata\AdminBundle\Form\Type\ModelListType;
-
 
 class ConventionAdmin extends AbstractAdmin
 {
@@ -22,7 +18,7 @@ class ConventionAdmin extends AbstractAdmin
             ->add('facebook')
             ->add('twitter')
             ->add('lieu')
-            //->add('departement', 'sonata_type_collection')
+            ->add('departement')
             ->add('meta')
             ->add('description')
             ->add('actif')
@@ -38,7 +34,7 @@ class ConventionAdmin extends AbstractAdmin
             ->add('facebook')
             ->add('twitter')
             ->add('lieu')
-            //->add('departement')
+            ->add('departement')
             ->add('meta')
             ->add('description')
             ->add('actif')
@@ -53,7 +49,7 @@ class ConventionAdmin extends AbstractAdmin
             ->add('facebook')
             ->add('twitter')
             ->add('lieu')
-            //->add('departement')
+            ->add('departement')
             ->add('meta')
             ->add('description')
             ->add('actif')
