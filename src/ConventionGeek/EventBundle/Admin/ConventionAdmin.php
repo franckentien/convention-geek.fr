@@ -7,12 +7,13 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ConventionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('id')
+        $formMapper->add('eventid')
             ->add('nom')
             ->add('site')
             ->add('facebook')
@@ -28,7 +29,7 @@ class ConventionAdmin extends AbstractAdmin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('id')
+        $datagridMapper->add('eventid')
             ->add('nom')
             ->add('site')
             ->add('facebook')
@@ -43,7 +44,7 @@ class ConventionAdmin extends AbstractAdmin
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->addIdentifier('id')
+        $listMapper->addIdentifier('eventid')
             ->add('nom')
             ->add('site')
             ->add('facebook')

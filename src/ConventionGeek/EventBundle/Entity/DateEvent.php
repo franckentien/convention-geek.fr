@@ -12,16 +12,27 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class DateEvent
 {
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
     /**
      * @ORM\ManyToOne(targetEntity="ConventionGeek\EventBundle\Entity\Convention")
-     * @ORM\Id
+     *
      * @ORM\JoinColumn(nullable=false)
      */
     private $evenement;
 
     /**
      * @var int
-     * @ORM\Id
+     *
      * @ORM\Column(name="edition", type="smallint")
      */
     private $edition;
@@ -49,6 +60,16 @@ class DateEvent
 
 
     //TODO Add user integration
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set evenement
@@ -168,6 +189,10 @@ class DateEvent
     public function getVisiteurs()
     {
         return $this->visiteurs;
+    }
+
+    public function __toString() {
+        return $this->evenement . "";
     }
 }
 

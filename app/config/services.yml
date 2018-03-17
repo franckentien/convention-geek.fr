@@ -34,16 +34,23 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    admin.contact:
-            class: AppBundle\Admin\ContactAdmin
-            arguments: [~, AppBundle\Entity\Contact, ~]
-            tags:
-                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Contact }
-            public: true
-
     admin.convention:
             class: ConventionGeek\EventBundle\Admin\ConventionAdmin
             arguments: [~, ConventionGeek\EventBundle\Entity\Convention, ~]
             tags:
                 - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Convention }
+            public: true
+
+    admin.date-event:
+            class: ConventionGeek\EventBundle\Admin\DateEventAdmin
+            arguments: [~, ConventionGeek\EventBundle\Entity\DateEvent, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Dates événements }
+            public: true
+
+    admin.contact:
+            class: AppBundle\Admin\ContactAdmin
+            arguments: [~, AppBundle\Entity\Contact, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Contact }
             public: true

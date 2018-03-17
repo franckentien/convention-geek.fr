@@ -13,7 +13,7 @@ class ContactAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('id')
+        $formMapper//->add('id')
             ->add('name')
             ->add('email')
             ->add('message')
