@@ -1,0 +1,47 @@
+{% extends '::menu.html.twig' %}
+
+{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
+{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
+{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}
+
+{% block pageContent %}
+
+    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col ">
+
+            {% for post in pager.getResults() %}
+            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--6dp">
+                <div class="mdl-card__title">
+                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}"><h2 class="mdl-card__title-text">{{ post.title }}</h2></a>
+                </div>
+                <div class="mdl-card__supporting-text">
+                    {{ post.abstract }}
+                </div>
+                <div class="mdl-card__actions">
+                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
+                </div>
+            </div>
+            {% else %}
+                {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
+            {% endfor %}
+
+        </div>
+
+        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+            <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" {% if pager.page == pager.lastPage %}disabled{% endif %}>
+                    {{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}
+                </button>
+            </a>
+            <div class="mdl-layout-spacer"></div>
+            <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" {% if pager.page == pager.firstPage %}disabled{% endif %}>
+                    {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
+                </button>
+            </a>
+        </div>
+
+    </div>
+
+{% endblock %}
