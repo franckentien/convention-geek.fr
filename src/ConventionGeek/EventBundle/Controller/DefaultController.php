@@ -2,6 +2,8 @@
 
 namespace ConventionGeek\EventBundle\Controller;
 
+use ConventionGeek\EventBundle\ConventionGeekEventBundle;
+use ConventionGeek\EventBundle\Utils\DateFormatClass;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
@@ -9,13 +11,7 @@ class DefaultController extends Controller
 
 
 
-    private function getDisplayDate($DateDebut, $DateFin){
 
-        //TODO Copie Android Script
-        $jourDebut = date_format($DateDebut, 'd') ;
-        $jourFin = date_format($DateFin, 'd');
-        return $jourDebut . '-' .$jourFin;
-    }
 
 
     private function getEvent(){
@@ -32,7 +28,7 @@ class DefaultController extends Controller
 
         foreach ($listDateEvents as $event) {
 
-            $date = $this->getDisplayDate($event->getDateDebut(), $event->getDateFin());
+            $date = DateFormatClass::getDisplayDate($event->getDateDebut(), $event->getDateFin());
 
             array_push($listEvent, array(
                 'date'   => $date,

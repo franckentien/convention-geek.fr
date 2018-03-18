@@ -40,7 +40,7 @@ class DateEvent
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="date")
+     * @ORM\Column(name="date_debut", type="date", nullable=true)
      */
     private $dateDebut;
 
