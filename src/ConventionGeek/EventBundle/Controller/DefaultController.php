@@ -16,13 +16,21 @@ class DefaultController extends Controller
 
     private function getEvent(){
 
-        $repository = $this
+        $repositoryDate = $this
             ->getDoctrine()
             ->getManager()
             ->getRepository('ConventionGeekEventBundle:DateEvent')
         ;
 
-        $listDateEvents = $repository->findAll();
+        $repositoryConvention = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('ConventionGeekEventBundle:Convention')
+        ;
+
+        $convention = $repositoryConvention->findOneBy(array('author' => 'Marine'));
+
+        $listDateEvents = $repositoryDate->findAll();
 
         $listEvent = array();
 
