@@ -28,7 +28,7 @@ class DefaultController extends Controller
             ->getRepository('ConventionGeekEventBundle:Convention')
         ;
 
-        $convention = $repositoryConvention->findOneBy(array('author' => 'Marine'));
+
 
         $listDateEvents = $repositoryDate->findAll();
 
@@ -38,10 +38,12 @@ class DefaultController extends Controller
 
             $date = DateFormatClass::getDisplayDate($event->getDateDebut(), $event->getDateFin());
 
+            $convention = $repositoryConvention->findOneBy(array('eventid' => strval($event->getEvenement())));
+
             array_push($listEvent, array(
                 'date'   => $date,
-                'name' => $event->getEvenement(),
-                'place'  => 'place',
+                'name' => $convention->getNom(),
+                'place'  => $event->getEvenement(),
                 'informateur' => 'informateur'));
         }
 
