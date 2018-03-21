@@ -59,7 +59,14 @@ class DateEvent
     private $visiteurs;
 
 
-    //TODO Add user integration
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\UserBundle\Entity\User")
+     *
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $informateur;
+
+    //TODO Add place for specifique edition
 
     /**
      * Get id
@@ -190,6 +197,31 @@ class DateEvent
     {
         return $this->visiteurs;
     }
+
+    /**
+     * Set informateur
+     *
+     * @param string $informateur
+     *
+     * @return DateEvent
+     */
+    public function setInformateur($informateur)
+    {
+        $this->informateur = $informateur;
+
+        return $this;
+    }
+
+    /**
+     * Get informateur
+     *
+     * @return string
+     */
+    public function getInformateur()
+    {
+        return $this->informateur;
+    }
+
 
     public function __toString() {
         return $this->evenement . "";

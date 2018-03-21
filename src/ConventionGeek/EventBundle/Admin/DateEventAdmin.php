@@ -18,6 +18,7 @@ class DateEventAdmin extends AbstractAdmin
             ->add('dateDebut')
             ->add('dateFin')
             ->add('visiteurs')
+            ->add('informateur')
         ;
     }
 
@@ -28,6 +29,7 @@ class DateEventAdmin extends AbstractAdmin
             ->add('dateDebut')
             ->add('dateFin')
             ->add('visiteurs')
+            ->add('informateur')
         ;
     }
 
@@ -38,6 +40,7 @@ class DateEventAdmin extends AbstractAdmin
             ->add('dateDebut')
             ->add('dateFin')
             ->add('visiteurs')
+            ->add('informateur')
         ;
     }
 }

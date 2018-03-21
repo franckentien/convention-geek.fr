@@ -9,11 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
 
-
-
-
-
-
     private function getEvent(){
 
         $repositoryDate = $this
@@ -44,7 +39,8 @@ class DefaultController extends Controller
                 'date'   => $date,
                 'name' => $convention->getNom(),
                 'place'  => $event->getEvenement(),
-                'informateur' => 'informateur'));
+                'informateur' => $event->getInformateur()));
+                //TODO return - if null
         }
 
         return $listEvent;
