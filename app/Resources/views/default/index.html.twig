@@ -28,17 +28,24 @@
                     <td class="mdl-data-table__cell--non-numeric">{{ event.informateur }}</td>
             </tr>
                 {% endfor %}
-
             </tbody>
         </table>
+
     </div>
+    <div class="mdl-cell mdl-cell--12-col" style="display: flex;">
+        <div class="section-spacer" style="flex-grow: 1;"></div>
+        <a href="">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent my-button-index">
+                Afficher toutes les dates
+            </button>
+        </a>
     </div>
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col">
-        News
     </div>
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col">
-        Form
+    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col ">
+            <h2 style="text-align: center;">Formulaires</h2>
+        </div>
     </div>
 {% endblock %}

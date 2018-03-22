@@ -3,6 +3,7 @@
 namespace ConventionGeek\EventBundle\Controller;
 
 
+use Sonata\NewsBundle\Controller\PostController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ConventionGeek\EventBundle\Utils\DateFormatClass;
 
@@ -47,7 +48,6 @@ class IndexController extends Controller
 
         return $listEvent;
     }
-
 
     public function indexAction()
     {
