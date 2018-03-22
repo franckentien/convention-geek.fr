@@ -25,4 +25,19 @@ class DateEventRepository extends \Doctrine\ORM\EntityRepository
             ->getResult()
             ;
     }
+
+    public function findAllDateAfterToday()
+    {
+        $qb = $this->createQueryBuilder('a');
+
+        $qb->where('a.dateDebut >= :start ')
+            ->setParameter('start', new \Datetime(date('Y').'-'.date('m').'-'.date('d')))
+            ->orderBy('a.dateDebut', 'ASC')
+        ;
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

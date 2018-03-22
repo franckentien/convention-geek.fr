@@ -3,13 +3,11 @@
 namespace ConventionGeek\EventBundle\Controller;
 
 
-use Sonata\NewsBundle\Controller\PostController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ConventionGeek\EventBundle\Utils\DateFormatClass;
 
-class IndexController extends Controller
+class ConventionController extends Controller
 {
-
     public function getDates(){
 
         $repositoryDate = $this
@@ -24,7 +22,7 @@ class IndexController extends Controller
             ->getRepository('ConventionGeekEventBundle:Convention')
         ;
 
-        $listDateEvents = $repositoryDate->findDateForIndex();
+        $listDateEvents = $repositoryDate->findAllDateAfterToday();
 
         $listEvent = array();
 
@@ -49,12 +47,10 @@ class IndexController extends Controller
         return $listEvent;
     }
 
-    public function indexAction()
+    public function ConventionsAction()
     {
-
         $listEvent = $this->getDates();
 
-        return $this->render('default/index.html.twig', array('listEvenement' => $listEvent));
+        return $this->render('conventionGeek/conventions.html.twig', array('listEvenement' => $listEvent));
     }
-
 }
