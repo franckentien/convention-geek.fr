@@ -10,8 +10,15 @@ App_irlEvent:
   path: /TGS2017
   defaults: { _controller: AppBundle:Default:irlEvent}
 
+CGEvent_conventions:
+  path: /convention
+  defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
+
 sonata:
     resource: routing_sonata.yml
 
+fos_user_delete_account:
+  path: /profile/delete/
+  defaults: { _controller: ApplicationSonataUserBundle:User:deleteUser }
 
 
