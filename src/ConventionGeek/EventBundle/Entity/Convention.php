@@ -369,10 +369,14 @@ class Convention
         return $this->id;
     }
 
-
+    /**
+     * toString
+     *
+     * @return string
+     */
     public function __toString()
     {
-        return $this->eventid;
+        return strval($this->eventid);
     }
 
 }

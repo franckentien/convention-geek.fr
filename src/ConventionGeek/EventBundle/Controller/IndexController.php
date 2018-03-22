@@ -2,14 +2,14 @@
 
 namespace ConventionGeek\EventBundle\Controller;
 
-use ConventionGeek\EventBundle\ConventionGeekEventBundle;
-use ConventionGeek\EventBundle\Utils\DateFormatClass;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use ConventionGeek\EventBundle\Utils\DateFormatClass;
+
+class IndexController extends Controller
 {
 
-    private function getEvent(){
+    public function getEvent(){
 
         $repositoryDate = $this
             ->getDoctrine()
@@ -23,9 +23,7 @@ class DefaultController extends Controller
             ->getRepository('ConventionGeekEventBundle:Convention')
         ;
 
-
-
-        $listDateEvents = $repositoryDate->findAll();
+        $listDateEvents = $repositoryDate->findDateForIndex();
 
         $listEvent = array();
 
@@ -35,23 +33,28 @@ class DefaultController extends Controller
 
             $convention = $repositoryConvention->findOneBy(array('eventid' => strval($event->getEvenement())));
 
+            $informateur = '-';
+            if($event->getInformateur()!==null){
+                $informateur = $event->getInformateur();
+            };
+
             array_push($listEvent, array(
                 'date'   => $date,
                 'name' => $convention->getNom(),
                 'place'  => $event->getEvenement(),
-                'informateur' => $event->getInformateur()));
-                //TODO return - if null
+                'informateur' => $informateur ));
         }
 
         return $listEvent;
     }
+
 
     public function indexAction()
     {
 
         $listEvent = $this->getEvent();
 
-
         return $this->render('default/index.html.twig', array('listEvenement' => $listEvent));
     }
+
 }

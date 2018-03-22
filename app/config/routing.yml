@@ -1,6 +1,6 @@
 App_home:
   path: /
-  defaults: { _controller: ConventionGeekEventBundle:Default:index}
+  defaults: { _controller: ConventionGeekEventBundle:Index:index}
 
 App_about:
   path: /about
