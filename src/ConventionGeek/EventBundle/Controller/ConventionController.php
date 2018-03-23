@@ -8,7 +8,7 @@ use ConventionGeek\EventBundle\Utils\DateFormatClass;
 
 class ConventionController extends Controller
 {
-    public function getDates(){
+    public function getAllNextDates(){
 
         $repositoryDate = $this
             ->getDoctrine()
@@ -47,10 +47,36 @@ class ConventionController extends Controller
         return $listEvent;
     }
 
+    public function getAllEvent(){
+        $repositoryConvention = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('ConventionGeekEventBundle:Convention')
+        ;
+
+        $listEvents = $repositoryConvention->findAll();
+
+        $result = array();
+
+        foreach ($listEvents as $event) {
+            array_push($result, array(
+                'nom'   => $event->getNom(),
+                'lieu' => $event->getLieu(),
+                'departement' => $event->getDepartement() ));
+        }
+
+
+    }
+
     public function ConventionsAction()
     {
-        $listEvent = $this->getDates();
+        $listEvent = $this->getAllNextDates();
 
         return $this->render('conventionGeek/conventions.html.twig', array('listEvenement' => $listEvent));
+    }
+
+    public function AnnuaireAction(){
+
+        return $this->render('conventionGeek/annuaire.html.twig');
     }
 }

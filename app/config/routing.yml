@@ -14,6 +14,10 @@ CGEvent_conventions:
   path: /convention
   defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
 
+CGEvent_annuaire:
+  path: /annuaire
+  defaults: { _controller: ConventionGeekEventBundle:Convention:Annuaire}
+
 sonata:
     resource: routing_sonata.yml
 

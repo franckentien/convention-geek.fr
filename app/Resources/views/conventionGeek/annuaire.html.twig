@@ -1,0 +1,37 @@
+{% extends '::menu.html.twig' %}
+
+{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
+{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
+{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}
+
+{% block pageContent %}
+
+    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col ">
+            <table class="mdl-data-table mdl-js-data-table table100">
+                <caption>LISTE EVENEMENTS</caption>
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Nom de l'evenement</th>
+                    <th class="mdl-data-table__cell--non-numeric">Lieu</th>
+                    <th class="mdl-data-table__cell--non-numeric" colspan="2">DEPARTEMENT</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="mdl-cell mdl-cell--12-col" style="display: flex;">
+            <div class="section-spacer" style="flex-grow: 1;"></div>
+            <a href="">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent my-button-index">
+                    Ajouter un évenement
+                </button>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
