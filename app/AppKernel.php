@@ -31,7 +31,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle(),
             new Sonata\NewsBundle\SonataNewsBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
-            new Sonata\IntlBundle\SonataIntlBundle(),//For format date maybe need to remove
+            new Sonata\IntlBundle\SonataIntlBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),

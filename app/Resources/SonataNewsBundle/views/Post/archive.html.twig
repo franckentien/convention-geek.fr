@@ -10,17 +10,24 @@
         <div class="mdl-cell mdl-cell--12-col ">
 
             {% for post in pager.getResults() %}
-            <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--6dp">
-                <div class="mdl-card__title">
-                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}"><h2 class="mdl-card__title-text">{{ post.title }}</h2></a>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    {{ post.abstract }}
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
-                </div>
-            </div>
+
+                {% if date() >= date(post.publicationDateStart) %}
+                    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--6dp">
+                        <div class="mdl-card__title">
+                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}"><h2 class="mdl-card__title-text">{{ post.title }}</h2></a>
+                            <div class="mdl-layout-spacer"></div>
+
+                            <p style="margin: auto;">Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            {{ post.abstract }}
+                        </div>
+                        <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-card__actions">
+                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
+                        </div>
+                    </div>
+                {% endif %}
             {% else %}
                 {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
             {% endfor %}

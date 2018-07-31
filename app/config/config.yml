@@ -40,6 +40,8 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'SonataFormatterBundle:Form:formatter.html.twig'
+    date:
+        timezone: Europe/Paris
 
 # Doctrine Configuration
 doctrine:

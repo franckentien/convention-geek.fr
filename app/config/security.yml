@@ -50,7 +50,7 @@ security:
             - ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT
 
     access_control:
-            - { path: ^/admin, ip: 127.0.0.1, requires_channel: https }
+            #- { path: ^/admin, ip: 127.0.0.1, requires_channel: https }
             # Admin login page needs to be accessed without credential
             - { path: ^/admin/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/logout$, role: IS_AUTHENTICATED_ANONYMOUSLY }

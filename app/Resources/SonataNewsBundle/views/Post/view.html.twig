@@ -6,14 +6,21 @@
 
 {% block pageContent %}
 
-<article class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+<article class="mdl-shadow--6dp mdl-cell mdl-cell--12-col">
 
-    <h1>{{ post.title }}</h1>
+    <div class="mdl-cell mdl-cell--12-col ">
 
-    {{ post.content|raw }}
+        <h1>{{ post.title }}</h1>
 
-    <p>Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+    </div>
 
+    <div class="mdl-cell mdl-cell--12-col ">
+
+        {{ post.content|raw }}
+
+        <p>Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+
+    </div>
 </article>
 
 
