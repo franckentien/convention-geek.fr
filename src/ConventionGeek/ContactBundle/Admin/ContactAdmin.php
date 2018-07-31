@@ -1,7 +1,7 @@
 <?php
 
 // src/Admin/ContactAdmin.php
-namespace AppBundle\Admin;
+namespace ConventionGeek\ContactBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;

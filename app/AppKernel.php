@@ -47,6 +47,7 @@ class AppKernel extends Kernel
 
             new AppBundle\AppBundle(),
 
+            new ConventionGeek\ContactBundle\ConventionGeekContactBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
 
         ];

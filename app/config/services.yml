@@ -49,8 +49,8 @@ services:
             public: true
 
     admin.contact:
-            class: AppBundle\Admin\ContactAdmin
-            arguments: [~, AppBundle\Entity\Contact, ~]
+            class: ConventionGeek\ContactBundle\Admin\ContactAdmin
+            arguments: [~, ConventionGeek\ContactBundle\Entity\Contact, ~]
             tags:
                 - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Contact }
             public: true
