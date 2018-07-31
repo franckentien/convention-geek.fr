@@ -45,8 +45,6 @@ class AppKernel extends Kernel
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
-            new AppBundle\AppBundle(),
-
             new ConventionGeek\ContactBundle\ConventionGeekContactBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
 
