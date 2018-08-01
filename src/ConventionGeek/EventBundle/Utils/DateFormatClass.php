@@ -106,7 +106,7 @@ class DateFormatClass
 
 
         $rst = "";
-        if($DateDebut == null){ // If the date is not sure
+        if($DateDebut === null){ // If the date is not sure
 
             if($moisFin == 1  && $jourFin == 1 ){ // Year Only
                 $rst = $anneeFin;
