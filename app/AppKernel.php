@@ -47,7 +47,7 @@ class AppKernel extends Kernel
 
             new ConventionGeek\ContactBundle\ConventionGeekContactBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
-
+            new ConventionGeek\MainBundle\ConventionGeekMainBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -9,7 +9,8 @@
             "Application\\": "src/Application",
             "ConventionGeek\\ContactBundle\\": "src/ConventionGeek/ContactBundle",
             "ConventionGeek\\UserBundle\\": "src/ConventionGeek/UserBundle",
-            "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle"
+            "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle",
+            "ConventionGeek\\MainBundle\\": "src/ConventionGeek/MainBundle"
 
         },
         "classmap": [

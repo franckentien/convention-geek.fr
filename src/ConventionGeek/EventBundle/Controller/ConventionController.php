@@ -72,11 +72,11 @@ class ConventionController extends Controller
     {
         $listEvent = $this->getAllNextDates();
 
-        return $this->render('conventionGeek/conventions.html.twig', array('listEvenement' => $listEvent));
+        return $this->render('@ConventionGeekEvent/eventList/conventions.html.twig', array('listEvenement' => $listEvent));
     }
 
     public function annuaireAction(){
 
-        return $this->render('conventionGeek/annuaire.html.twig');
+        return $this->render('@ConventionGeekEvent/eventList/annuaire.html.twig');
     }
 }

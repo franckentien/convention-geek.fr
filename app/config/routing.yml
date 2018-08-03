@@ -4,11 +4,11 @@ App_home:
 
 App_about:
   path: /about
-  defaults: { _controller: AppBundle:Default:about}
+  defaults: { _controller: ConventionGeekMainBundle:Default:about}
 
 App_irlEvent:
   path: /TGS2017
-  defaults: { _controller: AppBundle:Default:irlEvent}
+  defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
 
 CGEvent_conventions:
   path: /convention
