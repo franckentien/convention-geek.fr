@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-indigo.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- ressource pressonnel -->
-    {% stylesheets filter='cssrewrite, scssphp' 'css/style.css' %}
-    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% block stylesheets  %}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
     <style type="text/css">
         @font-face {
             font-family: 'Analecta';
@@ -20,7 +20,7 @@
             url({{asset('police/Analecta.svg')}}) format('svg');
         }
     </style>
-    {% endstylesheets %}
+    {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <!-- franck-cayzac.fr -->
     <meta name="keywords" content="{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}" />
