@@ -75,5 +75,9 @@ class Departement
     {
         return $this->departementNom;
     }
+
+    public function __toString() {
+        return $this->departementCode . " - " . $this->departementNom;
+    }
 }
 

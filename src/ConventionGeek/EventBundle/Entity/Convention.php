@@ -13,13 +13,22 @@ use Doctrine\ORM\Mapping as ORM;
 class Convention
 {
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="id", type="string", length=50)
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     *
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="eventid", type="string", length=255)
+     */
+    private $eventid;
+    //TODO Be unique
+
 
     /**
      * @var string
@@ -92,15 +101,7 @@ class Convention
     private $email;
 
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+
 
     /**
      * Set nom
@@ -341,5 +342,42 @@ class Convention
     {
         return $this->email;
     }
+
+    /**
+     * @return string
+     */
+    public function getEventid()
+    {
+        return $this->eventid;
+    }
+
+    /**
+     * @param string $eventid
+     */
+    public function setEventid(string $eventid)
+    {
+        $this->eventid = $eventid;
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * toString
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return strval($this->eventid);
+    }
+
 }
 

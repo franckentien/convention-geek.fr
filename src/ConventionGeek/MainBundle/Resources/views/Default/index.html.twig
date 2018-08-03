@@ -1,0 +1,51 @@
+{% extends '@ConventionGeekMain/Structures/menu.html.twig' %}
+
+{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
+{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
+{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}
+
+{% block pageContent %}
+
+    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+    <div class="mdl-cell mdl-cell--12-col ">
+        <table class="mdl-data-table mdl-js-data-table table100">
+            <caption>PROCHAINEMENT</caption>
+            <thead>
+            <tr>
+                <th class="mdl-data-table__cell--non-numeric">Date</th>
+                <th class="mdl-data-table__cell--non-numeric">Nom de l'evenement</th>
+                <th class="mdl-data-table__cell--non-numeric">Lieu</th>
+                <th class="mdl-data-table__cell--non-numeric">Informateur</th>
+            </tr>
+            </thead>
+            <tbody>
+
+                {% for event in listEvenement %}
+            <tr>
+                    <td class="mdl-data-table__cell--non-numeric">{{ event.date }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ event.name }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ event.place }}</td>
+                    <td class="mdl-data-table__cell--non-numeric">{{ event.informateur }}</td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div class="mdl-cell mdl-cell--12-col" style="display: flex;">
+        <div class="section-spacer" style="flex-grow: 1;"></div>
+        <a href="{{ path('CGEvent_conventions') }}">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent my-button-index">
+                Afficher toutes les dates
+            </button>
+        </a>
+    </div>
+
+    </div>
+
+    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col ">
+            <h2 style="text-align: center;">Formulaires</h2>
+        </div>
+    </div>
+{% endblock %}

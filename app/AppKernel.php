@@ -13,7 +13,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
 
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
@@ -31,7 +30,7 @@ class AppKernel extends Kernel
             new Sonata\UserBundle\SonataUserBundle(),
             new Sonata\NewsBundle\SonataNewsBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
-            new Sonata\IntlBundle\SonataIntlBundle(),//For format date maybe need to remove
+            new Sonata\IntlBundle\SonataIntlBundle(),
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
@@ -45,10 +44,9 @@ class AppKernel extends Kernel
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
-            new AppBundle\AppBundle(),
-
+            new ConventionGeek\ContactBundle\ConventionGeekContactBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
-
+            new ConventionGeek\MainBundle\ConventionGeekMainBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

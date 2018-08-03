@@ -7,8 +7,10 @@
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
             "Application\\": "src/Application",
+            "ConventionGeek\\ContactBundle\\": "src/ConventionGeek/ContactBundle",
             "ConventionGeek\\UserBundle\\": "src/ConventionGeek/UserBundle",
-            "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle"
+            "ConventionGeek\\EventBundle\\": "src/ConventionGeek/EventBundle",
+            "ConventionGeek\\MainBundle\\": "src/ConventionGeek/MainBundle"
 
         },
         "classmap": [
@@ -40,10 +42,10 @@
         "sonata-project/classification-bundle": "^3.5",
         "sonata-project/doctrine-orm-admin-bundle": "^3.2",
         "sonata-project/formatter-bundle": "^3.4",
+        "sonata-project/intl-bundle": "^2.5",
         "sonata-project/media-bundle": "^3.10",
         "sonata-project/news-bundle": "^3.2",
         "sonata-project/user-bundle": "^4.0",
-        "symfony/assetic-bundle": "^2.8",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.3.10",

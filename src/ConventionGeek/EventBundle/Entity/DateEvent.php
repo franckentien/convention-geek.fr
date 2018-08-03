@@ -12,16 +12,27 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class DateEvent
 {
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
     /**
      * @ORM\ManyToOne(targetEntity="ConventionGeek\EventBundle\Entity\Convention")
-     * @ORM\Id
+     *
      * @ORM\JoinColumn(nullable=false)
      */
     private $evenement;
 
     /**
      * @var int
-     * @ORM\Id
+     *
      * @ORM\Column(name="edition", type="smallint")
      */
     private $edition;
@@ -29,7 +40,7 @@ class DateEvent
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="date")
+     * @ORM\Column(name="date_debut", type="date", nullable=true)
      */
     private $dateDebut;
 
@@ -48,7 +59,24 @@ class DateEvent
     private $visiteurs;
 
 
-    //TODO Add user integration
+    /**
+     * @ORM\ManyToOne(targetEntity="Application\Sonata\UserBundle\Entity\User")
+     *
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $informateur;
+
+    //TODO Add place for specifique edition
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set evenement
@@ -168,6 +196,35 @@ class DateEvent
     public function getVisiteurs()
     {
         return $this->visiteurs;
+    }
+
+    /**
+     * Set informateur
+     *
+     * @param string $informateur
+     *
+     * @return DateEvent
+     */
+    public function setInformateur($informateur)
+    {
+        $this->informateur = $informateur;
+
+        return $this;
+    }
+
+    /**
+     * Get informateur
+     *
+     * @return string
+     */
+    public function getInformateur()
+    {
+        return $this->informateur;
+    }
+
+
+    public function __toString() {
+        return $this->evenement . "";
     }
 }
 

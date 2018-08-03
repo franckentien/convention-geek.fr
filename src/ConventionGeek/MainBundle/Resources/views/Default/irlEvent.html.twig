@@ -1,0 +1,17 @@
+{% extends '@ConventionGeekMain/Structures/irlEventLayout.html.twig' %}
+
+{% block title %}Bienvenue au TGS 2017{% endblock %}
+{% block logoSrc %}{{ asset('images/other/tgs.png') }}{% endblock %}
+{% block logoAlt %}Bannière du Toulouse Game show{% endblock %}
+
+{% block presentation %}
+    <p><strong>Convention Geek</strong> est un site web qui rassembles les dates des différents évènements geek et otaku en France.</p>
+
+    <p>Sur <strong>Convention Geek</strong>, vous pouvez retrouver les dates des prochains évènements, mais aussi un annuaire de toutes les conventions en France, et des retours sur les festivals où je suis présent.<br>
+        Si vous ne connaissez pas, je vous invite à faire un tour sur
+        <a href="{{ path('App_home') }}">convention-geek.fr</a> , vous pouvez toujours me suivre sur les réseaux sociaux pour être au courant de l’actualité du site et des évènements, mais aussi ne pas manquer les articles et les photos que je fais en festival.</p>
+
+    <p>Les photos du <strong>TGS</strong> seront disponibles en fin de week-end et l’article un peu plus tard.</p>
+    <p>Bon festival à tous, et à plus sur les internets.</p>
+{% endblock %}
+

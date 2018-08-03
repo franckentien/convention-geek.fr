@@ -40,10 +40,13 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'SonataFormatterBundle:Form:formatter.html.twig'
+    date:
+        timezone: Europe/Paris
 
 # Doctrine Configuration
 doctrine:
     dbal:
+
         driver: pdo_mysql
         host: '%database_host%'
         port: '%database_port%'
@@ -59,6 +62,7 @@ doctrine:
         #path: '%database_path%'
         types:
             json: Sonata\Doctrine\Types\JsonType
+        server_version: 5.6
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -71,15 +75,6 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-
-assetic:
-  debug:          '%kernel.debug%'
-  use_controller: '%kernel.debug%'
-  filters:
-    cssrewrite: ~
-    jsqueeze:   ~
-    scssphp:
-      formatter: 'Leafo\ScssPhp\Formatter\Compressed'
 
 doctrine_migrations:
     dir_name: "%kernel.root_dir%/DoctrineMigrations"
