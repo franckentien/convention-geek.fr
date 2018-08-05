@@ -9,11 +9,25 @@ class EventController extends Controller
 {
     public function getInfoEvent($eventid){
 
+        $repositoryConvention = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('ConventionGeekEventBundle:Convention')
+        ;
+
+        $convention = $repositoryConvention->findOneBy(array('eventid' => $eventid));
 
         $infoEvent = array(
-            'eventid'   => $eventid,
+            'eventmeta'   => $convention->getMeta(),
+            'eventname'   => $convention->getNom(),
+            'eventlieu' => $convention->getLieu(),
+            'eventdepartement' => $convention->getDepartement(),
+            'eventwebsite' => $convention->getSite(),
+            'eventfacebook' => $convention->getFacebook(),
+            'eventtwitter' => $convention->getTwitter(),
+            'eventdescription' => $convention->getDescription(),
         );
-        
+
         return $infoEvent;
     }
 

@@ -1,17 +1,60 @@
 {% extends '@ConventionGeekMain/Structures/menu.html.twig' %}
 
 {% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
-{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
-{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}
+{% block metaDescription %}{{ event.eventmeta }}{% endblock %}
+{% block metaTitle %}Convention Geek: {{ event.eventname }}{% endblock %}
 
 {% block pageContent %}
 
     <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col ">
-            {{ event.eventid }}
+        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+
+            <div class="mdl-cell mdl-cell--12-col ">
+
+            <h1>{{ event.eventname }}</h1>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--12-col ">
+
+                <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventname }} <br>
+                    <!-- page des evenemnt-->
+
+                    {% if event.eventwebsite is defined %}
+                        Site web de l'evenement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
+                    {% endif %}
+                    {% if event.eventfacebook is defined %}
+                        Page facebook: <a href="https://facebook.com/{{ event.eventfacebook }}" target="_blank">{{ event.eventname }}</a><br>
+                    {% endif %}
+                    {% if event.eventtwitter is defined %}
+                        Page twitter: <a href="https://twitter.com/{{ event.eventtwitter }}" target="_blank">@{{ event.eventtwitter }}</a>
+                    {% endif %}
+
+
+
+
+                </p>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--12-col ">
+
+                <p>{{ event.eventdescription }}</p>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--12-col ">
+
+                <p>Pour avoir la liste de tous les évènements, il faut se rendre sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
+                    Si une information n'est pas présente sur le site ou qu'il y a une erreur vous pouvez me contacter grâce au  <a href="">formulaires de contact</a>. </p>
+
+            </div>
 
         </div>
         <div class="mdl-cell mdl-cell--12-col">
+
+            
 
         </div>
     </div>
