@@ -21,18 +21,15 @@
                 <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventname }} <br>
                     <!-- page des evenemnt-->
 
-                    {% if event.eventwebsite is defined %}
+                    {% if event.eventwebsite is not null %}
                         Site web de l'evenement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
                     {% endif %}
-                    {% if event.eventfacebook is defined %}
+                    {% if event.eventfacebook is not null %}
                         Page facebook: <a href="https://facebook.com/{{ event.eventfacebook }}" target="_blank">{{ event.eventname }}</a><br>
                     {% endif %}
-                    {% if event.eventtwitter is defined %}
+                    {% if event.eventtwitter is not null %}
                         Page twitter: <a href="https://twitter.com/{{ event.eventtwitter }}" target="_blank">@{{ event.eventtwitter }}</a>
                     {% endif %}
-
-
-
 
                 </p>
 
@@ -54,7 +51,29 @@
         </div>
         <div class="mdl-cell mdl-cell--12-col">
 
-            
+            <table class="mdl-data-table mdl-js-data-table table100">
+                <caption>Les différentes éditions</caption>
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Editions</th>
+                    <th class="mdl-data-table__cell--non-numeric">Dates</th>
+                    <th class="mdl-data-table__cell--non-numeric">Visiteurs</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for eventdate in event.eventdatelist %}
+
+                    <tr>
+
+                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.edition }}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.date }}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.visiteurs }}</td>
+
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
 
         </div>
     </div>

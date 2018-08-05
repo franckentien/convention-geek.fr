@@ -15,7 +15,36 @@ class EventController extends Controller
             ->getRepository('ConventionGeekEventBundle:Convention')
         ;
 
+        $repositoryDate = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('ConventionGeekEventBundle:DateEvent')
+        ;
+
         $convention = $repositoryConvention->findOneBy(array('eventid' => $eventid));
+
+        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()));
+
+        $editionlist = array();
+
+        foreach ($editionrepository as $edition) {
+
+            $date = DateFormatClass::getDisplayDate($edition->getDateDebut(), $edition->getDateFin());
+
+            $convention = $repositoryConvention->findOneBy(array('eventid' => strval($edition->getEvenement())));
+
+            $visiteur= null;
+
+            if($edition->getVisiteurs()!==null){
+                $visiteur = $edition->getVisiteurs();
+            }
+
+            array_push($editionlist, array(
+                'edition'   => $edition->getEdition(),
+                'date' => $date,
+                'visiteurs' => $edition->getVisiteurs()
+                ));
+        }
 
         $infoEvent = array(
             'eventmeta'   => $convention->getMeta(),
@@ -26,6 +55,7 @@ class EventController extends Controller
             'eventfacebook' => $convention->getFacebook(),
             'eventtwitter' => $convention->getTwitter(),
             'eventdescription' => $convention->getDescription(),
+            'eventdatelist' => $editionlist
         );
 
         return $infoEvent;
