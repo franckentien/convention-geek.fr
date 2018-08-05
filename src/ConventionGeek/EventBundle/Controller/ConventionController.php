@@ -47,27 +47,6 @@ class ConventionController extends Controller
         return $listEvent;
     }
 
-    public function getAllEvent(){
-        $repositoryConvention = $this
-            ->getDoctrine()
-            ->getManager()
-            ->getRepository('ConventionGeekEventBundle:Convention')
-        ;
-
-        $listEvents = $repositoryConvention->findAll();
-
-        $result = array();
-
-        foreach ($listEvents as $event) {
-            array_push($result, array(
-                'nom'   => $event->getNom(),
-                'lieu' => $event->getLieu(),
-                'departement' => $event->getDepartement() ));
-        }
-
-
-    }
-
     public function conventionsAction()
     {
         $listEvent = $this->getAllNextDates();
@@ -75,8 +54,4 @@ class ConventionController extends Controller
         return $this->render('@ConventionGeekEvent/eventList/conventions.html.twig', array('listEvenement' => $listEvent));
     }
 
-    public function annuaireAction(){
-
-        return $this->render('@ConventionGeekEvent/eventList/annuaire.html.twig');
-    }
 }

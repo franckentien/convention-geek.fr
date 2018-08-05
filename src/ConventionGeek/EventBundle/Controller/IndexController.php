@@ -54,7 +54,7 @@ class IndexController extends Controller
 
         $listEvent = $this->getDates();
 
-        return $this->render('@ConventionGeekMain/default/index.html.twig', array('listEvenement' => $listEvent));
+        return $this->render('@ConventionGeekEvent/eventList/index.html.twig', array('listEvenement' => $listEvent));
     }
 
 }
