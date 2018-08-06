@@ -33,12 +33,6 @@ class EventController extends Controller
 
             $convention = $repositoryConvention->findOneBy(array('eventid' => strval($edition->getEvenement())));
 
-            $visiteur= null;
-
-            if($edition->getVisiteurs()!==null){
-                $visiteur = $edition->getVisiteurs();
-            }
-
             array_push($editionlist, array(
                 'edition'   => $edition->getEdition(),
                 'date' => $date,
