@@ -23,6 +23,7 @@ class AnnuaireController extends Controller
 
         foreach ($listEvents as $event) {
             array_push($result, array(
+                'eventid' => $event->getEventid(),
                 'nom'   => $event->getNom(),
                 'lieu' => $event->getLieu(),
                 'departement' => $event->getDepartement() ));

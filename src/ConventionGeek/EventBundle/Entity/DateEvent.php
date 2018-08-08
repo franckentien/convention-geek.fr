@@ -53,7 +53,7 @@ class DateEvent
      *
      * @ORM\Column(name="date_fin", type="date")
      * @Assert\Date()
-     * 
+     *
      */
     private $dateFin;
 
