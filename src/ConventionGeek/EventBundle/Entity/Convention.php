@@ -91,7 +91,7 @@ class Convention
      *
      * @ORM\Column(name="actif", type="boolean")
      */
-    private $actif;
+    private $actif = true;
 
     /**
      * @var string

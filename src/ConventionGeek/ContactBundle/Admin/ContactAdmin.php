@@ -13,13 +13,19 @@ class ContactAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper//->add('id')
-            ->add('name')
-            ->add('email')
-            ->add('message')
-            ->add('note')
-            ->add('date', DateTimePickerType::class)
-            ->add('sources');
+        $formMapper
+            ->with('Message', ['class' => 'col-md-8'])
+                ->add('name')
+                ->add('email')
+                ->add('message')
+            ->end()
+            ->with('Admin', ['class' => 'col-md-4'])
+                ->add('date', DateTimePickerType::class)
+                ->add('sources')
+                ->add('note')
+            ->end();
+
+
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

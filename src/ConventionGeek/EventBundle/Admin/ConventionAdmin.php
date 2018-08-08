@@ -13,17 +13,23 @@ class ConventionAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('eventid')
-            ->add('nom')
-            ->add('site')
-            ->add('facebook')
-            ->add('twitter')
-            ->add('lieu')
-            ->add('departement')
-            ->add('meta')
-            ->add('description')
-            ->add('actif')
-            ->add('email')
+        $formMapper
+            ->with('Informations', ['class' => 'col-md-8'])
+                ->add('eventid')
+                ->add('nom')
+                ->add('lieu')
+                ->add('departement')
+                ->add('meta')
+                ->add('description')
+            ->end()
+            ->with('Liens', ['class' => 'col-md-4'])
+                ->add('actif')
+                ->add('site')
+                ->add('facebook')
+                ->add('twitter')
+                ->add('email')
+            ->end()
+
         ;
     }
 
