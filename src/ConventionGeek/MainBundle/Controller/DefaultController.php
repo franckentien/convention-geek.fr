@@ -14,7 +14,7 @@ class DefaultController extends Controller
 
     public function irlEventAction()
     {
-        return $this->render('@ConventionGeekMain/Structures/irlEventLayout.html.twig', []);
+        return $this->render('@ConventionGeekMain/Default/irlEvent.html.twig', []);
     }
 
 
