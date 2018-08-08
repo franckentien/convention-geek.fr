@@ -28,9 +28,7 @@ class ConventionAdmin extends AbstractAdmin
                 ->add('facebook')
                 ->add('twitter')
                 ->add('email')
-            ->end()
-
-        ;
+            ->end();
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

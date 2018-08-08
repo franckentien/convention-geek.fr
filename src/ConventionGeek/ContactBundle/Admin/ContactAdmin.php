@@ -24,8 +24,6 @@ class ContactAdmin extends AbstractAdmin
                 ->add('sources')
                 ->add('note')
             ->end();
-
-
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
