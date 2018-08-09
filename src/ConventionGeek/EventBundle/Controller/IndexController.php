@@ -40,6 +40,7 @@ class IndexController extends Controller
             };
 
             array_push($listEvent, array(
+                'eventid' => $convention->getEventid(),
                 'date'   => $date,
                 'name' => $convention->getNom(),
                 'place'  => $convention->getLieu(),
@@ -54,7 +55,7 @@ class IndexController extends Controller
 
         $listEvent = $this->getDates();
 
-        return $this->render('@ConventionGeekMain/default/index.html.twig', array('listEvenement' => $listEvent));
+        return $this->render('@ConventionGeekEvent/eventList/index.html.twig', array('listEvenement' => $listEvent));
     }
 
 }

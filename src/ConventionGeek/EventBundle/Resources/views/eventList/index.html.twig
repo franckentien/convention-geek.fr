@@ -23,7 +23,7 @@
                 {% for event in listEvenement %}
             <tr>
                     <td class="mdl-data-table__cell--non-numeric">{{ event.date }}</td>
-                    <td class="mdl-data-table__cell--non-numeric">{{ event.name }}</td>
+                    <td class="mdl-data-table__cell--non-numeric"><a href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">{{ event.name }}</a></td>
                     <td class="mdl-data-table__cell--non-numeric">{{ event.place }}</td>
                     <td class="mdl-data-table__cell--non-numeric">{{ event.informateur }}</td>
             </tr>

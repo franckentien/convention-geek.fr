@@ -26,6 +26,7 @@ security:
             logout:
                 path:           /admin/logout
                 target:         /admin/login
+            logout_on_user_change: true
             anonymous:          true
         main:
             pattern:      ^/
@@ -38,6 +39,7 @@ security:
             logout:
               path:       fos_user_security_logout
               target:     /
+            logout_on_user_change: true
 
     encoders:
         ConventionGeek\UserBundle\Entity\User: bcrypt

@@ -1,22 +1,32 @@
 App_home:
   path: /
   defaults: { _controller: ConventionGeekEventBundle:Index:index}
+  methods: [GET]
 
 App_about:
   path: /about
   defaults: { _controller: ConventionGeekMainBundle:Default:about}
+  methods: [GET]
 
 App_irlEvent:
   path: /TGS2017
   defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
+  methods: [GET]
 
 CGEvent_conventions:
   path: /convention
   defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
+  methods: [GET]
 
 CGEvent_annuaire:
   path: /annuaire
-  defaults: { _controller: ConventionGeekEventBundle:Convention:Annuaire}
+  defaults: { _controller: ConventionGeekEventBundle:Annuaire:annuaire}
+  methods: [GET]
+
+CGEvent_event:
+  path: /convention/{eventid}
+  defaults: { _controller: ConventionGeekEventBundle:Event:event}
+  methods: [GET]
 
 sonata:
     resource: routing_sonata.yml
@@ -24,5 +34,6 @@ sonata:
 fos_user_delete_account:
   path: /profile/delete/
   defaults: { _controller: ApplicationSonataUserBundle:User:deleteUser }
+  methods: [GET]
 
 

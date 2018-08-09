@@ -36,7 +36,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
 
             new JMS\SerializerBundle\JMSSerializerBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new FOS\CKEditorBundle\FOSCKEditorBundle(),
 
 
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),

@@ -14,8 +14,8 @@ class DateEventRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('a');
 
-        $qb->where('a.dateFin BETWEEN :start AND :end')
-            ->setParameter('start', new \Datetime(date('Y').'-'.date('m').'-'.date('d')))  // Date entre le 1er janvier de cette année
+        $qb->where('a.dateDebut BETWEEN :start AND :end')
+            ->setParameter('start', new \Datetime(date('Y').'-'.date('m').'-'.date('d')))
             ->setParameter('end',   new \Datetime(date('Y').'-'.(date('m')+2).'-'.date('d')))
             ->orderBy('a.dateDebut', 'ASC')
         ;

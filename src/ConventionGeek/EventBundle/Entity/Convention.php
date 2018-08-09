@@ -3,12 +3,16 @@
 namespace ConventionGeek\EventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * Convention
  *
  * @ORM\Table(name="convention")
  * @ORM\Entity(repositoryClass="ConventionGeek\EventBundle\Repository\ConventionRepository")
+ * @UniqueEntity("eventid")
  */
 class Convention
 {
@@ -24,11 +28,10 @@ class Convention
     /**
      * @var string
      *
-     * @ORM\Column(name="eventid", type="string", length=255)
+     * @ORM\Column(name="eventid", type="string", length=255, unique=true)
+     *
      */
     private $eventid;
-    //TODO Be unique
-
 
     /**
      * @var string
@@ -41,6 +44,7 @@ class Convention
      * @var string
      *
      * @ORM\Column(name="site", type="string", length=255, nullable=true)
+     * @Assert\Url()
      */
     private $site;
 
@@ -91,12 +95,13 @@ class Convention
      *
      * @ORM\Column(name="actif", type="boolean")
      */
-    private $actif;
+    private $actif = true;
 
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
+     * @Assert\Email(checkMX=true)
      */
     private $email;
 

@@ -7,19 +7,25 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Sonata\CoreBundle\Form\Type\DatePickerType;
 
 class DateEventAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('evenement')
-            ->add('edition')
-            ->add('dateDebut')
-            ->add('dateFin')
-            ->add('visiteurs')
-            ->add('informateur')
-        ;
+        $formMapper
+            ->with('Édition', ['class' => 'col-md-4'])
+                ->add('evenement')
+                ->add('edition')
+            ->end()
+            ->with('Date', ['class' => 'col-md-4'])
+                ->add('dateDebut', DatePickerType::class , array('dp_view_mode' => 'months',))
+                ->add('dateFin', DatePickerType::class, array('dp_view_mode' => 'months',))
+            ->end()
+            ->with('Details', ['class' => 'col-md-4'])
+                ->add('visiteurs')
+                ->add('informateur')
+            ->end();
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)

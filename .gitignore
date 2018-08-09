@@ -9,6 +9,7 @@
 !var/logs/.gitkeep
 !var/sessions/.gitkeep
 
+
 # Parameters
 /app/config/parameters.yml
 /app/config/parameters.ini
@@ -18,7 +19,8 @@
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
-!bin/symfony_requirements
+bin/symfony_requirements
+var/SymfonyRequirements.php
 /vendor/
 
 # Assets and user uploads
@@ -32,6 +34,9 @@
 # Build data
 /build/
 
+# Composer PHAR
+/composer.phar
+
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~
 
@@ -41,4 +46,5 @@
 #Other
 .idea/
 app/DoctrineMigrations/
+
 

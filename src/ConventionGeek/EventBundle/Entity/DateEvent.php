@@ -3,6 +3,7 @@
 namespace ConventionGeek\EventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * DateEvent
@@ -34,6 +35,7 @@ class DateEvent
      * @var int
      *
      * @ORM\Column(name="edition", type="smallint")
+     * @Assert\Range(min = 0)
      */
     private $edition;
 
@@ -41,6 +43,8 @@ class DateEvent
      * @var \DateTime
      *
      * @ORM\Column(name="date_debut", type="date", nullable=true)
+     * @Assert\Date()
+     *
      */
     private $dateDebut;
 
@@ -48,6 +52,8 @@ class DateEvent
      * @var \DateTime
      *
      * @ORM\Column(name="date_fin", type="date")
+     * @Assert\Date()
+     *
      */
     private $dateFin;
 
