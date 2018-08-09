@@ -10,6 +10,8 @@ use Sonata\AdminBundle\Form\FormMapper;
 
 class ConventionFormAdmin extends AbstractAdmin
 {
+    public $supportsPreviewMode = true;
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
