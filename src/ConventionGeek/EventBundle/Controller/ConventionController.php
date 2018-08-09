@@ -38,6 +38,7 @@ class ConventionController extends Controller
             };
 
             array_push($listEvent, array(
+                'eventid' => $convention->getEventid(),
                 'date'   => $date,
                 'name' => $convention->getNom(),
                 'place'  => $convention->getLieu(),
