@@ -1,19 +1,20 @@
 <?php
 
-namespace ConventionGeek\EventBundle\Entity;
+namespace ConventionGeek\ContactBundle\Entity;
 
 use ConventionGeek\EventBundle\Entity\BaseConvention as BaseConvention;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
- * Convention
+ * ConventionForm
  *
- * @ORM\Table(name="convention")
- * @ORM\Entity(repositoryClass="ConventionGeek\EventBundle\Repository\ConventionRepository")
- * @UniqueEntity("eventid")
+ * @ORM\Table(name="ConventionForm")
+ * @ORM\Entity(repositoryClass="ConventionGeek\ContactBundle\Repository\ConventionFormRepository")
+ *
  */
-class Convention extends BaseConvention
+class ConventionForm extends BaseConvention
 {
     /**
      * @var int
@@ -27,7 +28,7 @@ class Convention extends BaseConvention
     /**
      * @var string
      *
-     * @ORM\Column(name="eventid", type="string", length=255, unique=true)
+     * @ORM\Column(name="eventid", type="string", length=255)
      *
      */
     private $eventid;
@@ -64,6 +65,8 @@ class Convention extends BaseConvention
     {
         return strval($this->eventid);
     }
+
+
 
 }
 
