@@ -36,10 +36,16 @@ services:
             public: true
 
 
-
-    admin.conventionform:
+    admin.convention-form:
           class: ConventionGeek\ContactBundle\Admin\ConventionFormAdmin
           arguments: [~, ConventionGeek\ContactBundle\Entity\ConventionForm, ~]
           tags:
-          - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Conventions Form  }
+          - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Form Conventions}
+          public: true
+
+    admin.date-event-form:
+          class: ConventionGeek\ContactBundle\Admin\DateEventFormAdmin
+          arguments: [~, ConventionGeek\ContactBundle\Entity\DateEventForm, ~]
+          tags:
+          - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Form Dates événements}
           public: true

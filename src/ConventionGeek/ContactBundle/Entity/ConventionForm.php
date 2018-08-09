@@ -3,7 +3,6 @@
 namespace ConventionGeek\ContactBundle\Entity;
 
 use ConventionGeek\EventBundle\Entity\BaseConvention as BaseConvention;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 
