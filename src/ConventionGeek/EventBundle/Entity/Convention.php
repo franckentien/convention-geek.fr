@@ -4,12 +4,15 @@ namespace ConventionGeek\EventBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * Convention
  *
  * @ORM\Table(name="convention")
  * @ORM\Entity(repositoryClass="ConventionGeek\EventBundle\Repository\ConventionRepository")
+ * @UniqueEntity("eventid")
  */
 class Convention
 {
@@ -29,8 +32,6 @@ class Convention
      *
      */
     private $eventid;
-    //TODO Be unique
-
 
     /**
      * @var string
