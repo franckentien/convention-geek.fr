@@ -118,6 +118,9 @@
                                 <button class="btn btn-success" type="submit" name="btn_create_and_create"><i class="fa fa-plus-circle" aria-hidden="true"></i> {{ 'btn_create_and_create_a_new_one'|trans({}, 'SonataAdminBundle') }}</button>
                             {% endif %}
                         {% endif %}
+                        {% if app.request.get('_route') == 'admin_conventiongeek_contact_conventionform_edit' or app.request.get('_route') == 'admin_conventiongeek_contact_dateeventform_edit' %}
+                            <a class="btn btn-primary" href="">Valider</a>
+                        {% endif %}
                     {% endblock %}
                 </div>
             {% endblock formactions %}
