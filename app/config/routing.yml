@@ -36,4 +36,14 @@ fos_user_delete_account:
   defaults: { _controller: ApplicationSonataUserBundle:User:deleteUser }
   methods: [GET]
 
+CGContact_import_convention:
+  path: /CGForm/Convention/Import
+  defaults: { _controller: ConventionGeekContactBundle:Default:ImportConvention }
+  methods: [GET]
+
+CGContact_import_dateEvent:
+  path: /CGForm/DateEvent/Import
+  defaults: { _controller: ConventionGeekContactBundle:Default:ImportDateEvent }
+  methods: [GET]
+
 

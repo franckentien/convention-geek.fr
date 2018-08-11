@@ -9,16 +9,22 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
 
-    public function aboutAction()
-    {
-        return $this->render('default/about.html.twig', []);
+    public function ImportConventionAction() {
+
+
+        //return $this->redirect($this->generateUrl('fos_user_security_login'));
+        return $this->redirect($this->generateUrl('sonata_admin_dashboard'));
+
+
     }
 
-    public function irlEventAction()
-    {
-        return $this->render('conventionGeek/irlEvent.html.twig', []);
+    public function ImportDateEventAction() {
+
+
+        //return $this->redirect($this->generateUrl('fos_user_security_login'));
+        return $this->redirect($this->generateUrl('sonata_admin_dashboard'));
+
+
     }
-
-
 
 }
