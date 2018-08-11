@@ -102,7 +102,7 @@
 
                                 {% if admin.hasRoute('delete') and admin.hasAccess('delete', object) %}
                                     {{ 'delete_or'|trans({}, 'SonataAdminBundle') }}
-                                    <a class="btn btn-danger" href="{{ admin.generateObjectUrl('delete', object) }}"><i class="fa fa-minus-circle" aria-hidden="true"></i> {{ 'link_delete'|trans({}, 'SonataAdminBundle') }}</a>
+                                    <a class="btn btn-danger" href="{{ admin.generateObjectUrl('delete', object) }}"><i class="fa fa-minus-circle" aria-hidden="true"></i>{{ 'link_delete'|trans({}, 'SonataAdminBundle') }}</a>
                                 {% endif %}
 
                                 {% if admin.isAclEnabled() and admin.hasRoute('acl') and admin.hasAccess('acl', object) %}
@@ -119,10 +119,10 @@
                             {% endif %}
                         {% endif %}
                         {% if app.request.get('_route') == 'admin_conventiongeek_contact_conventionform_edit' %}
-                            <a class="btn btn-primary" href="{{ path('CGContact_import_convention') }}">Valider</a>
+                            <a class="btn btn-primary" href="{{ path('CGContact_import_convention', {'idform': object.id} ) }}">Valider</a>
                         {% endif %}
                         {% if app.request.get('_route') == 'admin_conventiongeek_contact_dateeventform_edit' %}
-                            <a class="btn btn-primary" href="{{ path('CGContact_import_dateEvent') }}">Valider</a>
+                            <a class="btn btn-primary" href="{{ path('CGContact_import_dateEvent' , {'idform': object} ) }}">Valider</a>
                         {% endif %}
                     {% endblock %}
                 </div>
