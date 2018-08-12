@@ -122,7 +122,7 @@
                             <a class="btn btn-primary" href="{{ path('CGContact_import_convention', {'idform': object.id} ) }}">Valider</a>
                         {% endif %}
                         {% if app.request.get('_route') == 'admin_conventiongeek_contact_dateeventform_edit' %}
-                            <a class="btn btn-primary" href="{{ path('CGContact_import_dateEvent' , {'idform': object} ) }}">Valider</a>
+                            <a class="btn btn-primary" href="{{ path('CGContact_import_dateEvent' , {'idform': object.id} ) }}">Valider</a>
                         {% endif %}
                     {% endblock %}
                 </div>

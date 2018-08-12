@@ -3,6 +3,7 @@
 namespace ConventionGeek\ContactBundle\Controller;
 
 use ConventionGeek\EventBundle\Entity\Convention;
+use ConventionGeek\EventBundle\Entity\DateEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,11 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
 
-    public function ImportConventionAction($idform) {
+    public function importConventionAction($idform) {
 
         $em = $this->getDoctrine()->getManager();
 
-        $repositoryConventionForm = $em->getRepository('ConventionGeekContactBundle:ConventionForm')        ;
+        $repositoryConventionForm = $em->getRepository('ConventionGeekContactBundle:ConventionForm');
 
         $eventform = $repositoryConventionForm->findOneBy(array('id' => $idform));
 
@@ -32,11 +33,26 @@ class DefaultController extends Controller
 
     }
 
-    public function ImportDateEventAction() {
+    public function importDateEventAction($idform) {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $repositoryDateEventForm = $em->getRepository('ConventionGeekContactBundle:DateEventForm');
+
+        $dateform = $repositoryDateEventForm->findOneBy(array('id' => $idform));
+
+        $newDateEvent = new DateEvent($dateform);
+
+        $em->persist($newDateEvent);
+        $em->flush();
+
+        $newid = $newDateEvent->getId();
+
+        $em->remove($dateform);
+        $em->flush();
 
 
-        //return $this->redirect($this->generateUrl('fos_user_security_login'));
-        return $this->redirect($this->generateUrl('admin_conventiongeek_event_dateevent_edit', array('id' => '2')));
+        return $this->redirect($this->generateUrl('admin_conventiongeek_event_dateevent_edit', array('id' => $newid)));
 
 
     }

@@ -38,12 +38,12 @@ fos_user_delete_account:
 
 CGContact_import_convention:
   path: /CGForm/Convention/Import/{idform}
-  defaults: { _controller: ConventionGeekContactBundle:Default:ImportConvention }
-  methods: [GET]
+  defaults: { _controller: ConventionGeekContactBundle:Default:importConvention }
+  methods: [GET, POST, DELETE]
 
 CGContact_import_dateEvent:
   path: /CGForm/DateEvent/Import/{idform}
-  defaults: { _controller: ConventionGeekContactBundle:Default:ImportDateEvent }
-  methods: [GET]
+  defaults: { _controller: ConventionGeekContactBundle:Default:importDateEvent }
+  methods: [GET, POST, DELETE]
 
 

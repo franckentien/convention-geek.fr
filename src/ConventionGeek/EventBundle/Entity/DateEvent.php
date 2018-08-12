@@ -2,6 +2,7 @@
 
 namespace ConventionGeek\EventBundle\Entity;
 
+use ConventionGeek\ContactBundle\Entity\DateEventForm;
 use Doctrine\ORM\Mapping as ORM;
 use ConventionGeek\EventBundle\Entity\BaseDateEvent as BaseDateEvent;
 
@@ -22,6 +23,21 @@ class DateEvent extends BaseDateEvent
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * DateEvent constructor.
+     * @param DateEventForm $dateEvent
+     */
+    public function __construct(DateEventForm $dateEvent)
+    {
+        $this->evenement = $dateEvent->getEvenement();
+        $this->edition = $dateEvent->getEdition();
+        $this->dateDebut = $dateEvent->getDateDebut();
+        $this->dateFin = $dateEvent->getDateFin();
+        $this->visiteurs = $dateEvent->getVisiteurs();
+        $this->informateur = $dateEvent->getInformateur();
+
+    }
 
     /**
      * Get id
