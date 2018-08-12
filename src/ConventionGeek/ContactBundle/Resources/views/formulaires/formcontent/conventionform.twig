@@ -24,7 +24,7 @@
             </div>
             <br>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(conventionform.description, {'attr': {'class': 'mdl-textfield__input'}}) }}
+                {{ form_widget(conventionform.description, {'attr': {'class': 'mdl-textfield__input', 'type':'text'}}) }}
                 <div class="form_errors">
                     {{ form_errors(conventionform.description, {'attr': {'class': 'menu-dark'}}) }}
                 </div>
