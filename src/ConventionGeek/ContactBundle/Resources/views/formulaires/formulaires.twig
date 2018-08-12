@@ -7,11 +7,16 @@
 {% block pageContent %}
 
     <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col ">
-            DIV1
+        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+            <div class="mdl-cell mdl-cell--6-col ">
+                DIV1
+            </div>
+            <div class="mdl-cell mdl-cell--6-col">
+                DIV2
+            </div>
         </div>
         <div class="mdl-cell mdl-cell--12-col">
-            DIV2
+            {{ include('@ConventionGeekContact/formulaires/formcontent/contactform.twig') }}
         </div>
     </div>
 
