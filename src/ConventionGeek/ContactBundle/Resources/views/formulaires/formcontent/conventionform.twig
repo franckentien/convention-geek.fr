@@ -1,0 +1,17 @@
+<div class="my-card-wide mdl-card mdl-shadow--6dp">
+    {{ form_start(conventionform, {'attr': {'class': 'form-horizontal'}}) }}
+
+    <fieldset>
+
+
+
+
+        {{ form_rest(conventionform) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(conventionform) }}
+
+        {# Fermeture de la balise <form> du formulaire HTML #}
+        {{ form_end(conventionform) }}
+    </fieldset>
+</div>
