@@ -52,3 +52,8 @@ CGContact_import_dateEvent:
   methods: [GET, POST, DELETE]
 
 
+App_test:
+  path: /test
+  defaults: { _controller: ConventionGeekMainBundle:Default:test}
+  methods: [GET]
+
