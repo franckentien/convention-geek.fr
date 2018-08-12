@@ -2,4 +2,4 @@
 
 require('../css/app.scss');
 
-console.log('Hello Webpack Encore');
+console.log('hello world in JS');
