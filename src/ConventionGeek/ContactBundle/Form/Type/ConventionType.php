@@ -21,7 +21,7 @@ class ConventionType extends AbstractType
         $builder
             ->add('nom',TextType::class)
             ->add('lieu', TextType::class)
-            ->add('description', TextType::class)
+            ->add('description', TextareaType::class)
             ->add('site', UrlType::class)
             ->add('FormSubmit',SubmitType::class);
     }
