@@ -26,6 +26,11 @@ Encore
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
 
+    .enablePostCssLoader((options) => {
+         options.config = {
+             path: 'app/config/postcss.config.js'
+         };
+     })
 
 
     // uncomment if you use TypeScript
@@ -36,7 +41,7 @@ Encore
         // https://github.com/webpack-contrib/less-loader#examples
         // http://lesscss.org/usage/#command-line-usage-options
         // options.relativeUrls = false;
-        options.includePaths = './node_modules';
+        options.includePaths = [ './node_modules' ];
     })
 
     // uncomment if you're having problems with a jQuery plugin
