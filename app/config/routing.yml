@@ -28,6 +28,11 @@ CGEvent_event:
   defaults: { _controller: ConventionGeekEventBundle:Event:event}
   methods: [GET]
 
+CGEvent_formulaires:
+  path: /formulaires
+  defaults: { _controller: ConventionGeekContactBundle:Default:formulaires}
+  methods: [GET, POST]
+
 sonata:
     resource: routing_sonata.yml
 
@@ -38,12 +43,12 @@ fos_user_delete_account:
 
 CGContact_import_convention:
   path: /CGForm/Convention/Import/{idform}
-  defaults: { _controller: ConventionGeekContactBundle:Default:importConvention }
+  defaults: { _controller: ConventionGeekContactBundle:Import:importConvention }
   methods: [GET, POST, DELETE]
 
 CGContact_import_dateEvent:
   path: /CGForm/DateEvent/Import/{idform}
-  defaults: { _controller: ConventionGeekContactBundle:Default:importDateEvent }
+  defaults: { _controller: ConventionGeekContactBundle:Import:importDateEvent }
   methods: [GET, POST, DELETE]
 
 
