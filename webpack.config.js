@@ -32,6 +32,13 @@ Encore
          };
      })
 
+    .configureBabel(function(babelConfig) {
+        // add additional presets
+        //babelConfig.presets.push('es2017');
+        babelConfig.presets.push('es2015');
+        // no plugins are added by default, but you can add some
+        // babelConfig.plugins.push('styled-jsx/babel');
+    })
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()

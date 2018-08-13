@@ -1,5 +1,4 @@
-// assets/js/app.js
-
 require('../css/app.scss');
 
-console.log('hello world in JS');
+import {MDCRipple} from '@material/ripple';
+const ripple = new MDCRipple(document.querySelector('.foo-button'));
