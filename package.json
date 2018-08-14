@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@material/button": "^0.38.0",
-    "@material/ripple": "^0.38.0",
+    "@material/button": "^0.38.1",
+    "@material/ripple": "^0.38.1",
     "@symfony/webpack-encore": "^0.20.1",
-    "autoprefixer": "^9.1.0",
+    "autoprefixer": "^9.1.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2015": "^6.24.1",
@@ -18,5 +18,13 @@
   },
   "scripts": {
     "start": "webpack-dev-server"
+  },
+  "dependencies": {
+    "@material/drawer": "^0.38.0",
+    "@material/icon-button": "^0.38.1",
+    "@material/list": "^0.38.1",
+    "@material/theme": "^0.38.0",
+    "@material/top-app-bar": "^0.38.1",
+    "material-components-web": "^0.38.1"
   }
 }

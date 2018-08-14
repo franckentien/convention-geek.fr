@@ -1,6 +1,37 @@
-@import "@material/button/mdc-button";
+$mdc-theme-primary: #780a0a;
+$mdc-theme-secondary: #004d16;
+$mdc-theme-on-primary: #ffffff;
+$mdc-theme-on-secondary: #ffffff;
 
-.foo-button {
-  @include mdc-button-ink-color(teal);
-  @include mdc-states(teal);
+@import "~@material/icon-button/mdc-icon-button";
+@import "~@material/button/mdc-button";
+@import "~@material/typography/mdc-typography";
+@import "~@material/list/mdc-list";
+@import "~@material/drawer/mdc-drawer";
+@import "~@material/top-app-bar/mdc-top-app-bar";
+
+body{margin: auto;}
+
+.mdc-top-app-bar{
+  &__section {
+    padding: 0;
+  }
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px;}
+.material-icons.md-24 { font-size: 24px;}
+.material-icons.md-36 { font-size: 36px;}
+.material-icons.md-48 { font-size: 48px;}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons{
+  margin-right: 32px;
 }
