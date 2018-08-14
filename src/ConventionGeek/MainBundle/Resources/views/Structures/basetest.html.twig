@@ -1,0 +1,47 @@
+{# app/Ressources/views/base.html.twig #}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Material + General-->
+    <meta charset="{{ _charset }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <!-- ressource pressonnel -->
+    {% block stylesheets  %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
+        <style type="text/css">
+            @font-face {
+                font-family: 'Analecta';
+                src:    url({{asset('police/Analecta.eot')}}) format('eot'),
+                url({{asset('police/Analecta.woff')}}) format('woff'),
+                url({{asset('police/Analecta.ttf')}}) format('truetype'),
+                url({{asset('police/Analecta.svg')}}) format('svg');
+            }
+        </style>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <!-- franck-cayzac.fr -->
+    <meta name="keywords" content="{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}" />
+    <meta name="description" content="{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}" />
+    <meta name="author" content="CAYZAC Franck">
+    <title>{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}</title>
+    {% block metaMore %}{% endblock %}
+</head>
+
+<body>
+
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-8672311963154117",
+            enable_page_level_ads: true
+        });
+    </script>
+    <script src="{{ asset('build/app.js') }}" async></script>
+{% endblock %}
+</body>
+</html>
