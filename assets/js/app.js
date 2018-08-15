@@ -23,3 +23,8 @@ const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 import {MDCToolbar} from '@material/toolbar';
 
 const toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'));
+
+import {MDCPersistentDrawer} from '@material/drawer';
+const drawer = new MDCPersistentDrawer(document.querySelector('.mdc-drawer--persistent'));
+document.querySelector('.menu').addEventListener('click', () => drawer.open = true);
+
