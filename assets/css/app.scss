@@ -5,8 +5,8 @@ $mdc-theme-on-secondary: #ffffff;
 $mdc-theme-background: #ffffff;
 $mdc-theme-surface: #b5b5b5;
 
-@import "~@material/icon-button/mdc-icon-button";
 @import "~@material/button/mdc-button";
+@import "~@material/icon-button/mdc-icon-button";
 @import "~@material/typography/mdc-typography";
 @import "~@material/list/mdc-list";
 @import "~@material/drawer/mdc-drawer";
@@ -15,6 +15,7 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/tab-scroller/mdc-tab-scroller";
 @import "~@material/tab-indicator/mdc-tab-indicator";
 @import "~@material/tab/mdc-tab";
+@import "~@material/toolbar/mdc-toolbar";
 
 body{margin: auto;}
 

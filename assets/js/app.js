@@ -19,3 +19,7 @@ const tab = new MDCTab(document.querySelector('.mdc-tab'));
 
 
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
+
+import {MDCToolbar} from '@material/toolbar';
+
+const toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'));
