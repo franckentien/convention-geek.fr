@@ -25,6 +25,11 @@ import {MDCToolbar} from '@material/toolbar';
 const toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'));
 
 import {MDCPersistentDrawer} from '@material/drawer';
-const drawer = new MDCPersistentDrawer(document.querySelector('.mdc-drawer--persistent'));
-document.querySelector('.menu').addEventListener('click', () => drawer.open = true);
+//const drawer = new MDCPersistentDrawer(document.querySelector('.mdc-drawer--persistent'));
+//document.querySelector('.demo-menu').addEventListener('click', () => drawer.open = !drawer.open);
 
+var drawerEl = document.querySelector('.mdc-drawer');
+var drawer = new MDCPersistentDrawer(drawerEl);
+document.querySelector('.demo-menu').addEventListener('click', function() {
+    drawer.open = !drawer.open;
+});
