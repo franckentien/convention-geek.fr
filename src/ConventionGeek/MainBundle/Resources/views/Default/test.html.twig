@@ -4,18 +4,22 @@
 
 {% block body %}
 
-
-    <header class="mdc-toolbar mdc-toolbar--fixed">
-        <div class="mdc-toolbar__row">
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+    <header class="mdc-top-app-bar">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 <a href="#" class="demo-menu material-icons mdc-toolbar__menu-icon">menu</a>
-                <span class="mdc-toolbar__title">Title</span>
+                <span class="mdc-top-app-bar__title" style="height: 100%">
+                    <a href="{{ path('App_home') }}" style="height: 100%">
+                        <img class="mdl-layout-title" src="{{ asset('images/menu/banniere.svg') }}" alt="Bannière de Convention Geek" height="100%"/>
+                    </a>
+
+                </span>
             </section>
-            <section class="mdc-toolbar__section">
-                Section aligns to center.
-            </section>
-            <section class="mdc-toolbar__section mdc-toolbar__section--align-end">
-                Section aligns to end.
+
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">file_download</a>
+                <button class="foo-button mdc-button--unelevated --mdc-theme-secondary">Button</button>
+                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
             </section>
         </div>
     </header>
@@ -39,7 +43,7 @@
     </aside>
 
 
-    <main class="mdc-toolbar-fixed-adjust">
+    <main class="mdc-top-app-bar--fixed-adjust">
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sapien ex, mattis at placerat quis, dignissim luctus nisi. Ut vulputate magna augue, et porta neque accumsan nec. Fusce aliquet augue eget blandit congue. Sed elementum quam cursus nisi ornare, sit amet finibus lorem accumsan. Nulla facilisi. Vivamus sed rutrum nisi, vitae facilisis ligula. Pellentesque lacinia, felis ut volutpat maximus, diam nibh lobortis augue, non lacinia diam ex nec nibh. Nullam fringilla eros id augue rhoncus, sed maximus massa elementum. Suspendisse hendrerit dolor ligula, quis molestie elit aliquam vel. In est est, hendrerit sed nisl eget, sollicitudin ultricies nulla. Ut vitae odio tempus, fringilla sem vel, aliquet ante. Nam mattis suscipit posuere. Vivamus vehicula magna consectetur est rutrum maximus. Cras sodales urna a diam vestibulum, aliquam egestas sem finibus. In pretium enim mauris, at ultrices leo ullamcorper eu.
