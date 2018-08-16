@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+
     <!-- ressource pressonnel -->
     {% block stylesheets  %}
         <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
@@ -35,14 +36,7 @@
 {% block body %}{% endblock %}
 
 {% block javascripts %}
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8672311963154117",
-            enable_page_level_ads: true
-        });
-    </script>
-    <script src="{{ asset('build/app.js') }}" async></script>
+    <script src="{{ asset('build/app.js') }}"></script>
 {% endblock %}
 </body>
 </html>

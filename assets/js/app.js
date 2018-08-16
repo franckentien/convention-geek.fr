@@ -1,35 +1,23 @@
 require('../css/app.scss');
+console.log('hello world 1');
 
 import {MDCRipple} from '@material/ripple';
-import {MDCTopAppBar} from '@material/top-app-bar/index';
-import {MDCTab} from '@material/tab';
-import {MDCTabBar} from '@material/tab-bar';
 
 
 
+// import {MDCTemporaryDrawer} from '@material/drawer';
+// const drawer = new MDCPersistentDrawer(document.querySelector('.mdc-drawer--persistent'));
+// document.querySelector('.demo-menu').addEventListener('click', () => drawer.open = !drawer.open);
 
-const ripple = new MDCRipple(document.querySelector('.foo-button'));
-const iconButtonRipple = new MDCRipple(document.querySelector('.mdc-icon-button'));
-iconButtonRipple.unbounded = true;
+import {MDCTemporaryDrawer} from '@material/drawer';
+var drawer = new MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
 
-const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-const topAppBar = new MDCTopAppBar(topAppBarElement);
-const tab = new MDCTab(document.querySelector('.mdc-tab'));
+document.querySelector('.demo-menu').addEventListener('click', function() { drawer.open = true;});
+// drawerEl.addEventListener('MDCTemporaryDrawer:open', function() {
+//     console.log('Received MDCTemporaryDrawer:open');
+// });
+// drawerEl.addEventListener('MDCTemporaryDrawer:close', function() {
+//     console.log('Received MDCTemporaryDrawer:close');
+// });
 
-
-
-const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
-
-import {MDCToolbar} from '@material/toolbar';
-
-const toolbar = new MDCToolbar(document.querySelector('.mdc-toolbar'));
-
-import {MDCPersistentDrawer} from '@material/drawer';
-//const drawer = new MDCPersistentDrawer(document.querySelector('.mdc-drawer--persistent'));
-//document.querySelector('.demo-menu').addEventListener('click', () => drawer.open = !drawer.open);
-
-var drawerEl = document.querySelector('.mdc-drawer');
-var drawer = new MDCPersistentDrawer(drawerEl);
-document.querySelector('.demo-menu').addEventListener('click', function() {
-    drawer.open = !drawer.open;
-});
+console.log('hello world 2');
