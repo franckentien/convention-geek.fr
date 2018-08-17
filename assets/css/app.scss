@@ -42,3 +42,8 @@ body{margin: auto;}
 .material-icons{
   margin-right: 32px;
 }
+
+.mdc-tab-bar {
+     @include mdc-tab-text-label-color($mdc-theme-on-primary);
+}
+

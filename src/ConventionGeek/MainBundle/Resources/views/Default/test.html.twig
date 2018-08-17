@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <header class="mdc-top-app-bar">
+    <header class="mdc-top-app-bar ">
         <div class="mdc-top-app-bar__row">
             <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                 <a href="#" class="demo-menu material-icons mdc-toolbar__menu-icon">menu</a>
@@ -12,15 +12,71 @@
                     <a href="{{ path('App_home') }}" style="height: 100%">
                         <img class="mdl-layout-title" src="{{ asset('images/menu/banniere.svg') }}" alt="Bannière de Convention Geek" height="100%"/>
                     </a>
-
                 </span>
+                <div class="mdc-tab-bar" role="tablist">
+                    <div class="mdc-tab-scroller">
+                        <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0px;">
+                            <div class="mdc-tab-scroller__scroll-content">
+                                <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">News</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Annuaire</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="1">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Formulaires</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="2">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">À propos</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="3" disabled>
+                                    <span class="mdc-tab__content">
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+                                <button class="mdc-tab" role="tab" aria-selected="false" tabindex="4">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Connexion</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
-                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Download" alt="Download">file_download</a>
-                <button class="foo-button mdc-button--unelevated --mdc-theme-secondary">Button</button>
-                <a href="#" class="material-icons mdc-top-app-bar__action-item" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
-            </section>
         </div>
     </header>
 
@@ -44,6 +100,9 @@
 
 
     <main class="mdc-top-app-bar--fixed-adjust">
+
+
+
 
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sapien ex, mattis at placerat quis, dignissim luctus nisi. Ut vulputate magna augue, et porta neque accumsan nec. Fusce aliquet augue eget blandit congue. Sed elementum quam cursus nisi ornare, sit amet finibus lorem accumsan. Nulla facilisi. Vivamus sed rutrum nisi, vitae facilisis ligula. Pellentesque lacinia, felis ut volutpat maximus, diam nibh lobortis augue, non lacinia diam ex nec nibh. Nullam fringilla eros id augue rhoncus, sed maximus massa elementum. Suspendisse hendrerit dolor ligula, quis molestie elit aliquam vel. In est est, hendrerit sed nisl eget, sollicitudin ultricies nulla. Ut vitae odio tempus, fringilla sem vel, aliquet ante. Nam mattis suscipit posuere. Vivamus vehicula magna consectetur est rutrum maximus. Cras sodales urna a diam vestibulum, aliquam egestas sem finibus. In pretium enim mauris, at ultrices leo ullamcorper eu.
