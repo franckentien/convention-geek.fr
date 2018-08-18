@@ -12,7 +12,8 @@ const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 
 
 //In each Page
-tabBar.activateTab(2);
+//tabBar.activateTab(2);
+
 
 //Test JS
 console.log('hello world 2');

@@ -47,3 +47,13 @@ body{margin: auto;}
      @include mdc-tab-text-label-color($mdc-theme-on-primary);
 }
 
+.mdc-drawer__header{
+  background-color: $mdc-theme-primary;
+}
+
+.mdc-drawer__header-content{
+  align-items: center!important;
+  padding: inherit!important;
+}
+
+

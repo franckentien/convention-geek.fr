@@ -3,79 +3,160 @@
 {% extends '@ConventionGeekMain/Structures/base.html.twig' %}
 
 {% block body %}
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <a href="{{ path('App_home') }}" style="height: 90%">
-                <img class="mdl-layout-title" src="{{ asset('images/menu/banniere.svg') }}" alt="Bannière de Convention Geek" height="100%"/>
-                </a>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation. We hide it in small screens. -->
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="{{ path('sonata_news_home') }}">News</a>
-                    <a class="mdl-navigation__link" href="{{ path('CGEvent_annuaire') }}">Annuaire</a>
-                    <a class="mdl-navigation__link" href="">Formulaires</a>
-                    <a class="mdl-navigation__link" href="{{ path('App_about') }}">À propos</a>
-                </nav>
-                <div class="mdl-layout-spacer"></div>
-                <div class="mdl-navigation mdl-layout--large-screen-only">
 
+    <header class="mdc-top-app-bar ">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <a href="#" class="demo-menu material-icons mdc-toolbar__menu-icon">menu</a>
+                <span class="mdc-top-app-bar__title" style="height: 100%">
+                    <a href="{{ path('App_home') }}" style="height: 100%">
+                        <img class="mdl-layout-title" src="{{ asset('images/menu/banniere.svg') }}" alt="Bannière de Convention Geek" height="100%"/>
+                    </a>
+                </span>
+                <div class="mdc-tab-bar" role="tablist">
+                    <div class="mdc-tab-scroller">
+                        <div class="mdc-tab-scroller__scroll-area mdc-tab-scroller__scroll-area--scroll" style="margin-bottom: 0;">
+                            <div class="mdc-tab-scroller__scroll-content">
+                                <a class="mdc-tab" role="tab" aria-selected="true" tabindex="0" href="{{ path('sonata_news_home') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">News</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </a>
+                                <a class="mdc-tab" role="tab" aria-selected="false" tabindex="1" href="{{ path('CGEvent_annuaire') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Annuaire</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </a>
+                                <a class="mdc-tab" role="tab" aria-selected="false" tabindex="2" href="{{ path('CGEvent_formulaires') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Formulaires</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </a>
+                                <a class="mdc-tab" role="tab" aria-selected="false" tabindex="3" href="{{ path('App_about') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">À propos</span>
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </a>
+                                <div class="mdc-tab mdc-tab--active" role="tab" aria-selected="false" tabindex="4" disabled>
+                                    <span class="mdc-tab__content">
+                                    </span>
+                                    <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                    <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                </div>
 
+                                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                    <a class="mdc-tab" role="tab" aria-selected="false" tabindex="5" href="{{ path('fos_user_profile_show') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">Mon compte</span>
+                                    </span>
+                                        <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                        <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                    </a>
 
-                        <span class="menuWelcomeUser">Bienvenue, {{ app.user.username }}</span>
-                        <a class="mdl-navigation__link" href="{{ path('fos_user_profile_show') }}">Mon compte</a>
-                        <a class="mdl-navigation__link" href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+                                {% else %}
 
-                    {% else %}
-                        <span class="menuWelcomeUser">Bienvenue, Visiteur</span>
-                        <a class="mdl-navigation__link" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                        <a class="mdl-navigation__link" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
-                    {% endif %}
+                                    <a class="mdc-tab" role="tab" aria-selected="false" tabindex="5" href="{{ path('fos_user_security_login') }}">
+                                    <span class="mdc-tab__content">
+                                        <span class="mdc-tab__text-label">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</span>
+                                    </span>
+                                        <span class="mdc-tab-indicator">
+                                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                    </span>
+                                        <span class="mdc-tab__ripple mdc-ripple-upgraded"></span>
+                                    </a>
+                                {% endif %}
 
-
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
         </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">News</a>
-                <a class="mdl-navigation__link" href="">Annuaire</a>
-                <a class="mdl-navigation__link" href="">Formulaires</a>
-                <a class="mdl-navigation__link" href="{{ path('App_about') }}">À propos</a>
-            </nav>
-            <div class="mdl-navigation">
+    </header>
 
+    <aside class="mdc-drawer mdc-drawer--temporary mdc-typography">
+        <nav class="mdc-drawer__drawer">
+            <header class="mdc-drawer__header mdc-theme--primary">
+                <div class="mdc-drawer__header-content">
+                    <a href="{{ path('App_home') }}" style="width: 100%">
+                        <img class="mdl-layout-title" src="{{ asset('images/menu/banniere.svg') }}" alt="Bannière de Convention Geek" width="100%"/>
+                    </a>
+                </div>
+            </header>
+            <nav class="mdc-drawer__content mdc-list">
+
+                <a class="mdc-list-item" href="{{ path('App_home') }}">
+                    Conventions
+                </a>
+                <a class="mdc-list-item" href="{{ path('sonata_news_home') }}">
+                    News
+                </a>
+                <a class="mdc-list-item" href="{{ path('CGEvent_annuaire') }}">
+                    Annuaire
+                </a>
+                <a class="mdc-list-item" href="{{ path('CGEvent_formulaires') }}">
+                    Formulaires
+                </a>
+                <a class="mdc-list-item" href="{{ path('App_about') }}">
+                    À propos
+                </a>
+                <div class="mdc-drawer__toolbar-spacer"></div>
 
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <span class="menuWelcomeUser">Bienvenue, {{ app.user.username }}</span>
-                    <a class="mdl-navigation__link" href="{{ path('fos_user_profile_show') }}">Mon compte</a>
-                    <a class="mdl-navigation__link" href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a>
+
+                    <div class="mdc-drawer__toolbar-spacer mdc-list-item" style="justify-content: center">Bienvenue, {{ app.user.username }}</div>
+
+                    <a class="mdc-list-item" href="{{ path('fos_user_profile_show') }}">
+                        Mon compte
+                    </a>
+                    <a class="mdc-list-item" href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+
                 {% else %}
-                    <div class="menuWelcomeUser">Bienvenue, Visiteur</div>
-                    <a class="mdl-navigation__link" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                    <a class="mdl-navigation__link" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+                    <div class="mdc-drawer__toolbar-spacer mdc-list-item" style="justify-content: center">Bienvenue, Visiteur</div>
+
+                    <a class="mdc-list-item" href="{{ path('fos_user_security_login') }}">
+                        {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                    <a class="mdc-list-item" href="{{ path('fos_user_registration_register') }}">
+                        {{ 'layout.register'|trans({}, 'FOSUserBundle') }}
+                    </a>
+
                 {% endif %}
 
+            </nav>
+        </nav>
+    </aside>
 
 
+    <main class="mdc-top-app-bar--fixed-adjust">
 
+        {% block pageContent %}{% endblock %}
 
-            </div>
-        </div>
-        <main class="mdl-layout__content">
-            <div class="page-content">
-                <div class="mdl-cell mdl-cell--12-col mdl-grid">
-                        {% block pageContent %}{% endblock %}
-                </div>
-            </div>
-        </main>
-    </div>
+    </main>
 
 
 
