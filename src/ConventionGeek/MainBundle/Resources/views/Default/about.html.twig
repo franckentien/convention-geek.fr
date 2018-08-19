@@ -1,4 +1,4 @@
-{% extends '@ConventionGeekMain/Structures/menuold.html.twig' %}
+{% extends '@ConventionGeekMain/Structures/menu.html.twig' %}
 
 {% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
 {% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
@@ -6,67 +6,88 @@
 
 {% block pageContent %}
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-cell mdl-cell--10-col mdl-cell--9-col-tablet">
-            <h2>Presentation</h2>
 
-            <p>Le site <strong>Convention Geek</strong> a été créé durant l’été 2014 par Franck CAYZAC, étudiants en programmation informatique.<br>
-            J’ai commencé mes premières conventions en 2013 et je voulais en faire plus, mais à l’époque il était très difficile de trouver les conventions autour de chez moi, c’est donc sur cette idée que j’ai créé Convention Geek et qui aujourd’hui est devenue le premier site pour connaitre les conventions.
-            Très rapidement après la sortie du site j’ai également mis en place une partie news dans la quel vous pouvez retrouver mon retour sur les conventions avec le point de vue d’un visiteur.</p>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner mdc-elevation--z6">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
-            <p>Depuis 2014, le site a subi de gros changement avec un an après sa sortie l’ajout d’une page pour chaque évènement et l’historique des dates, mais également la sortie de la version 2 qui est la version actuelle du site.
-                Néanmoins, je ne compte pas m’arrêter la et continuer à développer de nombreuses fonctionnalités pour le site qui vont rendre <strong>Convention Geek</strong> indispensable.</p>
+                <h2>Presentation</h2>
 
-            <p>En attendant, je vous souhaite une bonne visite sur le site et vous donne rendez-vous en conventions pour plus de fun.</p>
+                <p>Le site <strong>Convention Geek</strong> a été créé durant l’été 2014 par Franck CAYZAC, étudiants en programmation informatique.<br>
+                    J’ai commencé mes premières conventions en 2013 et je voulais en faire plus, mais à l’époque il était très difficile de trouver les conventions autour de chez moi, c’est donc sur cette idée que j’ai créé <strong>Convention Geek</strong> et qui aujourd’hui est devenue le premier site pour connaitre les conventions.
+                    Très rapidement après la sortie du site j’ai également mis en place une partie news dans la quel vous pouvez retrouver mon retour sur les conventions avec le point de vue d’un visiteur.</p>
 
+                <p>Depuis 2014, le site a subi de gros changement avec un an après sa sortie l’ajout d’une page pour chaque évènement et l’historique des dates, mais également la sortie de la version 2 qui est la version actuelle du site.
+                    Néanmoins, je ne compte pas m’arrêter la et continuer à développer de nombreuses fonctionnalités pour le site qui vont rendre <strong>Convention Geek</strong> indispensable.</p>
+
+                <p>En attendant, je vous souhaite une bonne visite sur le site et vous donne rendez-vous en conventions pour plus de fun.</p>
+
+            </div>
 
 
         </div>
-        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet about-img-contener">
-            <img class="about-img" src="{{ asset('images/about/cosplay.jpg') }}" alt="Bannière de Convention Geek"/>
+        <div class="mdc-layout-grid__inner mdc-elevation--z6">
+            <h2>Partenaires</h2>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet mdc-elevation--z8">
+
+                    <div class="mdc-card">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <div class="mdc-card__media-content"><img src="{{ asset('images/about/nationsglory.png') }}" alt=""></div>
+                        </div>
+
+                        <p>
+                            NationsGlory est un serveur Semi-RP moddé, actuellement le premier serveur moddé de France depuis presque trois ans.<br>
+                            Rejoignez la communauté de NationsGlory, de grandes aventures vous attendent !</p>
+                        <div class="mdc-card__actions">
+                            <div class="mdc-card__action-icons">
+                                <button class="mdc-button mdc-card__action mdc-card__action--button">Jouons !</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet  mdc-elevation--z8">
+
+                    <div class="mdc-card ">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <div class="mdc-card__media-content"><h1>FOKUZA</h1></div>
+                        </div>
+
+                        <p>
+                            Fokuza, une association de photographes passionnés qui vous proposent ses services, présentent leur travail et ouvre une discussion entre modèles, public et photographes.
+                        </p>
+                        <div class="mdc-card__actions">
+                            <div class="mdc-card__action-icons">
+                                <button class="mdc-button mdc-card__action mdc-card__action--button">Où est mon cosplay ?</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4 mdc-layout-grid__cell--span-12-tablet mdc-elevation--z8">
+
+                    <div class="mdc-card">
+                        <div class="mdc-card__media mdc-card__media--16-9">
+                            <div class="mdc-card__media-content"><img src="{{ asset('images/about/erreur42.png') }}"  alt=""></div>
+                        </div>
+                        <p>Erreur42.fr est webzine sur l'univers geek tenu par une bande de passionnés. Fondé en 2013 sous un autre nom puis renommé en 2016 notre objectif est de rendre plus accessible la "presse" spécialisée en parlant avec passions de Cinéma, de Séries et de Littérature.</p>
+                        <div class="mdc-card__actions">
+                            <div class="mdc-card__action-icons">
+                                <button class="mdc-button mdc-card__action mdc-card__action--button">Plus de News ?</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
         </div>
     </div>
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <h2>Partenaires</h2>
-        <div class="mdl-cell mdl-cell--12-col mdl-grid conteneur-about-partenaire ">
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <div class="mdl-card__media">
-                    <img src="{{ asset('images/about/nationsglory.png') }}" border="0" alt="" style="padding:20px;">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Rejoignez la communauté de NationsGlory, de grandes aventures vous attendent !
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="">Jouons!</a>
-                </div>
-            </div>
 
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="fluid"
-                     data-ad-layout="image-top"
-                     data-ad-layout-key="-9f+1r-dh+et+eq"
-                     data-ad-client="ca-pub-8672311963154117"
-                     data-ad-slot="6323883082"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <div class="mdl-card__media">
-                    <img src="{{ asset('images/about/erreur42.png') }}" border="0" alt="" style="padding:20px;">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Erreur42.fr est webzine sur l'univers geek tenu par une bande de passionnés. Fondé en 2013 sous un autre nom puis renommé en 2016 notre objectif est de rendre plus accessible la "presse" spécialisée en parlant avec passions de Cinéma, de Séries et de Littérature.
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="">Plus de News ?</a>
-                </div>
-            </div>
-        </div>
-    </div>
 {% endblock %}
