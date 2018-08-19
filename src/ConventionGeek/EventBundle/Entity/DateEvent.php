@@ -28,14 +28,17 @@ class DateEvent extends BaseDateEvent
      * DateEvent constructor.
      * @param DateEventForm $dateEvent
      */
-    public function __construct(DateEventForm $dateEvent)
+    public function __construct(DateEventForm $dateEvent = null)
     {
-        $this->evenement = $dateEvent->getEvenement();
-        $this->edition = $dateEvent->getEdition();
-        $this->dateDebut = $dateEvent->getDateDebut();
-        $this->dateFin = $dateEvent->getDateFin();
-        $this->visiteurs = $dateEvent->getVisiteurs();
-        $this->informateur = $dateEvent->getInformateur();
+        if($dateEvent !== null){
+            $this->evenement = $dateEvent->getEvenement();
+            $this->edition = $dateEvent->getEdition();
+            $this->dateDebut = $dateEvent->getDateDebut();
+            $this->dateFin = $dateEvent->getDateFin();
+            $this->visiteurs = $dateEvent->getVisiteurs();
+            $this->informateur = $dateEvent->getInformateur();
+        }
+
 
     }
 
