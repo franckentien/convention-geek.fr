@@ -6,46 +6,54 @@
 
 {% block pageContent %}
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col ">
-        <table class="mdl-data-table mdl-js-data-table table100">
-            <caption>PROCHAINEMENT</caption>
-            <thead>
-            <tr>
-                <th class="mdl-data-table__cell--non-numeric">Date</th>
-                <th class="mdl-data-table__cell--non-numeric">Nom de l'evenement</th>
-                <th class="mdl-data-table__cell--non-numeric">Lieu</th>
-                <th class="mdl-data-table__cell--non-numeric">Informateur</th>
-            </tr>
-            </thead>
-            <tbody>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner mdc-elevation--z6">
+            <div class="mdc-layout-grid__cell">
 
-            {% for event in listEvenement %}
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">{{ event.date }}</td>
-                    <td class="mdl-data-table__cell--non-numeric"><a href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">{{ event.name }}</a></td>
-                    <td class="mdl-data-table__cell--non-numeric">{{ event.place }}</td>
-                    <td class="mdl-data-table__cell--non-numeric">{{ event.informateur }}</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                <h2 style="text-align: center;">Prochainement</h2>
 
+                <ul   class="mdc-list mdc-list--two-line" aria-orientation="vertical">
+
+                    {% for event in listEvenement %}
+
+
+                        <li class="mdc-list-item" >
+                            <a class="a-list-item" href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">
+                    <span class="mdc-list-item__text">
+                        <span class="mdc-list-item__primary-text">{{ event.name }} - {{ event.place }}</span>
+                        <span class="mdc-list-item__secondary-text">{{ event.date }}</span>
+
+                    </span>
+                                <span class="mdc-list-item__meta" aria-hidden="true">{{ event.informateur }}</span>
+                            </a>
+                        </li>
+
+
+
+                    {% endfor %}
+                </ul>
+
+
+
+            </div>
+            <div class="mdc-layout-grid__cell" style="display: flex;">
+                <div class="section-spacer" style="flex-grow: 1;"></div>
+
+                <a href="">
+                    <button class="mdc-button mdc-button--raised">
+                        Ajouter un évenement
+                    </button>
+                </a>
+                <span class="one-pc-spacer"></span>
+                <a href="">
+                    <button class="mdc-button mdc-button--raised">
+                        Ajouter une date
+                    </button>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col" style="display: flex;">
-        <div class="section-spacer" style="flex-grow: 1;"></div>
-        <a href="">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent my-button-index">
-                Ajouter un évenement
-            </button>
-        </a>
-        <div class="section-spacer" style="margin: 10px;"></div>
-        <a href="">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent my-button-index">
-                Ajouter une date
-            </button>
-        </a>
-    </div>
-    </div>
+
+
 
 {% endblock %}

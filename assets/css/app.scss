@@ -60,11 +60,18 @@ body{margin: auto;}
   padding: 1%;
 }
 
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
+
 .a-list-item{
   display: flex;
   align-items: center;
   width: 100%;
-  color: inherit;
-  text-decoration: inherit;
 }
+
+.one-pc-spacer{
+  padding: 0% 1%;
+  }
 
