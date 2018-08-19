@@ -9,12 +9,12 @@
 
 <div class="mdc-layout-grid">
     <div class="mdc-layout-grid__inner mdc-elevation--z6">
-        <div class="mdc-layout-grid__cell">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
             <h1>{{ event.eventname }}</h1>
 
         </div>
-        <div class="mdc-layout-grid__cell">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
             <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventdepartement }} <br>
                 <!-- page des evenemnt-->
@@ -31,14 +31,11 @@
 
             </p>
 
-        </div>
-        <div class="mdc-layout-grid__cell">
-
             <p>Pour avoir la liste de tous les évènements, il faut se rendre sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
                 Si une information n'est pas présente sur le site ou qu'il y a une erreur vous pouvez me contacter grâce au  <a href="" style=" color: -webkit-link; text-decoration: underline;">formulaires de contact</a>. </p>
 
         </div>
-        <div class="mdc-layout-grid__cell">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
             <h2 style="text-align: center;">Les différentes éditions</h2>
 

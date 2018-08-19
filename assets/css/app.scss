@@ -17,6 +17,7 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/tab/mdc-tab";
 @import "~@material/toolbar/mdc-toolbar";
 @import "~@material/elevation/mdc-elevation";
+@import "~@material/layout-grid/mdc-layout-grid";
 
 body{margin: auto;}
 
@@ -57,7 +58,6 @@ body{margin: auto;}
   padding: inherit!important;
 }
 .mdc-layout-grid__inner{
-  margin: 1%;
   padding: 1%;
 }
 

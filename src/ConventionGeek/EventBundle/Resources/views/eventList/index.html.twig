@@ -9,11 +9,11 @@
 
     <div class="mdc-layout-grid">
         <div class="mdc-layout-grid__inner mdc-elevation--z6">
-            <div class="mdc-layout-grid__cell">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
                 <h2 style="text-align: center;">Prochainement</h2>
 
-                <ul   class="mdc-list mdc-list--two-line" aria-orientation="vertical">
+                <ul class="mdc-list mdc-list--two-line" aria-orientation="vertical">
 
                     {% for event in listEvenement %}
 
@@ -37,7 +37,7 @@
 
 
             </div>
-            <div class="mdc-layout-grid__cell" style="display: flex;">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: flex;">
                 <div class="section-spacer" style="flex-grow: 1;"></div>
                 <a href="{{ path('CGEvent_conventions') }}">
                     <button class="mdc-button mdc-button--raised">
@@ -47,10 +47,8 @@
             </div>
         </div>
         <div class="mdc-layout-grid__inner mdc-elevation--z6">
-            <div class="mdc-layout-grid__cell">
-                <div class="mdl-cell mdl-cell--12-col ">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
                     <h2 style="text-align: center;">Formulaires</h2>
-                </div>
             </div>
         </div>
     </div>
