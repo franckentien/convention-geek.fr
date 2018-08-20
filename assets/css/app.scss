@@ -87,10 +87,33 @@ a{
   padding: 5%;
 }
 
+
+
 .mdc-card__media--16-9::before{
   margin-top: 25%;
 }
 
-p{
+.mdc-card__media-content.archive-title{
+  position: inherit;
+}
+
+.card-news-title-author{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.card-news-title-date{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.margin-right-flex{
+  display: flex;
+  justify-content: flex-end;
+}
+
+h1, h2, h3, h4, h5, h6, p{
   margin: 1%;
 }
