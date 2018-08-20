@@ -28,6 +28,7 @@
     "@material/list": "^0.38.1",
     "@material/tab": "^0.38.1",
     "@material/tab-bar": "^0.38.1",
+    "@material/textfield": "^0.38.1",
     "@material/theme": "^0.38.0",
     "@material/toolbar": "^0.38.1",
     "@material/top-app-bar": "^0.38.1",

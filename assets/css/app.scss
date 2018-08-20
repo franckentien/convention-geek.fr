@@ -19,6 +19,7 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/elevation/mdc-elevation";
 @import "~@material/layout-grid/mdc-layout-grid";
 @import "~@material/card/mdc-card";
+@import "~@material/textfield/mdc-text-field";
 
 body{margin: auto;}
 
@@ -116,4 +117,8 @@ a{
 
 h1, h2, h3, h4, h5, h6, p{
   margin: 1%;
+}
+
+fieldset{
+  border: inherit;
 }

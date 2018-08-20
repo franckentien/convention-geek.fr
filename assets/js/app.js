@@ -10,10 +10,12 @@ document.querySelector('.demo-menu').addEventListener('click', function() { draw
 import {MDCTabBar} from '@material/tab-bar';
 const tabBar = new MDCTabBar(document.querySelector('.mdc-tab-bar'));
 
-
 //In each Page
 //tabBar.activateTab(2);
 
+import {MDCTextField} from '@material/textfield';
+
+const textField = new MDCTextField(document.getElementById('.username'));
 
 //Test JS
 console.log('hello world 2');
