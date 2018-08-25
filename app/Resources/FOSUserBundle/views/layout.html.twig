@@ -10,19 +10,23 @@
     {# On affiche les messages flash que définissent les contrôleurs du bundle #}
     {% for key, messages in app.session.flashbag.all() %}
         {% for message in messages %}
-            <div class="alert alert-{{ key }}">
-                {{ message|trans({}, 'FOSUserBundle') }}
+            <div class="mdc-snackbar"
+                 aria-live="assertive"
+                 aria-atomic="true"
+                 aria-hidden="true">
+                <div class="mdc-snackbar__message" hidden>{{ message|trans({}, 'FOSUserBundle') }}</div>
+                <div class="mdc-snackbar__text"></div>
+                <div class="mdc-snackbar__action-wrapper">
+                    <button type="button" class="mdc-snackbar__action-button"></button>
+                </div>
             </div>
         {% endfor %}
     {% endfor %}
 
     {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
-    <div class="mdc-layout-grid">
-        <div class="mdc-layout-grid__inner mdc-elevation--z6">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-layout-grid__inner">
+    <div class="mdc-layout-grid__inner mdc-elevation--z6">
     {% block fos_user_content %}
     {% endblock fos_user_content %}
-            </div>
-        </div>
     </div>
+
 {% endblock %}

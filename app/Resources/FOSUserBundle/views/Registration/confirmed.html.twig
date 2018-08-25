@@ -6,10 +6,8 @@
 
 {% block pageContent %}
 
-<div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-    <div class="mdl-cell mdl-cell--12-col">
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
     <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
     <p>Vosu pouvez maintenant <a href="{{ path('fos_user_profile_show') }}">consulter votre profil</a> ou retourner sur la <a href="{{ path('App_home') }}" >page d'accueil</a>.</p>
-    </div>
 </div>
 {% endblock pageContent %}

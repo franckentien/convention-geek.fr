@@ -1,4 +1,4 @@
-{% extends '@ConventionGeekMain/Structures/menuold.html.twig' %}
+{% extends '@ConventionGeekMain/Structures/menu.html.twig' %}
 
 {% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
 {% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
@@ -19,55 +19,19 @@
 
             <p>En attendant, je vous souhaite une bonne visite sur le site et vous donne rendez-vous en conventions pour plus de fun.</p>
 
-
-
-        </div>
-        <div class="mdl-cell mdl-cell--2-col mdl-cell--3-col-tablet about-img-contener">
-            <img class="about-img" src="{{ asset('images/about/cosplay.jpg') }}" alt="Bannière de Convention Geek"/>
         </div>
     </div>
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <h2>Partenaires</h2>
-        <div class="mdl-cell mdl-cell--12-col mdl-grid conteneur-about-partenaire ">
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <div class="mdl-card__media">
-                    <img src="{{ asset('images/about/nationsglory.png') }}" border="0" alt="" style="padding:20px;">
-                </div>
-                <div class="mdl-card__supporting-text">
-                    Rejoignez la communauté de NationsGlory, de grandes aventures vous attendent !
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="">Jouons!</a>
-                </div>
-            </div>
+    <div class="mdc-snackbar"
+         aria-live="assertive"
+         aria-atomic="true"
+         aria-hidden="true">
 
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-format="fluid"
-                     data-ad-layout="image-top"
-                     data-ad-layout-key="-9f+1r-dh+et+eq"
-                     data-ad-client="ca-pub-8672311963154117"
-                     data-ad-slot="6323883082"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-
-            <div class="mdl-card mdl-cell--4-col mdl-cell--12-col-tablet mdl-shadow--8dp part-card">
-                <div class="mdl-card__media">
-                    <img src="{{ asset('images/about/erreur42.png') }}" border="0" alt="" style="padding:20px;">
-                </div>
-                <div class="mdl-card__supporting-text">
-
-
-                </div>
-                <div class="mdl-card__actions">
-                    <a href="">Plus de News ?</a>
-                </div>
-            </div>
+        <div class="mdc-snackbar__text"></div>
+        <div class="mdc-snackbar__action-wrapper">
+            <button type="button" class="mdc-snackbar__action-button"></button>
         </div>
     </div>
+
+
 {% endblock %}

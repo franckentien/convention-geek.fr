@@ -20,10 +20,11 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/tab-indicator/mdc-tab-indicator";
 @import "~@material/tab/mdc-tab";
 @import "~@material/textfield/mdc-text-field";
+@import "~@material/textfield/helper-text/mdc-text-field-helper-text";
 @import "~@material/top-app-bar/mdc-top-app-bar";
 @import "~@material/toolbar/mdc-toolbar";
-
-
+@import "~@material/dialog/mdc-dialog";
+@import "~@material/snackbar/mdc-snackbar";
 
 
 
@@ -51,6 +52,10 @@ body{margin: auto;}
 
 .material-icons{
   margin-right: 32px;
+}
+
+.mdc-layout-grid__inner{
+  margin-bottom: 2%;
 }
 
 .mdc-tab-bar {
@@ -127,4 +132,8 @@ h1, h2, h3, h4, h5, h6, p{
 
 fieldset{
   border: inherit;
+}
+
+.form_errors{
+  color: $mdc-theme-primary;
 }

@@ -33,7 +33,7 @@
                         </div>
                         <br>
                         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
-                            <input class="mdc-text-field__input" type="password" id="password" name="_username" value="{{ last_username }}" required="required">
+                            <input class="mdc-text-field__input" type="password" id="password" name="_password" required="required">
                             <label class="mdc-floating-label" for="password">{{ 'security.login.password'|trans }}</label>
                             <div class="mdc-line-ripple"></div>
                         </div>
@@ -46,10 +46,10 @@
 
                         <div class="mdc-form-field">
                             <div class="mdc-checkbox">
-                                <label for="cremember_me"></label>
+                                <label for="remember_me"></label>
                                 <input type="checkbox"
                                  class="mdc-checkbox__native-control"
-                                 id="cremember_me" name="_remember_me" checked/>
+                                 id="remember_me" name="_remember_me" value="on" checked/>
                                 <div class="mdc-checkbox__background">
                                     <svg class="mdc-checkbox__checkmark"
                                          viewBox="0 0 24 24">

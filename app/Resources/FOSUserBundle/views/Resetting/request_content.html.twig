@@ -1,24 +1,45 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
-<div class="mdl-cell mdl-cell--12-col ">
+<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
     <h2>Réinitialisation du mot de passe</h2>
 
     <p>Si vous avez perdu votre mot de passe vous pouvez le reinitialiser avec le formulaire si dessous.</p>
 
-    <div class="my-card-wide mdl-card mdl-card-smallheight mdl-shadow--6dp">
-        <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <div class="mdc-card mdc-elevation--z6 mdc-layout-grid__inner">
+
+
+        <form class="mdc-layout-grid__cell--span-12" action="{{ path('fos_user_resetting_send_email') }}" method="POST">
+
             <fieldset>
-                <div class="mdl-card__supporting-text">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <label class="mdl-textfield__label" for="username">{{ 'resetting.request.username'|trans }}</label>
-                        <input class="mdl-textfield__input" type="text" id="username" name="username" required="required" />
+
+
+                <div class="mdc-layout-grid__cell--span-12 mdc-layout-grid__inner" >
+                    <div class="mdc-layout-grid__cell--span-12" >
+                        <div class="mdl-card__supporting-text">
+
+
+
+                            <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                                <input class="mdc-text-field__input" type="text" id="username" name="username" required="required">
+                                <label class="mdc-floating-label" for="username">Identifiant</label>
+                                <div class="mdc-line-ripple"></div>
+                            </div>
+                            <p class="mdc-text-field-helper-text" aria-hidden="true">{{ 'resetting.request.username'|trans }}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <input class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" type="submit" value="{{ 'resetting.request.submit'|trans }}" />
+                <hr class="mdc-list-divider">
+                <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
+                    <div class="mdc-card__action-buttons">
+
+                        <input class="mdc-button mdc-card__action mdc-card__action--button mdc-button--raised" type="submit" id="_submit" name="_submit" value="{{ 'resetting.request.submit'|trans }}" />
+
+                    </div>
                 </div>
+
             </fieldset>
         </form>
     </div>
+
 </div>
