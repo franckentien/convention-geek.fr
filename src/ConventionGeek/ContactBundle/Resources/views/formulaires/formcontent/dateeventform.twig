@@ -1,63 +1,69 @@
-<div class="my-card-wide mdl-card mdl-shadow--6dp">
-    {{ form_start(dateeventform, {'attr': {'class': 'form-horizontal'}}) }}
+<div class="mdc-card mdc-elevation--z6 mdc-layout-grid__inner">
+    {{ form_start(dateeventform, {'attr': {'class': 'mdc-layout-grid__cell--span-12'}}) }}
 
     <fieldset>
 
-        <div class="mdl-card__supporting-text">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(dateeventform.evenement, {'attr': {'class': 'mdl-textfield__input'}}) }}
-                <div class="form_errors">
-                    {{ form_errors(dateeventform.evenement, {'attr': {'class': 'menu-dark'}}) }}
+
+        <div class="mdc-layout-grid__cell--span-12 mdc-layout-grid__inner" >
+            <div class="mdc-layout-grid__cell--span-12" >
+                <div class="mdl-card__supporting-text">
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.evenement, {'attr': {'class': 'mdc-text-field__input'}}) }}
+
+                        {{ form_label(dateeventform.evenement, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.evenement, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.edition, {'attr': {'class': 'mdc-text-field__input'}}) }}
+
+                        {{ form_label(dateeventform.edition, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.edition, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.dateDebut, {'attr': {'class': 'mdc-text-field__input'}}) }}
+
+                        {{ form_label(dateeventform.dateDebut, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.dateDebut, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.dateFin, {'attr': {'class': 'mdc-text-field__input'}}) }}
+
+                        {{ form_label(dateeventform.dateFin, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.dateFin, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.visiteurs, {'attr': {'class': 'mdc-text-field__input'}}) }}
+
+                        {{ form_label(dateeventform.visiteurs, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.visiteurs, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
                 </div>
-                {{ form_label(dateeventform.evenement, "dateeventform.evenement", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
-
             </div>
-            <br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(dateeventform.edition, {'attr': {'class': 'mdl-textfield__input', 'pattern': '-?[0-9]*(\.[0-9]+)?'}}) }}
-                <div class="form_errors">
-                    <span class="mdl-textfield__error">Input is not a number!</span>
-                    {{ form_errors(dateeventform.edition, {'attr': {'class': 'menu-dark'}}) }}
-                </div>
-                {{ form_label(dateeventform.edition, "dateeventform.edition", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
+        </div>
+        <hr class="mdc-list-divider">
 
-
+        <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
+            <div class="mdc-card__action-icons">
+                {{ form_widget(dateeventform.FormSubmit, {'attr': {'class': 'mdc-button mdc-card__action mdc-card__action--button mdc-button--raised'}}) }}
             </div>
-            <br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(dateeventform.dateDebut, {'attr': {'class': 'mdl-textfield__input'}}) }}
-                <div class="form_errors">
-                    {{ form_errors(dateeventform.dateDebut, {'attr': {'class': 'menu-dark'}}) }}
-                </div>
-                {{ form_label(dateeventform.dateDebut, "dateeventform.dateDebut", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
-
-            </div>
-            <br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(dateeventform.dateFin, {'attr': {'class': 'mdl-textfield__input'}}) }}
-                <div class="form_errors">
-                    {{ form_errors(dateeventform.dateFin, {'attr': {'class': 'menu-dark'}}) }}
-                </div>
-                {{ form_label(dateeventform.dateFin, "dateeventform.dateFin", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
-
-            </div>
-            <br>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                {{ form_widget(dateeventform.visiteurs, {'attr': {'class': 'mdl-textfield__input'}}) }}
-                <div class="form_errors">
-                    {{ form_errors(dateeventform.visiteurs, {'attr': {'class': 'menu-dark'}}) }}
-                </div>
-                {{ form_label(dateeventform.visiteurs, "dateeventform.visiteurs", {'label_attr': {'class': 'mdl-textfield__label'}}) }}
-
-            </div>
-
-
         </div>
 
-
-        <div class="mdl-card__actions mdl-card--border">
-            {{ form_widget(dateeventform.FormSubmit, {'attr': {'class': 'mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect'}}) }}
-        </div>
 
         {{ form_rest(dateeventform) }}
 
