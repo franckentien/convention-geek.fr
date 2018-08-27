@@ -1,0 +1,75 @@
+<div class="mdc-layout-grid__inner">
+
+<div class="mdc-layout-grid__cell--span-12" >
+
+        <h2>Proposer une Convention</h2>
+</div>
+
+    <div class="mdc-layout-grid__cell--span-12 mdc-card mdc-elevation--z8 mdc-layout-grid__inner">
+
+        {{ form_start(conventionform, {'attr': {'class': 'mdc-layout-grid__cell--span-12'}}) }}
+
+        <fieldset>
+
+            <div class="mdc-layout-grid__cell--span-12 mdc-layout-grid__inner" >
+                <div class="mdc-layout-grid__cell--span-12" >
+                    <div class="mdl-card__supporting-text">
+
+                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                            {{ form_widget(conventionform.nom, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                            {{ form_label(conventionform.nom, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="form_errors">
+                            {{ form_errors(conventionform.nom, {'attr': {'class': 'menu-dark'}}) }}
+                        </div>
+
+                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                            {{ form_widget(conventionform.lieu, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                            {{ form_label(conventionform.lieu, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="form_errors">
+                            {{ form_errors(conventionform.lieu, {'attr': {'class': 'menu-dark'}}) }}
+                        </div>
+
+                        <div class="mdc-text-field mdc-text-field--textarea" data-mdc-auto-init="MDCTextField">
+                            {{ form_widget(conventionform.description, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                            {{ form_label(conventionform.description, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="form_errors">
+                            {{ form_errors(conventionform.description, {'attr': {'class': 'menu-dark'}}) }}
+                        </div>
+
+                        <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                            {{ form_widget(conventionform.site, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                            {{ form_label(conventionform.site, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                            <div class="mdc-line-ripple"></div>
+                        </div>
+                        <div class="form_errors">
+                            {{ form_errors(conventionform.site, {'attr': {'class': 'menu-dark'}}) }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mdc-list-divider">
+
+            <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
+                <div class="mdc-card__action-icons">
+                {{ form_widget(conventionform.FormSubmit, {'attr': {'class': 'mdc-button mdc-card__action mdc-card__action--button mdc-button--raised'}}) }}
+                </div>
+            </div>
+
+            {{ form_rest(conventionform) }}
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(conventionform) }}
+
+            {# Fermeture de la balise <form> du formulaire HTML #}
+            {{ form_end(conventionform) }}
+        </fieldset>
+    </div>
+</div>

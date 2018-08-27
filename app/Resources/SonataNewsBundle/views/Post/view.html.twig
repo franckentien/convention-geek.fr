@@ -6,22 +6,20 @@
 
 {% block pageContent %}
 
-<article class="mdl-shadow--6dp mdl-cell mdl-cell--12-col">
 
-    <div class="mdl-cell mdl-cell--12-col ">
+    <article class="mdc-layout-grid__inner mdc-elevation--z12">
 
-        <h1>{{ post.title }}</h1>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
-    </div>
+                <h1>{{ post.title }}</h1>
 
-    <div class="mdl-cell mdl-cell--12-col ">
+                {{ post.content|raw }}
 
-        {{ post.content|raw }}
+                <p class="margin-right-flex">Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
 
-        <p>Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+            </div>
 
-    </div>
-</article>
+    </article>
 
 
 {% endblock %}

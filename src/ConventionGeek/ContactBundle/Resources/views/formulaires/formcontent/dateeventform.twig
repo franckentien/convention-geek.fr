@@ -1,0 +1,86 @@
+<div class="mdc-layout-grid__inner">
+
+    <div class="mdc-layout-grid__cell--span-12" >
+
+        <h2>Proposer une Convention</h2>
+    </div>
+
+<div class="mdc-layout-grid__cell--span-12 mdc-card mdc-elevation--z8 mdc-layout-grid__inner">
+
+
+    {{ form_start(dateeventform, {'attr': {'class': 'mdc-layout-grid__cell--span-12'}}) }}
+
+    <fieldset>
+
+
+        <div class="mdc-layout-grid__cell--span-12 mdc-layout-grid__inner" >
+            <div class="mdc-layout-grid__cell--span-12" >
+                <div class="mdl-card__supporting-text">
+
+                    <div class="mdc-select" data-mdc-auto-init="MDCSelect">
+                        {{ form_widget(dateeventform.evenement, {'attr': {'class': 'mdc-select__native-control'}}) }}
+                        {{ form_label(dateeventform.evenement, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.evenement, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.edition, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                        {{ form_label(dateeventform.edition, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.edition, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.dateDebut, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                        {{ form_label(dateeventform.dateDebut, "",  {'label_attr': {'class': 'mdc-floating-label mdc-floating-label--float-above'}}) }}
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.dateDebut, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.dateFin, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                        {{ form_label(dateeventform.dateFin, "",  {'label_attr': {'class': 'mdc-floating-label mdc-floating-label--float-above'}}) }}
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.dateFin, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                        {{ form_widget(dateeventform.visiteurs, {'attr': {'class': 'mdc-text-field__input'}}) }}
+                        {{ form_label(dateeventform.visiteurs, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="form_errors">
+                        {{ form_errors(dateeventform.visiteurs, {'attr': {'class': 'menu-dark'}}) }}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr class="mdc-list-divider">
+
+        <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
+            <div class="mdc-card__action-icons">
+                {{ form_widget(dateeventform.FormSubmit, {'attr': {'class': 'mdc-button mdc-card__action mdc-card__action--button mdc-button--raised'}}) }}
+            </div>
+        </div>
+
+
+        {{ form_rest(dateeventform) }}
+
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(dateeventform) }}
+
+        {# Fermeture de la balise <form> du formulaire HTML #}
+        {{ form_end(dateeventform) }}
+    </fieldset>
+</div>
+</div>
