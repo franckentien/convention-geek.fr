@@ -8,7 +8,7 @@
         Ils seront ajoutés sur le site au plus vite.</p>
 
 
-    <div class="mdc-card mdc-elevation--z6 mdc-layout-grid__inner">
+    <div class="mdc-card mdc-elevation--z10 mdc-layout-grid__inner">
 
 
     <form class="mdc-layout-grid__cell--span-12" action="{{ path('fos_user_registration_register') }}" method="POST">
@@ -22,7 +22,6 @@
 
                         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
                             {{ form_widget(form.username, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                             {{ form_label(form.username, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
                             <div class="mdc-line-ripple"></div>
                         </div>
@@ -31,7 +30,6 @@
                         </div>
                         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
                             {{ form_widget(form.email, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                             {{ form_label(form.email, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
                             <div class="mdc-line-ripple"></div>
                         </div>
@@ -48,7 +46,6 @@
                         </div>
                         <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
                             {{ form_widget(form.plainPassword.second, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                             {{ form_label(form.plainPassword.second, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
                             <div class="mdc-line-ripple"></div>
                         </div>

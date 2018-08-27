@@ -6,7 +6,7 @@
 
 {% block pageContent %}
 
-        <div class="mdc-layout-grid__inner mdc-elevation--z6">
+        <div class="mdc-layout-grid__inner mdc-elevation--z12">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
                 <h2 style="text-align: center;">Prochainement</h2>
@@ -46,9 +46,21 @@
                 </a>
             </div>
         </div>
-        <div class="mdc-layout-grid__inner mdc-elevation--z6">
+        <div class="mdc-layout-grid__inner mdc-elevation--z12">
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
                     <h2 style="text-align: center;">Formulaires</h2>
+            </div>
+            <div class="mdc-layout-grid__inner mdc-elevation--z12 ">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+                    {#{{ include('@ConventionGeekContact/formulaires/formcontent/conventionform.twig') }}#}
+
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+
+                    {#{{ include('@ConventionGeekContact/formulaires/formcontent/dateeventform.twig') }}#}
+
+                </div>
+
             </div>
         </div>
 
