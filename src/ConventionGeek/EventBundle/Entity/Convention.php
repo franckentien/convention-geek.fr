@@ -40,22 +40,27 @@ class Convention extends BaseConvention
      * Convention constructor.
      * @param ConventionForm $conventionForm
      */
-    public function __construct(ConventionForm $conventionForm)
+    public function __construct(ConventionForm $conventionForm = null)
     {
-        $this->eventid = $conventionForm->getEventid();
-        $this->nom = $conventionForm->getNom();
-        $this->lieu = $conventionForm->getLieu();
-        $this->departement = $conventionForm->getDepartement();
-        $this->meta = $conventionForm->getMeta();
-        $this->description = $conventionForm->getDescription();
+        if($conventionForm !== null){
+            $this->eventid = $conventionForm->getEventid();
+            $this->nom = $conventionForm->getNom();
+            $this->lieu = $conventionForm->getLieu();
+            $this->departement = $conventionForm->getDepartement();
+            $this->meta = $conventionForm->getMeta();
+            $this->description = $conventionForm->getDescription();
 
-        $this->actif = $conventionForm->getActif();
-        $this->site = $conventionForm->getSite();
-        $this->facebook = $conventionForm->getFacebook();
-        $this->twitter = $conventionForm->getTwitter();
-        $this->email = $conventionForm->getEmail();
+            $this->actif = $conventionForm->getActif();
+            $this->site = $conventionForm->getSite();
+            $this->facebook = $conventionForm->getFacebook();
+            $this->twitter = $conventionForm->getTwitter();
+            $this->email = $conventionForm->getEmail();
+        }
+
 
     }
+
+
 
     public function getEventid()
     {

@@ -6,74 +6,57 @@
 
 {% block pageContent %}
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col mdl-grid">
-
-
-            <div class="mdl-cell mdl-cell--12-col ">
+    <div class="mdc-layout-grid__inner mdc-elevation--z12">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
             <h1>{{ event.eventname }}</h1>
 
-            </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
-            <div class="mdl-cell mdl-cell--12-col ">
+            <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventdepartement }} <br>
+                <!-- page des evenemnt-->
 
-                <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventname }} <br>
-                    <!-- page des evenemnt-->
+                {% if event.eventwebsite is not null %}
+                    Site web de l'evenement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
+                {% endif %}
+                {% if event.eventfacebook is not null %}
+                    Page facebook: <a href="https://facebook.com/{{ event.eventfacebook }}" target="_blank">{{ event.eventname }}</a><br>
+                {% endif %}
+                {% if event.eventtwitter is not null %}
+                    Page twitter: <a href="https://twitter.com/{{ event.eventtwitter }}" target="_blank">@{{ event.eventtwitter }}</a>
+                {% endif %}
 
-                    {% if event.eventwebsite is not null %}
-                        Site web de l'evenement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
-                    {% endif %}
-                    {% if event.eventfacebook is not null %}
-                        Page facebook: <a href="https://facebook.com/{{ event.eventfacebook }}" target="_blank">{{ event.eventname }}</a><br>
-                    {% endif %}
-                    {% if event.eventtwitter is not null %}
-                        Page twitter: <a href="https://twitter.com/{{ event.eventtwitter }}" target="_blank">@{{ event.eventtwitter }}</a>
-                    {% endif %}
+            </p>
 
-                </p>
-
-            </div>
-
-            <div class="mdl-cell mdl-cell--12-col ">
-
-                <p>{{ event.eventdescription }}</p>
-
-            </div>
-
-            <div class="mdl-cell mdl-cell--12-col ">
-
-                <p>Pour avoir la liste de tous les évènements, il faut se rendre sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
-                    Si une information n'est pas présente sur le site ou qu'il y a une erreur vous pouvez me contacter grâce au  <a href="">formulaires de contact</a>. </p>
-
-            </div>
+            <p>Pour avoir la liste de tous les évènements, il faut se rendre sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
+                Si une information n'est pas présente sur le site ou qu'il y a une erreur vous pouvez me contacter grâce au  <a href="" style=" color: -webkit-link; text-decoration: underline;">formulaires de contact</a>. </p>
 
         </div>
-        <div class="mdl-cell mdl-cell--12-col">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-elevation--z12">
 
-            <table class="mdl-data-table mdl-js-data-table table100">
-                <caption>Les différentes éditions</caption>
-                <thead>
-                <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Editions</th>
-                    <th class="mdl-data-table__cell--non-numeric">Dates</th>
-                    <th class="mdl-data-table__cell--non-numeric">Visiteurs</th>
-                </tr>
-                </thead>
-                <tbody>
+            <h2 style="text-align: center;">Les différentes éditions</h2>
+
+            <ul   class="mdc-list mdc-list--two-line" aria-orientation="vertical">
+
                 {% for eventdate in event.eventdatelist %}
 
-                    <tr>
 
-                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.edition }}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.date }}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{ eventdate.visiteurs }}</td>
+                    <li class="mdc-list-item" >
 
-                    </tr>
+                    <span class="mdc-list-item__text">
+                        <span class="mdc-list-item__primary-text">{{ eventdate.edition }}</span>
+                        <span class="mdc-list-item__secondary-text">{{ eventdate.date }}</span>
+
+                    </span>
+                        <span class="mdc-list-item__meta" aria-hidden="true">{{ eventdate.visiteurs }}</span>
+
+                    </li>
+
+
+
                 {% endfor %}
-
-                </tbody>
-            </table>
+            </ul>
 
         </div>
     </div>

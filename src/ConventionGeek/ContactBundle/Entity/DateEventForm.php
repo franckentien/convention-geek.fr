@@ -33,5 +33,10 @@ class DateEventForm extends BaseDateEvent
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return $this->getEvenement();
+    }
+
 }
 

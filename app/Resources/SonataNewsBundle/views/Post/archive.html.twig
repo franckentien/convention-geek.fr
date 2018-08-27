@@ -6,49 +6,84 @@
 
 {% block pageContent %}
 
-    <div class="mdl-shadow--6dp mdl-cell mdl-cell--12-col mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col ">
+    <div class="mdc-layout-grid__inner mdc-elevation--z12 ">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+
 
             {% for post in pager.getResults() %}
 
-                {% if date() >= date(post.publicationDateStart) %}
-                    <div class="mdl-card mdl-cell mdl-cell--12-col mdl-shadow--6dp">
-                        <div class="mdl-card__title">
-                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}"><h2 class="mdl-card__title-text">{{ post.title }}</h2></a>
-                            <div class="mdl-layout-spacer"></div>
 
-                            <p style="margin: auto;">Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+
+                {% if date() >= date(post.publicationDateStart) %}
+
+
+                    <div class="mdc-card mdc-elevation--z10 mdc-layout-grid__inner">
+                        <div class="mdc-card__media mdc-card__media--archive mdc-layout-grid__cell--span-12">
+                            <div class="mdc-card__media-content archive-title mdc-layout-grid__inner">
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10 ">
+                                    <h2>{{ post.title }}</h2>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1 card-news-title-author">
+                                    <span class="author-article-media-card">Ecrit par {{ post.author }} </span>
+                                </div>
+                                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1 card-news-title-date">
+                                    <span class="author-article-media-card">Le {{ post.publicationDateStart | format_date }}</span>
+                                </div>
+
+
+                            </div>
+
                         </div>
-                        <div class="mdl-card__supporting-text">
-                            {{ post.abstract }}
+                        <div class="mdc-layout-grid__cell--span-12 mdc-layout-grid__inner" >
+                            <div class="mdc-layout-grid__cell--span-12" >
+                                <p>{{ post.abstract }}</p>
+                            </div>
                         </div>
-                        <div class="mdl-layout-spacer"></div>
-                        <div class="mdl-card__actions">
-                            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
+                        <hr class="mdc-list-divider">
+                        <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
+                            <div class="mdc-card__action-icons">
+                                <button class="mdc-button mdc-card__action mdc-card__action--button">
+                                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 {% endif %}
+
+
+
             {% else %}
                 {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
             {% endfor %}
 
+
         </div>
 
-        <div class="mdl-cell mdl-cell--12-col mdl-grid">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
-            <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" {% if pager.page == pager.lastPage %}disabled{% endif %}>
-                    {{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}
-                </button>
-            </a>
-            <div class="mdl-layout-spacer"></div>
-            <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" {% if pager.page == pager.firstPage %}disabled{% endif %}>
-                    {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
-                </button>
-            </a>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: flex;">
+                <div class="section-spacer" style="flex-grow: 1;"></div>
+
+
+                    <button class="mdc-button mdc-button--raised" {% if pager.page == pager.firstPage %}disabled{% endif %}>
+                        <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}">
+                        {{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}
+                        </a>
+                    </button>
+
+                <span class="one-pc-spacer"></span>
+
+                    <button class="mdc-button mdc-button--raised" {% if pager.page == pager.lastPage %}disabled{% endif %}>
+                        <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}">
+                        {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
+                        </a>
+                    </button>
+
+            </div>
+
+
+
         </div>
-
     </div>
 
 {% endblock %}
