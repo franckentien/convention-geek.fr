@@ -1,6 +1,6 @@
 <?php
 
-namespace ConventionGeek\ContactBundle\Form\Type;
+namespace ConventionGeek\ContactBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -30,7 +30,7 @@ class ContactType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ConventionGeek\ContactBundle\Entity\Contact'
+            'data_class' => 'AppBundle\Entity\Contact'
         ));
     }
 
@@ -39,7 +39,7 @@ class ContactType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'contactbundle_contact';
+        return 'appbundle_contact';
     }
 
 

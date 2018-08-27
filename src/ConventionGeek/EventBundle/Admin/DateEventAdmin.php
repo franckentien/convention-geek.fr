@@ -11,8 +11,6 @@ use Sonata\CoreBundle\Form\Type\DatePickerType;
 
 class DateEventAdmin extends AbstractAdmin
 {
-    public $supportsPreviewMode = true;
-
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper

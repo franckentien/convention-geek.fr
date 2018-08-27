@@ -18,34 +18,19 @@ services:
             class: ConventionGeek\EventBundle\Admin\ConventionAdmin
             arguments: [~, ConventionGeek\EventBundle\Entity\Convention, ~]
             tags:
-                - { name: sonata.admin, manager_type: orm, group: CG - Conventions, label: Convention }
+                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Convention }
             public: true
 
     admin.date-event:
             class: ConventionGeek\EventBundle\Admin\DateEventAdmin
             arguments: [~, ConventionGeek\EventBundle\Entity\DateEvent, ~]
             tags:
-                - { name: sonata.admin, manager_type: orm, group: CG - Conventions, label: Dates événements }
+                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Dates événements }
             public: true
 
     admin.contact:
             class: ConventionGeek\ContactBundle\Admin\ContactAdmin
             arguments: [~, ConventionGeek\ContactBundle\Entity\Contact, ~]
             tags:
-                - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Contact }
+                - { name: sonata.admin, manager_type: orm, group: Convention Geek, label: Contact }
             public: true
-
-
-    admin.convention-form:
-          class: ConventionGeek\ContactBundle\Admin\ConventionFormAdmin
-          arguments: [~, ConventionGeek\ContactBundle\Entity\ConventionForm, ~]
-          tags:
-          - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Form Conventions}
-          public: true
-
-    admin.date-event-form:
-          class: ConventionGeek\ContactBundle\Admin\DateEventFormAdmin
-          arguments: [~, ConventionGeek\ContactBundle\Entity\DateEventForm, ~]
-          tags:
-          - { name: sonata.admin, manager_type: orm, group: CG - Contact, label: Form Dates événements}
-          public: true

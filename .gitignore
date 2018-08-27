@@ -47,6 +47,4 @@ var/SymfonyRequirements.php
 .idea/
 app/DoctrineMigrations/
 
-node_modules/
-
 
