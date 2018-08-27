@@ -50,7 +50,9 @@ if(snackbarDom !== null){
 
 import autoInit from '@material/auto-init';
 import {MDCTextField} from '@material/textfield';
+import {MDCSelect} from '@material/select'
 autoInit.register('MDCTextField', MDCTextField);
+autoInit.register('MDCSelect', MDCSelect);
 autoInit();
 
 //Test JS

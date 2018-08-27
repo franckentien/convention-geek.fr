@@ -20,11 +20,23 @@ class DateEventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('evenement', TextType::class)
+            ->add('evenement')
             ->add('edition', NumberType::class)
-            ->add('dateDebut', DateType::class)
-            ->add('dateFin', DateType::class)
-            ->add('visiteurs', NumberType::class)
+            ->add('dateDebut', DateType::class,
+                array(
+                    // renders it as a single text box
+                    'widget' => 'single_text',
+                )
+            )
+            ->add('dateFin', DateType::class,
+                array(
+                    // renders it as a single text box
+                    'widget' => 'single_text',
+                )
+            )
+            ->add('visiteurs', NumberType::class,
+                array('required' => false)
+            )
             ->add('FormSubmit',SubmitType::class);
     }
     

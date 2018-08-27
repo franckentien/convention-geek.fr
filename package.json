@@ -1,7 +1,5 @@
 {
   "devDependencies": {
-    "@material/button": "^0.38.1",
-    "@material/ripple": "^0.38.1",
     "@symfony/webpack-encore": "^0.20.1",
     "autoprefixer": "^9.1.3",
     "babel-core": "^6.26.3",
@@ -29,6 +27,7 @@
     "@material/form-field": "^0.38.1",
     "@material/icon-button": "^0.38.1",
     "@material/list": "^0.38.1",
+    "@material/select": "^0.38.1",
     "@material/snackbar": "^0.38.0",
     "@material/tab": "^0.38.1",
     "@material/tab-bar": "^0.38.1",
@@ -36,6 +35,6 @@
     "@material/theme": "^0.38.0",
     "@material/toolbar": "^0.38.1",
     "@material/top-app-bar": "^0.38.1",
-    "material-components-web": "^0.38.2"
+    "material-components-web": "^0.39.0-0"
   }
 }

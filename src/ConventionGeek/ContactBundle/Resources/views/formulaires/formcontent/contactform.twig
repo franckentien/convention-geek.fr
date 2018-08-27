@@ -1,4 +1,13 @@
-<div class="mdc-card mdc-elevation--z6 mdc-layout-grid__inner">
+
+
+
+<div class="mdc-layout-grid__inner" >
+    <div class="mdc-layout-grid__cell--span-12" >
+        <h2>Contactez-nous</h2>
+    </div>
+
+<div class="mdc-card mdc-elevation--z8 mdc-layout-grid__cell--span-12 mdc-layout-grid__inner">
+
     {{ form_start(contactform, {'attr': {'class': 'mdc-layout-grid__cell--span-12'}}) }}
 
     <fieldset>
@@ -8,24 +17,24 @@
 
                     <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
                         {{ form_widget(contactform.name, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                         {{ form_label(contactform.name, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
                     </div>
                     <div class="form_errors">
                         {{ form_errors(contactform.name, {'attr': {'class': 'menu-dark'}}) }}
                     </div>
                     <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
                         {{ form_widget(contactform.email, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                         {{ form_label(contactform.email, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
                     </div>
                     <div class="form_errors">
                         {{ form_errors(contactform.email, {'attr': {'class': 'menu-dark'}}) }}
                     </div>
-                    <div class="mdc-text-field" data-mdc-auto-init="MDCTextField">
+                    <div class="mdc-text-field text-field mdc-text-field--textarea" data-mdc-auto-init="MDCTextField">
                         {{ form_widget(contactform.message, {'attr': {'class': 'mdc-text-field__input'}}) }}
-
                         {{ form_label(contactform.message, "",  {'label_attr': {'class': 'mdc-floating-label'}}) }}
+                        <div class="mdc-line-ripple"></div>
                     </div>
                     <div class="form_errors">
                         {{ form_errors(contactform.message, {'attr': {'class': 'menu-dark'}}) }}
@@ -55,4 +64,5 @@
 
 
     </fieldset>
+</div>
 </div>

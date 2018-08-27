@@ -5,6 +5,7 @@ $mdc-theme-on-secondary: #ffffff;
 $mdc-theme-background: #ffffff;
 $mdc-theme-surface: #b5b5b5;
 
+@import "~@material/theme/mdc-theme";
 @import "~@material/button/mdc-button";
 @import "~@material/card/mdc-card";
 @import "~@material/checkbox/mdc-checkbox";
@@ -25,8 +26,7 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/toolbar/mdc-toolbar";
 @import "~@material/dialog/mdc-dialog";
 @import "~@material/snackbar/mdc-snackbar";
-
-
+@import "~@material/select/mdc-select";
 
 body{margin: auto;}
 
@@ -136,4 +136,30 @@ fieldset{
 
 .form_errors{
   color: $mdc-theme-primary;
+}
+
+.mdc-text-field {
+   width: 100%;
+ }
+
+.mdc-select{
+  width: 100%;
+}
+
+
+
+.mdc-text-field--textarea .mdc-floating-label{
+  margin-left: inherit;
+  padding-left: inherit;
+  background-color: inherit;
+}
+
+.mdc-text-field--textarea .mdc-floating-label--float-above{
+  margin-left: 8px;
+}
+
+.mdc-text-field--textarea {
+  border-top: none;
+  border-right: none;
+  border-left: none;
 }
