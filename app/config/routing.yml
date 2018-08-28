@@ -1,7 +1,7 @@
 App_home:
   path: /
   defaults: { _controller: ConventionGeekEventBundle:Index:index}
-  methods: [GET]
+  methods: [GET,POST]
 
 App_about:
   path: /about

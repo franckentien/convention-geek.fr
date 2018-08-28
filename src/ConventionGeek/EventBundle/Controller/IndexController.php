@@ -3,6 +3,10 @@
 namespace ConventionGeek\EventBundle\Controller;
 
 
+use ConventionGeek\ContactBundle\Entity\ConventionForm;
+use ConventionGeek\ContactBundle\Entity\DateEventForm;
+use ConventionGeek\ContactBundle\Form\Type\ConventionType;
+use ConventionGeek\ContactBundle\Form\Type\DateEventType;
 use Sonata\NewsBundle\Controller\PostController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ConventionGeek\EventBundle\Utils\DateFormatClass;
@@ -55,7 +59,18 @@ class IndexController extends Controller
 
         $listEvent = $this->getDates();
 
-        return $this->render('@ConventionGeekEvent/eventList/index.html.twig', array('listEvenement' => $listEvent));
+        $convention = new ConventionForm();
+        $formConvention  = $this->get('form.factory')->create(ConventionType::class, $convention);
+
+        $dateevent = new DateEventForm();
+        $formDateEvemt  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
+
+        return $this->render('@ConventionGeekEvent/eventList/index.html.twig',
+            array('listEvenement' => $listEvent,
+                'conventionform' => $formConvention->createView(),
+                'dateeventform' => $formDateEvemt->createView(),
+            )
+        );
     }
 
 }
