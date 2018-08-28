@@ -66,7 +66,7 @@ class IndexController extends Controller
         $dateevent = new DateEventForm();
         $formDateEvent  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
 
-        $snackbarMessage = null;
+        $snackbarMessage = null ;
 
         if($request->isMethod('POST')){
             if ($formConvention->handleRequest($request)->isValid()) {
