@@ -5,16 +5,19 @@ $mdc-theme-on-secondary: #ffffff;
 $mdc-theme-background: #ffffff;
 $mdc-theme-surface: #b5b5b5;
 
-@import "~@material/theme/mdc-theme";
+
 @import "~@material/button/mdc-button";
 @import "~@material/card/mdc-card";
 @import "~@material/checkbox/mdc-checkbox";
+@import "~@material/dialog/mdc-dialog";
 @import "~@material/drawer/mdc-drawer";
 @import "~@material/elevation/mdc-elevation";
 @import "~@material/form-field/mdc-form-field";
 @import "~@material/icon-button/mdc-icon-button";
 @import "~@material/layout-grid/mdc-layout-grid";
 @import "~@material/list/mdc-list";
+@import "~@material/select/mdc-select";
+@import "~@material/snackbar/mdc-snackbar";
 @import "~@material/typography/mdc-typography";
 @import "~@material/tab-bar/mdc-tab-bar";
 @import "~@material/tab-scroller/mdc-tab-scroller";
@@ -22,11 +25,9 @@ $mdc-theme-surface: #b5b5b5;
 @import "~@material/tab/mdc-tab";
 @import "~@material/textfield/mdc-text-field";
 @import "~@material/textfield/helper-text/mdc-text-field-helper-text";
+@import "~@material/theme/mdc-theme";
 @import "~@material/top-app-bar/mdc-top-app-bar";
 @import "~@material/toolbar/mdc-toolbar";
-@import "~@material/dialog/mdc-dialog";
-@import "~@material/snackbar/mdc-snackbar";
-@import "~@material/select/mdc-select";
 
 body{margin: auto;}
 
@@ -146,8 +147,6 @@ fieldset{
   width: 100%;
 }
 
-
-
 .mdc-text-field--textarea .mdc-floating-label{
   margin-left: inherit;
   padding-left: inherit;
@@ -163,3 +162,4 @@ fieldset{
   border-right: none;
   border-left: none;
 }
+

@@ -1,5 +1,4 @@
 require('../css/app.scss');
-console.log('hello world 1');
 
 import {MDCTemporaryDrawer} from '@material/drawer';
 import {MDCDialog} from '@material/dialog';
@@ -55,5 +54,9 @@ autoInit.register('MDCTextField', MDCTextField);
 autoInit.register('MDCSelect', MDCSelect);
 autoInit();
 
-//Test JS
-console.log('hello world 2');
+var cssRuleName =
+    "color: #780a0a;" +
+    "font-size: 60px;" +
+    "font-weight: bold;" +
+    "text-shadow: 1px 1px 5px black;";
+console.log("%cConvention Geek", cssRuleName);
