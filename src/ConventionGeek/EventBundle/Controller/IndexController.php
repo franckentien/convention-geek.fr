@@ -66,17 +66,21 @@ class IndexController extends Controller
         $dateevent = new DateEventForm();
         $formDateEvent  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
 
+        $snackbarMessage = null;
+
         if($request->isMethod('POST')){
             if ($formConvention->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($convention);
                 $em->flush();
+                $snackbarMessage = "La convention a bien a bien été envoyé.";
 
             }
             if ($formDateEvent->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($dateevent);
                 $em->flush();
+                $snackbarMessage = "La date a bien a bien été envoyé.";
             }
         }
 
@@ -84,6 +88,7 @@ class IndexController extends Controller
             array('listEvenement' => $listEvent,
                 'conventionform' => $formConvention->createView(),
                 'dateeventform' => $formDateEvent->createView(),
+                'snackbarMessage' => $snackbarMessage,
             )
         );
     }

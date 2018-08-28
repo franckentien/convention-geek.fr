@@ -25,7 +25,7 @@ class DefaultController extends Controller
         $dateevent = new DateEventForm();
         $formDateEvent  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
 
-        $toast = false;
+        $snackbarMessage = null;
 
 
         if($request->isMethod('POST')){
@@ -33,18 +33,19 @@ class DefaultController extends Controller
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($contact);
                 $em->flush();
-
+                $snackbarMessage = "Le message a bien a bien été envoyé.";
             }
             if ($formConvention->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($convention);
                 $em->flush();
-
+                $snackbarMessage = "La convention a bien a bien été envoyé.";
             }
             if ($formDateEvent->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($dateevent);
                 $em->flush();
+                $snackbarMessage = "La date a bien a bien été envoyé.";
             }
         }
 
@@ -54,6 +55,7 @@ class DefaultController extends Controller
             array('contactform' => $formContact->createView(),
                 'conventionform' => $formConvention->createView(),
                 'dateeventform' => $formDateEvent->createView(),
+                'snackbarMessage' => $snackbarMessage,
                 ) );
     }
 
