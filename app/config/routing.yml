@@ -50,10 +50,3 @@ CGContact_import_dateEvent:
   path: /CGForm/DateEvent/Import/{idform}
   defaults: { _controller: ConventionGeekContactBundle:Import:importDateEvent }
   methods: [GET, POST, DELETE]
-
-
-App_test:
-  path: /test
-  defaults: { _controller: ConventionGeekMainBundle:Default:test}
-  methods: [GET]
-

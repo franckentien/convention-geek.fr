@@ -37,6 +37,24 @@
 
 {% block javascripts %}
     <script src="{{ asset('build/app.js') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tracking }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ ga_tracking }}');
+    </script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "{{ google_ad_client }}",
+            enable_page_level_ads: true
+        });
+    </script>
+
+
 {% endblock %}
 </body>
 </html>

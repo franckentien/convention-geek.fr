@@ -43,6 +43,9 @@ twig:
         - 'SonataFormatterBundle:Form:formatter.html.twig'
     date:
         timezone: Europe/Paris
+    globals:
+        ga_tracking: "%ga_tracking%"
+        google_ad_client: "%google_ad_client%"
 
 # Doctrine Configuration
 doctrine:

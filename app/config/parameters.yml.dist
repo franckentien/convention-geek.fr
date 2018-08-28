@@ -15,3 +15,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret: This_Token_Is_Not_So_Secret_Change_It
+
+    # Personal Config
+    ga_tracking: UA-xxxxx-x
+    google_ad_client: ca-pub-xxx

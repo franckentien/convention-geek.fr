@@ -17,9 +17,4 @@ class DefaultController extends Controller
         return $this->render('@ConventionGeekMain/Default/irlEvent.html.twig', []);
     }
 
-    public function testAction()
-    {
-        return $this->render('@ConventionGeekMain/Default/test.html.twig', []);
-    }
-
 }
