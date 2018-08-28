@@ -50,7 +50,7 @@ class ConventionFormAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper->addIdentifier('eventid')
-            ->add('nom')
+            ->addIdentifier('nom')
             ->add('site')
             ->add('facebook')
             ->add('twitter')

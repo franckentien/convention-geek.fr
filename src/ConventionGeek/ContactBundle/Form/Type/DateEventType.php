@@ -5,6 +5,7 @@ namespace ConventionGeek\ContactBundle\Form\Type;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,7 +22,7 @@ class DateEventType extends AbstractType
     {
         $builder
             ->add('evenement')
-            ->add('edition', NumberType::class)
+            ->add('edition', IntegerType::class)
             ->add('dateDebut', DateType::class,
                 array(
                     // renders it as a single text box
@@ -34,7 +35,7 @@ class DateEventType extends AbstractType
                     'widget' => 'single_text',
                 )
             )
-            ->add('visiteurs', NumberType::class,
+            ->add('visiteurs', IntegerType::class,
                 array('required' => false)
             )
             ->add('FormSubmit',SubmitType::class);

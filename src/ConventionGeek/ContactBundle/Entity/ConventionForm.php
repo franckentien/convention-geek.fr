@@ -25,9 +25,16 @@ class ConventionForm extends BaseConvention
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="ConventionGeek\EventBundle\Entity\Departement")
+     *
+     * @ORM\JoinColumn(nullable=true)
+     */
+    protected $departement;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="eventid", type="string", length=255)
+     * @ORM\Column(name="eventid", type="string", length=255, nullable=true)
      *
      */
     private $eventid;
@@ -36,6 +43,13 @@ class ConventionForm extends BaseConvention
     {
         return $this->eventid;
     }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta", type="string", length=160, nullable=true)
+     */
+    public $meta;
 
     /**
      * @param string $eventid

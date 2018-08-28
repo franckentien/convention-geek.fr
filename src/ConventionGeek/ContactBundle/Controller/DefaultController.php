@@ -23,29 +23,38 @@ class DefaultController extends Controller
         $formConvention  = $this->get('form.factory')->create(ConventionType::class, $convention);
 
         $dateevent = new DateEventForm();
-        $formDateEvemt  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
+        $formDateEvent  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
+
+        $toast = false;
 
 
+        if($request->isMethod('POST')){
+            if ($formContact->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($contact);
+                $em->flush();
 
+            }
+            if ($formConvention->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($convention);
+                $em->flush();
 
-
-        if ($request->isMethod('POST') && $formContact->handleRequest($request)->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($contact);
-            $em->flush();
-
-            return $this->render('@ConventionGeekContact/formulaires/formulaires.twig',
-                array('contactform' => $formContact->createView(),
-                    'conventionform' => $formConvention->createView(),
-                    'dateeventform' => $formDateEvemt->createView(),
-                    'toast' => true));
+            }
+            if ($formDateEvent->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($dateevent);
+                $em->flush();
+            }
         }
+
+
 
         return $this->render('@ConventionGeekContact/formulaires/formulaires.twig',
             array('contactform' => $formContact->createView(),
                 'conventionform' => $formConvention->createView(),
-                'dateeventform' => $formDateEvemt->createView(),
-                'toast' => false) );
+                'dateeventform' => $formDateEvent->createView(),
+                ) );
     }
 
 }

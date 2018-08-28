@@ -10,6 +10,7 @@ use ConventionGeek\ContactBundle\Form\Type\DateEventType;
 use Sonata\NewsBundle\Controller\PostController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ConventionGeek\EventBundle\Utils\DateFormatClass;
+use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends Controller
 {
@@ -54,7 +55,7 @@ class IndexController extends Controller
         return $listEvent;
     }
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
 
         $listEvent = $this->getDates();
@@ -63,12 +64,26 @@ class IndexController extends Controller
         $formConvention  = $this->get('form.factory')->create(ConventionType::class, $convention);
 
         $dateevent = new DateEventForm();
-        $formDateEvemt  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
+        $formDateEvent  = $this->get('form.factory')->create(DateEventType::class, $dateevent);
+
+        if($request->isMethod('POST')){
+            if ($formConvention->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($convention);
+                $em->flush();
+
+            }
+            if ($formDateEvent->handleRequest($request)->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($dateevent);
+                $em->flush();
+            }
+        }
 
         return $this->render('@ConventionGeekEvent/eventList/index.html.twig',
             array('listEvenement' => $listEvent,
                 'conventionform' => $formConvention->createView(),
-                'dateeventform' => $formDateEvemt->createView(),
+                'dateeventform' => $formDateEvent->createView(),
             )
         );
     }
