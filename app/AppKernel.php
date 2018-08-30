@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new FOS\CKEditorBundle\FOSCKEditorBundle(),
 
 
+
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
@@ -47,6 +48,7 @@ class AppKernel extends Kernel
             new ConventionGeek\ContactBundle\ConventionGeekContactBundle(),
             new ConventionGeek\EventBundle\ConventionGeekEventBundle(),
             new ConventionGeek\MainBundle\ConventionGeekMainBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -59,6 +61,10 @@ class AppKernel extends Kernel
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
                 $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
             }
+        }
+
+        if (in_array($this->getEnvironment(), ['staging', 'prod'], true)) {
+            $bundles[] = new Sentry\SentryBundle\SentryBundle();
         }
 
         return $bundles;

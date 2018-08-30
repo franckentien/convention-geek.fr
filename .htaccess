@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://beta.convention-geek.fr/$1 [R,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ web/$1 [QSA,L]
+
+</IfModule>
+
+Options -Indexes

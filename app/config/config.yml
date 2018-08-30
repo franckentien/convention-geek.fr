@@ -106,3 +106,4 @@ fos_user:
         form:
             name:               fos_user_profile_form
             validation_groups:  [Authentication] # Please note : this is not the default value
+

@@ -5,7 +5,7 @@ App_home:
 
 App_about:
   path: /about
-  defaults: { _controller: ConventionGeekMainBundle:Default:about}
+  defaults: { _controller: ConventionGeekMainBundle:Default:aboutPage}
   methods: [GET]
 
 App_irlEvent:
