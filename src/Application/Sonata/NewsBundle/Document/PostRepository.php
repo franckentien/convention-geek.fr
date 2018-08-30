@@ -15,4 +15,3 @@ use Sonata\NewsBundle\Document\BasePostRepository;
 class PostRepository extends BasePostRepository
 {
 }
-
