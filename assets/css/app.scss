@@ -32,10 +32,22 @@ $mdc-theme-surface: #b5b5b5;
 body{margin: auto;}
 
 .mdc-top-app-bar{
+  z-index: 10;
+}
+
+.mdc-top-app-bar{
   &__section {
     padding: 0;
   }
 }
+
+@media (max-width: 840px){
+  .mdc-tab-bar{
+    display: none;
+  }
+}
+
+
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px;}
