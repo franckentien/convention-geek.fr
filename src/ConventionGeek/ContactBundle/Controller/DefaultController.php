@@ -43,6 +43,13 @@ class DefaultController extends Controller
             }
             if ($formDateEvent->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
+
+                $userManager = $this->container->get('fos_user.user_manager');
+                if($dateevent->getInformateurtext() !== null){
+                    $user = $userManager->find($dateevent->getInformateurtext());
+                    $dateevent->setInformateur($user);
+                }
+                
                 $em->persist($dateevent);
                 $em->flush();
                 $snackbarMessage = "La date a bien a bien été envoyé.";

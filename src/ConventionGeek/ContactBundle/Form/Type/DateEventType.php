@@ -2,9 +2,11 @@
 
 namespace ConventionGeek\ContactBundle\Form\Type;
 
+use Application\Sonata\UserBundle\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -36,6 +38,9 @@ class DateEventType extends AbstractType
                 )
             )
             ->add('visiteurs', IntegerType::class,
+                array('required' => false)
+            )
+            ->add('informateurtext', HiddenType::class,
                 array('required' => false)
             )
             ->add('FormSubmit',SubmitType::class);

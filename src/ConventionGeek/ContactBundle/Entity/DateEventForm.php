@@ -24,6 +24,14 @@ class DateEventForm extends BaseDateEvent
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     */
+    private $informateurtext;
+
+    /**
      * Get id
      *
      * @return int
@@ -33,10 +41,20 @@ class DateEventForm extends BaseDateEvent
         return $this->id;
     }
 
-    public function __toString()
+
+    public function getInformateurtext()
     {
-        return $this->getEvenement();
+        return $this->informateurtext;
     }
+
+
+
+    public function setInformateurtext(string $informateurtext)
+    {
+        $this->informateurtext = $informateurtext;
+    }
+
+
 
 }
 
