@@ -5612,9 +5612,6 @@ a.mdc-list-item {
 body {
   margin: auto; }
 
-.mdc-top-app-bar {
-  z-index: 10; }
-
 .mdc-top-app-bar__section {
   padding: 0; }
 
