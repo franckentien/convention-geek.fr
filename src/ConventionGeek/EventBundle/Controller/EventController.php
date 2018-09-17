@@ -31,7 +31,7 @@ class EventController extends Controller
 
             $date = DateFormatClass::getDisplayDate($edition->getDateDebut(), $edition->getDateFin());
 
-            $convention = $repositoryConvention->findOneBy(array('eventid' => strval($edition->getEvenement())));
+            $convention = $repositoryConvention->findOneBy(array('id' => $edition->getEvenement()->getid()));
 
             array_push($editionlist, array(
                 'edition'   => $edition->getEdition(),

@@ -37,7 +37,7 @@ class IndexController extends Controller
 
             $date = DateFormatClass::getDisplayDate($event->getDateDebut(), $event->getDateFin());
 
-            $convention = $repositoryConvention->findOneBy(array('eventid' => strval($event->getEvenement())));
+            $convention = $repositoryConvention->findOneBy(array('id' => $event->getEvenement()->getid()));
 
             $informateur = '-';
             if($event->getInformateur()!==null){
