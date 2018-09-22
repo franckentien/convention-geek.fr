@@ -11,7 +11,7 @@
 
     <!-- ressource pressonnel -->
     {% block stylesheets  %}
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
         <style type="text/css">
             @font-face {
                 font-family: 'Analecta';
@@ -36,7 +36,7 @@
 {% block body %}{% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
+    <script src="{{ asset('script.js') }}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tracking }}"></script>
     <script>

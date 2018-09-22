@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@symfony/webpack-encore": "^0.20.1",
-    "autoprefixer": "^9.1.3",
+    "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-es2015": "^6.24.1",
@@ -35,6 +35,6 @@
     "@material/theme": "^0.38.0",
     "@material/toolbar": "^0.38.1",
     "@material/top-app-bar": "^0.38.1",
-    "material-components-web": "^0.39.1"
+    "material-components-web": "^0.39.3"
   }
 }
