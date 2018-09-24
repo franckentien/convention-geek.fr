@@ -30,7 +30,7 @@
             </p>
 
             <p>
-                {{ event.eventdescription }}
+                {{ event.eventdescription |raw }}
             </p>
 
             <p>Pour avoir la liste de tous les évènements, il rendez-vous sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
