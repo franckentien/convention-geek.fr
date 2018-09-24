@@ -29,6 +29,7 @@
     "require": {
         "php": ">=7.1.0",
         "cocur/slugify": "^2.0",
+        "coresphere/console-bundle": "^0.5.0",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "doctrine/orm": "^2.5",
