@@ -3,6 +3,26 @@ App_home:
   defaults: { _controller: ConventionGeekEventBundle:Index:index}
   methods: [GET,POST]
 
+CGEvent_event:
+  path: /convention/{eventid}
+  defaults: { _controller: ConventionGeekEventBundle:Event:event}
+  methods: [GET]
+
+CGEvent_annuaire:
+  path: /annuaire
+  defaults: { _controller: ConventionGeekEventBundle:Annuaire:annuaire}
+  methods: [GET]
+
+CGEvent_conventions:
+  path: /convention
+  defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
+  methods: [GET]
+
+CGEvent_formulaires:
+  path: /formulaires
+  defaults: { _controller: ConventionGeekContactBundle:Default:formulaires}
+  methods: [GET, POST]
+
 App_about:
   path: /about
   defaults: { _controller: ConventionGeekMainBundle:Default:aboutPage}
@@ -12,26 +32,6 @@ App_irlEvent:
   path: /TGS2017
   defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
   methods: [GET]
-
-CGEvent_conventions:
-  path: /convention
-  defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
-  methods: [GET]
-
-CGEvent_annuaire:
-  path: /annuaire
-  defaults: { _controller: ConventionGeekEventBundle:Annuaire:annuaire}
-  methods: [GET]
-
-CGEvent_event:
-  path: /convention/{eventid}
-  defaults: { _controller: ConventionGeekEventBundle:Event:event}
-  methods: [GET]
-
-CGEvent_formulaires:
-  path: /formulaires
-  defaults: { _controller: ConventionGeekContactBundle:Default:formulaires}
-  methods: [GET, POST]
 
 sonata:
     resource: routing_sonata.yml
