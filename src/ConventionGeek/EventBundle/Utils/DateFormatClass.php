@@ -100,26 +100,26 @@ class DateFormatClass
 
     public static function getDisplayDate($DateDebut, $DateFin){
 
-        $jourFin = date_format($DateFin, 'd');
-        $moisFin = date_format($DateFin, 'm');
-        $anneeFin = date_format($DateFin, 'Y');
+        $jourDebut = date_format($DateDebut, 'd');
+        $moisDebut = date_format($DateDebut, 'm');
+        $anneeDebut = date_format($DateDebut, 'Y');
 
 
         $rst = "";
-        if($DateDebut === null){ // If the date is not sure
+        if($DateFin === null){ // If the date is not sure
 
-            if($moisFin == 1  && $jourFin == 1 ){ // Year Only
-                $rst = $anneeFin;
+            if($moisDebut == 1  && $jourDebut == 1 ){ // Year Only
+                $rst = $anneeDebut;
             }
             else { // Year an month
-                $rst = self::getFullMonth($moisFin) . " " . $anneeFin;
+                $rst = ucfirst(self::getFullMonth($moisDebut)) . " " . $anneeDebut;
             }
 
         }
         else{ // Le jour exacte de debut et de fin
-            $jourDebut = date_format($DateDebut, 'd');
-            $moisDebut = date_format($DateDebut, 'm');
-            $anneeDebut = date_format($DateDebut, 'Y');
+            $jourFin = date_format($DateFin, 'd');
+            $moisFin = date_format($DateFin, 'm');
+            $anneeFin = date_format($DateFin, 'Y');
 
             if($anneeDebut != $anneeFin){ // Sur deux Ans
                 $rst = $jourDebut . " " . self::getShortMonth($moisDebut) . " " . $anneeDebut .
