@@ -16,7 +16,7 @@
                     {% for event in listEvenement %}
 
 
-                        <li class="mdc-list-item" >
+                        <li class="mdc-list-item mdc-elevation--z1" >
                             <a class="a-list-item" href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">{{ event.name }} - {{ event.place }}</span>
@@ -40,17 +40,9 @@
 
 
                      <button class="mdc-button mdc-button--raised">
-                         <a href="" >
-                        Ajouter un évenement
+                         <a href="{{ path('CGEvent_formulaires') }}" >
+                             Proposer une convention
                          </a>
-                    </button>
-
-                <span class="one-pc-spacer"></span>
-
-                    <button class="mdc-button mdc-button--raised">
-                        <a href="">
-                        Ajouter une date
-                        </a>
                     </button>
 
             </div>
