@@ -23,7 +23,7 @@ class EventController extends Controller
 
         $convention = $repositoryConvention->findOneBy(array('eventid' => $eventid));
 
-        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()));
+        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('id' => 'DESC'));
 
         $editionlist = array();
 
