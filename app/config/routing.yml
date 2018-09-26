@@ -50,3 +50,23 @@ CGContact_import_dateEvent:
   path: /CGForm/DateEvent/Import/{idform}
   defaults: { _controller: ConventionGeekContactBundle:Import:importDateEvent }
   methods: [GET, POST, DELETE]
+
+CGMain_sitmap_index:
+  path: /sitemap.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapIndex}
+  methods: [GET]
+
+CGMain_sitmap_main:
+  path: /sitemap-main.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapMain}
+  methods: [GET]
+
+CGMain_sitmap_news:
+  path: /sitemap-news.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapNews}
+  methods: [GET]
+
+CGMain_sitmap_convention:
+  path: /sitemap-convention.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapEvent}
+  methods: [GET]
