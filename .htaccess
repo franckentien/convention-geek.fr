@@ -9,4 +9,13 @@
 
 </IfModule>
 
+<IfModule mod_expires.c>
+
+    ExpiresActive On
+    ExpiresByType image/png A900
+
+</IfModule>
+
+
+
 Options -Indexes

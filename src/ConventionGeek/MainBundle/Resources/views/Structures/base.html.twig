@@ -27,7 +27,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <meta name="keywords" content="{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}" />
     <meta name="description" content="{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}" />
-    <meta name="author" content="CAYZAC Franck">
+    <meta name="author" content="{{ app.request.host }}/humans.txt">
     <title>{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}</title>
 
     <!-- meta pour fb -->
