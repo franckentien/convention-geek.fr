@@ -7,15 +7,19 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ web/$1 [QSA,L]
 
+    Redirect "/convention?convention=octogones" "/about"
+
 </IfModule>
+
 
 <IfModule mod_expires.c>
 
     ExpiresActive On
-    ExpiresByType image/png A900
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 day"
+    ExpiresByType text/javascript "access plus 1 day"
 
 </IfModule>
-
-
 
 Options -Indexes
