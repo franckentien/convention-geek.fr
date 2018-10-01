@@ -17,7 +17,7 @@ class AnnuaireController extends Controller
             ->getRepository('ConventionGeekEventBundle:Convention')
         ;
 
-        $listEvents = $repositoryConvention->findAll();
+        $listEvents = $repositoryConvention->findBy(array(), array('departement' => 'ASC'));
 
         $result = array();
 
