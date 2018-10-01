@@ -3,7 +3,7 @@
 
     {% for url in urls %}
         <url>{# check if hostname is not alreay in url#}
-            <loc>{{ app.request.host }}{{url.loc}}</loc>
+            <loc>{{ app.request.getSchemeAndHttpHost() }}{{url.loc}}</loc>
             {% if url.lastmod is defined %}
                 <lastmod>{{url.lastmod}}</lastmod>
             {% endif %}
