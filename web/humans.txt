@@ -1,0 +1,18 @@
+/* TEAM */
+	Creator: CAYZAC Franck
+	Contact: contact [at] convention-geek.fr
+	Twitter: @franckentien
+	Location: Montpellier, France
+
+/* THANKS */
+	Advice: Fokuza
+	Twitter: @_FOKUZA
+	WebSite: http://fokuza.fr/
+
+/* SITE */
+	Language: French
+	Doctype:HTML5
+	IDE: PhpStorm
+	Twitter: @convention_geek
+	Facebook: ConventionGeek
+	Instagram: conventiongeek

@@ -14,11 +14,11 @@
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
 
-            <p>L'évenement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventdepartement }} <br>
+            <p>L'évènement: {{ event.eventname }} est un évènement qui a lieu à {{ event.eventname }} dans le {{ event.eventdepartement }} <br>
                 <!-- page des evenemnt-->
 
                 {% if event.eventwebsite is not null %}
-                    Site web de l'evenement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
+                    Site web de l'évènement: <a href="{{ event.eventwebsite }}" target="_blank">{{ event.eventname }}</a><br>
                 {% endif %}
                 {% if event.eventfacebook is not null %}
                     Page facebook: <a href="https://facebook.com/{{ event.eventfacebook }}" target="_blank">{{ event.eventname }}</a><br>
@@ -29,8 +29,12 @@
 
             </p>
 
-            <p>Pour avoir la liste de tous les évènements, il faut se rendre sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
-                Si une information n'est pas présente sur le site ou qu'il y a une erreur vous pouvez me contacter grâce au  <a href="" style=" color: -webkit-link; text-decoration: underline;">formulaires de contact</a>. </p>
+            <p>
+                {{ event.eventdescription |raw }}
+            </p>
+
+            <p>Pour avoir la liste de tous les évènements, il rendez-vous sur <a href="{{ path('CGEvent_annuaire') }}">l'annuaire</a>.<br>
+                Si une information n'est pas présente sur le site ou s'il y a une erreur vous pouvez me contacter grâce aux <a href="{{ path('CGEvent_formulaires') }}" style=" color: -webkit-link; text-decoration: underline;">formulaires de contact</a>. </p>
 
         </div>
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 mdc-elevation--z12">
@@ -42,13 +46,11 @@
                 {% for eventdate in event.eventdatelist %}
 
 
-                    <li class="mdc-list-item" >
+                    <li class="mdc-list-item mdc-elevation--z1" >
+                        <span class="mdc-list-item__graphic">{{ eventdate.edition }}</span>
 
-                    <span class="mdc-list-item__text">
-                        <span class="mdc-list-item__primary-text">{{ eventdate.edition }}</span>
-                        <span class="mdc-list-item__secondary-text">{{ eventdate.date }}</span>
+                        {{ eventdate.date }}
 
-                    </span>
                         <span class="mdc-list-item__meta" aria-hidden="true">{{ eventdate.visiteurs }}</span>
 
                     </li>

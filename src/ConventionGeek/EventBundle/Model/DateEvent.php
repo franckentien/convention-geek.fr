@@ -26,7 +26,7 @@ abstract class DateEvent implements DateEventInterface
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="date", nullable=true)
+     * @ORM\Column(name="date_debut", type="date")
      * @Assert\Date()
      *
      */
@@ -35,7 +35,7 @@ abstract class DateEvent implements DateEventInterface
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_fin", type="date")
+     * @ORM\Column(name="date_fin", type="date", nullable=true)
      * @Assert\Date()
      *
      */

@@ -62,6 +62,14 @@
                         {{ form_errors(dateeventform.visiteurs, {'attr': {'class': 'menu-dark'}}) }}
                     </div>
 
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    {{ form_widget(dateeventform.informateurtext, {'value':  app.user.id }) }}
+
+                    {% endif %}
+
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {{ form_widget(dateeventform.informateurtext, {'value': null}) }}
+                    {% endif %}
                 </div>
             </div>
         </div>

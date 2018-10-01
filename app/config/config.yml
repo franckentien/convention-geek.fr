@@ -70,6 +70,7 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
+        naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
 # Swiftmailer Configuration
@@ -106,3 +107,4 @@ fos_user:
         form:
             name:               fos_user_profile_form
             validation_groups:  [Authentication] # Please note : this is not the default value
+

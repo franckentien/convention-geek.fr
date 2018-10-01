@@ -1,8 +1,8 @@
 {% extends '@ConventionGeekMain/Structures/menu.html.twig' %}
 
 {% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}
-{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}
-{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}
+{% block metaDescription %}Ceci est la page où vous prouvez retrouver tous les évènements geek qui aurons lieu les prochains mois{% endblock %}
+{% block metaTitle %}Convention Geek: Conventions{% endblock %}
 
 {% block pageContent %}
 
@@ -16,7 +16,7 @@
                     {% for event in listEvenement %}
 
 
-                        <li class="mdc-list-item" >
+                        <li class="mdc-list-item mdc-elevation--z1" >
                             <a class="a-list-item" href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">
                     <span class="mdc-list-item__text">
                         <span class="mdc-list-item__primary-text">{{ event.name }} - {{ event.place }}</span>
@@ -40,17 +40,9 @@
 
 
                      <button class="mdc-button mdc-button--raised">
-                         <a href="" >
-                        Ajouter un évenement
+                         <a href="{{ path('CGEvent_formulaires') }}" >
+                             Proposer une convention
                          </a>
-                    </button>
-
-                <span class="one-pc-spacer"></span>
-
-                    <button class="mdc-button mdc-button--raised">
-                        <a href="">
-                        Ajouter une date
-                        </a>
                     </button>
 
             </div>

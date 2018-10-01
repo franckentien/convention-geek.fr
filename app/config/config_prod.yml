@@ -20,3 +20,7 @@ monolog:
         console:
             type: console
             process_psr_3_messages: false
+
+sentry:
+    dsn: "https://95cf8f41d55e477db5881a0662e3e130@sentry.io/1271320"
+

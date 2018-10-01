@@ -22,7 +22,7 @@ class DateEventAdmin extends AbstractAdmin
             ->end()
             ->with('Date', ['class' => 'col-md-4'])
                 ->add('dateDebut', DatePickerType::class , array('dp_view_mode' => 'months',))
-                ->add('dateFin', DatePickerType::class, array('dp_view_mode' => 'months',))
+                ->add('dateFin', DatePickerType::class, array('dp_view_mode' => 'months', 'required' => false))
             ->end()
             ->with('Details', ['class' => 'col-md-4'])
                 ->add('visiteurs')

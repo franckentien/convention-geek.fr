@@ -66,4 +66,4 @@ security:
             - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
     acl:
-            connection: default
+        connection: default

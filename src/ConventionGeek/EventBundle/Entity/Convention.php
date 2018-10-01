@@ -92,7 +92,7 @@ class Convention extends BaseConvention
      */
     public function __toString()
     {
-        return strval($this->eventid);
+        return $this->getEventid();
     }
 
 }

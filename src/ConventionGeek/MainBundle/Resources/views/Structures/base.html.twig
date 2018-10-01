@@ -2,16 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="robots" content="noindex">
+
     <!-- Material + General-->
     <meta charset="{{ _charset }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
-    <!-- ressource pressonnel -->
+    <!--stylesheets -->
     {% block stylesheets  %}
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('style.css') }}">
         <style type="text/css">
             @font-face {
                 font-family: 'Analecta';
@@ -21,13 +20,25 @@
                 url({{asset('police/Analecta.svg')}}) format('svg');
             }
         </style>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     {% endblock %}
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <!-- franck-cayzac.fr -->
     <meta name="keywords" content="{% block metaKeyword %}calendier, salon, jeux, vidéo, jeux vidéo, dates, convention, geek, otaku, japan, expo, France, free, manga, évenement{% endblock %}" />
     <meta name="description" content="{% block metaDescription %}Ce site web est un site communautaire qui a pour but de rassembler à la manière d'un calendrier tous les évènements Geek est Otaku en France.{% endblock %}" />
-    <meta name="author" content="CAYZAC Franck">
+    <meta name="author" content="{{ app.request.host }}/humans.txt">
     <title>{% block metaTitle %}Convention Geek: Le calendrier des conventions Geek et Otaku{% endblock %}</title>
+
+    <!-- meta pour fb -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ block('metaTitle') }}" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta property="og:image" content="{{ asset('images/menu/logo.jpg') }}" />
+    <meta property="og:description" content="{{ block('metaDescription') }}"/>
+    <meta property="og:site_name" content="Convention Geek"/>
+    <meta property="og:locale" content="fr" />
+
     {% block metaMore %}{% endblock %}
 </head>
 
@@ -36,7 +47,7 @@
 {% block body %}{% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('build/app.js') }}"></script>
+    <script src="{{ asset('script.js') }}"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tracking }}"></script>
     <script>
@@ -49,8 +60,9 @@
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "{{ google_ad_client }}",
-            enable_page_level_ads: true
+            google_ad_client: '{{ google_ad_client }}',
+            enable_page_level_ads: true,
+            overlays: {bottom: true}
         });
     </script>
 

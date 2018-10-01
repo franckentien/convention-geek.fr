@@ -3,19 +3,9 @@ App_home:
   defaults: { _controller: ConventionGeekEventBundle:Index:index}
   methods: [GET,POST]
 
-App_about:
-  path: /about
-  defaults: { _controller: ConventionGeekMainBundle:Default:about}
-  methods: [GET]
-
-App_irlEvent:
-  path: /TGS2017
-  defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
-  methods: [GET]
-
-CGEvent_conventions:
-  path: /convention
-  defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
+CGEvent_event:
+  path: /convention/{eventid}
+  defaults: { _controller: ConventionGeekEventBundle:Event:event}
   methods: [GET]
 
 CGEvent_annuaire:
@@ -23,15 +13,25 @@ CGEvent_annuaire:
   defaults: { _controller: ConventionGeekEventBundle:Annuaire:annuaire}
   methods: [GET]
 
-CGEvent_event:
-  path: /convention/{eventid}
-  defaults: { _controller: ConventionGeekEventBundle:Event:event}
+CGEvent_conventions:
+  path: /convention
+  defaults: { _controller: ConventionGeekEventBundle:Convention:Conventions}
   methods: [GET]
 
 CGEvent_formulaires:
   path: /formulaires
   defaults: { _controller: ConventionGeekContactBundle:Default:formulaires}
   methods: [GET, POST]
+
+App_about:
+  path: /about
+  defaults: { _controller: ConventionGeekMainBundle:Default:aboutPage}
+  methods: [GET]
+
+App_irlEvent:
+  path: /TGS2017
+  defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
+  methods: [GET]
 
 sonata:
     resource: routing_sonata.yml
@@ -50,3 +50,23 @@ CGContact_import_dateEvent:
   path: /CGForm/DateEvent/Import/{idform}
   defaults: { _controller: ConventionGeekContactBundle:Import:importDateEvent }
   methods: [GET, POST, DELETE]
+
+CGMain_sitmap_index:
+  path: /sitemap.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapIndex}
+  methods: [GET]
+
+CGMain_sitmap_main:
+  path: /sitemap-main.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapMain}
+  methods: [GET]
+
+CGMain_sitmap_news:
+  path: /sitemap-news.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapNews}
+  methods: [GET]
+
+CGMain_sitmap_convention:
+  path: /sitemap-convention.xml
+  defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapEvent}
+  methods: [GET]
