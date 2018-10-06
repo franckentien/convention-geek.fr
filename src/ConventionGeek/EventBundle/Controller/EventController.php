@@ -23,6 +23,11 @@ class EventController extends Controller
 
         $convention = $repositoryConvention->findOneBy(array('eventid' => $eventid));
 
+        if($convention === null ){
+            throw $this->createNotFoundException('Cet événement n\'existe pas');
+        }
+
+
         $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('id' => 'DESC'));
 
         $editionlist = array();
@@ -37,7 +42,7 @@ class EventController extends Controller
                 'edition'   => $edition->getEdition(),
                 'date' => $date,
                 'visiteurs' => $edition->getVisiteurs()
-                ));
+            ));
         }
 
         $infoEvent = array(
@@ -53,17 +58,21 @@ class EventController extends Controller
         );
 
         return $infoEvent;
+
     }
 
     public function eventAction($eventid)
     {
+
         $infoEvent = $this->getInfoEvent($eventid);
-
-
 
         return $this->render('@ConventionGeekEvent/eventList/event.html.twig',  array(
             'event' => $infoEvent
         ));
+
+
+
+
     }
 
 }
