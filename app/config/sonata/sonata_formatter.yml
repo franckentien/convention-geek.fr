@@ -1,5 +1,5 @@
 sonata_formatter:
-    default_formatter: richhtml
+    default_formatter: twig
     formatters:
         markdown:
             service: sonata.formatter.text.markdown

@@ -5716,11 +5716,16 @@ fieldset {
 .form_errors {
   color: #780a0a; }
 
+.mdc-select {
+  width: 100%; }
+
 .mdc-text-field {
   width: 100%; }
 
-.mdc-select {
-  width: 100%; }
+.mdc-text-field--textarea {
+  border-top: none;
+  border-right: none;
+  border-left: none; }
 
 .mdc-text-field--textarea .mdc-floating-label {
   margin-left: inherit;
@@ -5730,7 +5735,12 @@ fieldset {
 .mdc-text-field--textarea .mdc-floating-label--float-above {
   margin-left: 8px; }
 
-.mdc-text-field--textarea {
-  border-top: none;
-  border-right: none;
-  border-left: none; }
+.img-align-right {
+  float: right;
+  margin-right: 1%;
+  margin-left: 1%; }
+
+.img-align-left {
+  float: left;
+  margin-left: 1%;
+  margin-right: 1%; }

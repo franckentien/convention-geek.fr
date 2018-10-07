@@ -19392,7 +19392,7 @@ exports.default = MDCSelectFoundation;
 /* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "web/style.css";
+module.exports = __webpack_require__.p + "web/css/style.css";
 
 /***/ })
 /******/ ]);
