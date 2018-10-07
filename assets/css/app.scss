@@ -93,5 +93,7 @@ fieldset{border: inherit;}
 .mdc-text-field--textarea .mdc-floating-label{ margin-left: inherit; padding-left: inherit; background-color: inherit;}
 .mdc-text-field--textarea .mdc-floating-label--float-above{ margin-left: 8px;}
 
-.img-align-right {float: right; margin-right:1%; margin-left:1%;}
-.img-align-left{float:left; margin-left:1%; margin-right:1%;}
+
+.img-align-left{float:left; margin-left:1%; margin-right:1%; width: auto; height: auto;}
+.img-align-center{width: auto; height: auto;}
+.img-align-right {float: right; margin-right:1%; margin-left:1%; width: auto; height: auto;}
