@@ -28,15 +28,13 @@ class EventController extends Controller
         }
 
 
-        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('id' => 'DESC'));
+        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('edition' => 'ASC'));
 
         $editionlist = array();
 
         foreach ($editionrepository as $edition) {
 
             $date = DateFormatClass::getDisplayDate($edition->getDateDebut(), $edition->getDateFin());
-
-            $convention = $repositoryConvention->findOneBy(array('id' => $edition->getEvenement()->getid()));
 
             array_push($editionlist, array(
                 'edition'   => $edition->getEdition(),
