@@ -29,7 +29,7 @@ App_about:
   methods: [GET]
 
 App_irlEvent:
-  path: /TGS2017
+  path: /IRLEvent
   defaults: { _controller: ConventionGeekMainBundle:Default:irlEvent}
   methods: [GET]
 
