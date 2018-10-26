@@ -64,7 +64,8 @@ a{ color: $mdc-theme-primary;}
 
 .a-list-item{display: flex; align-items: center; width: 100%; color: inherit; text-decoration: inherit;}
 
-.mdc-button a{ color: $mdc-theme-on-primary; text-decoration: inherit;}
+.mdc-button--raised a{ text-decoration: inherit;}
+.mdc-button--raised:enabled a{ color: inherit;}
 
 .one-pc-spacer{padding: 0% 1%;}
 
