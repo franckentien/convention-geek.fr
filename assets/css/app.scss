@@ -60,9 +60,11 @@ body{margin: auto;}
 .mdc-drawer__header-content{align-items: center!important; padding: inherit!important;}
 .mdc-layout-grid__inner{padding: 1%;}
 
-a{ color: inherit; text-decoration: inherit;}
+a{ color: $mdc-theme-primary;}
 
-.a-list-item{display: flex; align-items: center; width: 100%;}
+.a-list-item{display: flex; align-items: center; width: 100%; color: inherit; text-decoration: inherit;}
+
+.mdc-button a{ color: $mdc-theme-on-primary; text-decoration: inherit;}
 
 .one-pc-spacer{padding: 0% 1%;}
 
