@@ -69,7 +69,8 @@ a{ color: $mdc-theme-primary;}
 
 .one-pc-spacer{padding: 0% 1%;}
 
-.mdc-card{@include mdc-card-fill-color($mdc-theme-background); height: 100%;}
+.mdc-card{@include mdc-card-fill-color($mdc-theme-background);}
+.card-about{height: 100%;}
 
 .mdc-card__media-content img{width: 90%; padding-top: 3%; padding-left: 5%; padding-right: 5%;}
 

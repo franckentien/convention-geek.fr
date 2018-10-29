@@ -5685,7 +5685,9 @@ a {
   padding: 0% 1%; }
 
 .mdc-card {
-  background-color: #ffffff;
+  background-color: #ffffff; }
+
+.card-about {
   height: 100%; }
 
 .mdc-card__media-content img {
