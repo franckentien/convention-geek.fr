@@ -42,9 +42,7 @@
                         <hr class="mdc-list-divider">
                         <div class="mdc-card__actions mdc-layout-grid__cell--span-12">
                             <div class="mdc-card__action-icons">
-                                <button class="mdc-button mdc-card__action mdc-card__action--button">
-                                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">Lire l'article</a>
-                                </button>
+                                <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" class="mdc-button mdc-card__action mdc-card__action--button">Lire l'article</a>
                             </div>
                         </div>
                     </div>
@@ -64,24 +62,37 @@
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: flex;">
                 <div class="section-spacer" style="flex-grow: 1;"></div>
 
+                {% if pager.page == pager.firstPage %}
 
-                    <button class="mdc-button mdc-button--raised" {% if pager.page == pager.firstPage %}disabled{% endif %}>
-                        <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}">
-                        {{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}
-                        </a>
+                    <button class="mdc-button mdc-button--raised" {% if pager.page == pager.lastPage %}disabled{% endif %}>
+                        {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
                     </button>
+
+                {% else %}
+
+                    <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" class="mdc-button mdc-button--raised" >
+                        {{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}
+                    </a>
+
+                {% endif %}
 
                 <span class="one-pc-spacer"></span>
 
+                {% if pager.page == pager.lastPage %}
+
                     <button class="mdc-button mdc-button--raised" {% if pager.page == pager.lastPage %}disabled{% endif %}>
-                        <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}">
                         {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
-                        </a>
                     </button>
 
+                {% else %}
+
+                    <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" class="mdc-button mdc-button--raised" >
+                        {{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}
+                    </a>
+
+                {% endif %}
+
             </div>
-
-
 
         </div>
     </div>
