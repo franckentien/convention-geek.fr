@@ -70,3 +70,9 @@ CGMain_sitmap_convention:
   path: /sitemap-convention.xml
   defaults: { _controller: ConventionGeekMainBundle:Sitemap:sitemapEvent}
   methods: [GET]
+
+CGAPI_Event:
+  type:     rest
+  prefix:   /api/
+  resource: "@ConventionGeekEventBundle/Controller/ApiController.php"
+

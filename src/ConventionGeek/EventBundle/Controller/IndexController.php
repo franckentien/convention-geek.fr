@@ -41,7 +41,7 @@ class IndexController extends Controller
 
             $informateur = '-';
             if($event->getInformateur()!==null){
-                $informateur = $event->getInformateur();
+                $informateur = $event->getInformateur()->getUsername();
             };
 
             array_push($listEvent, array(

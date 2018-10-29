@@ -7,8 +7,9 @@ imports:
     - { resource: sonata_block.yml }
     - { resource: sonata_media.yml}
     - { resource: sonata_formatter.yml }
-    - { resource: sonata_user.yml}
-    - { resource: sonata_intl.yml}
+    - { resource: sonata_user.yml }
+    - { resource: sonata_intl.yml }
+    - { resource: api_bundles.yml }
 
 sonata_core:
     form:
