@@ -51,7 +51,7 @@ class ApiController extends Controller
             array_push($listEvent, array(
                 'eventid' => $convention->getEventid(),
                 'datedebut' => $event->getDateDebut(),
-                'datefin ' => $event->getDateFin(),
+                'datefin' => $event->getDateFin(),
                 'name' => $convention->getNom(),
                 'place'  => $convention->getLieu(),
                 'informateur' => $informateur ));
@@ -99,7 +99,7 @@ class ApiController extends Controller
             array_push($listEvent, array(
                 'eventid' => $convention->getEventid(),
                 'datedebut' => $event->getDateDebut(),
-                'datefin ' => $event->getDateFin(),
+                'datefin' => $event->getDateFin(),
                 'name' => $convention->getNom(),
                 'place'  => $convention->getLieu(),
                 'informateur' => $informateur ));
@@ -175,7 +175,7 @@ class ApiController extends Controller
             array_push($editionlist, array(
                 'edition'   => $edition->getEdition(),
                 'datedebut' => $edition->getDateDebut(),
-                'datefin ' => $edition->getDateFin(),
+                'datefin' => $edition->getDateFin(),
                 'visiteurs' => $edition->getVisiteurs()
             ));
         }
