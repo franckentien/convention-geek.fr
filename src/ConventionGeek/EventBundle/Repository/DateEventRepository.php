@@ -16,10 +16,17 @@ class DateEventRepository extends \Doctrine\ORM\EntityRepository
 
         $qb->where('a.dateFin BETWEEN :start AND :end')
             ->setParameter('start', new \Datetime(date('Y').'-'.date('m').'-'.date('d')))
-            ->setParameter('end',   new \Datetime(date('Y').'-'.(date('m')+1).'-'.date('d')))
+            ->setParameter('end',
+                new \Datetime(
+                    date_format(
+                        date_modify(
+                            new \DateTime(date('Y').'-'.date('m').'-'.date('d')), '+1 month'
+                                    )
+                        , ('Y-m-d')
+                    )
+                ))
             ->orderBy('a.dateFin', 'ASC')
             ->orderBy('a.dateDebut', 'ASC')
-
         ;
 
         return $qb
