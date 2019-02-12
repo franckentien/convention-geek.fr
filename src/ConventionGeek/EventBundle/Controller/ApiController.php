@@ -166,7 +166,7 @@ class ApiController extends Controller
         }
 
 
-        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('edition' => 'ASC'));
+        $editionrepository = $repositoryDate->findBy(array('evenement' => $convention->getid()), array('edition' => 'DESC'));
 
         $editionlist = array();
 
