@@ -9,15 +9,15 @@
 
     <article class="mdc-layout-grid__inner mdc-elevation--z12">
 
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <h1>{{ post.title }}</h1>
+        </div>
 
-                <h1>{{ post.title }}</h1>
+        {{ post.content|raw }}
 
-                {{ post.content|raw }}
-
-                <p class="margin-right-flex">Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
-
-            </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <p class="margin-right-flex">Ecrit par {{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }} le  {{ post.publicationDateStart | format_date }}</p>
+        </div>
 
     </article>
 

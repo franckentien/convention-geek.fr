@@ -25,15 +25,11 @@
         <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
         <h3>Gestion de compte</h3><br>
 
-        <button class="mdc-button">
-            <a href="{{ path('fos_user_profile_edit') }}">Modifier votre profil</a>
-        </button>
+        <a href="{{ path('fos_user_profile_edit') }}" class="mdc-button">Modifier votre profil</a>
         <br>
-        <button class="mdc-button">
-            <a href="{{ path('fos_user_change_password') }}">Changer de mot de passe</a>
-        </button>
+        <a href="{{ path('fos_user_change_password') }}" class="mdc-button">Changer de mot de passe</a>
         <br>
-        <button class="mdc-button" id="remove-account-dialog-button">
+        <button class="mdc-button" id="remove-account-dialog-button" style="text-decoration: underline">
             Supprimer votre compte
         </button>
         </div>

@@ -18,33 +18,24 @@
 
                         <li class="mdc-list-item mdc-elevation--z1" >
                             <a class="a-list-item" href="{{ path('CGEvent_event', {'eventid': event.eventid}) }}">
-                    <span class="mdc-list-item__text">
-                        <span class="mdc-list-item__primary-text">{{ event.name }} - {{ event.place }}</span>
-                        <span class="mdc-list-item__secondary-text">{{ event.date }}</span>
+                                <span class="mdc-list-item__text">
+                                    <span class="mdc-list-item__primary-text">{{ event.name }} - {{ event.place }}</span>
+                                    <span class="mdc-list-item__secondary-text">{{ event.date }}</span>
 
-                    </span>
+                                </span>
                                 <span class="mdc-list-item__meta" aria-hidden="true">{{ event.informateur }}</span>
                             </a>
                         </li>
 
-
-
                     {% endfor %}
                 </ul>
-
-
 
             </div>
             <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12" style="display: flex;">
                 <div class="section-spacer" style="flex-grow: 1;"></div>
-
-
-                     <button class="mdc-button mdc-button--raised">
-                         <a href="{{ path('CGEvent_formulaires') }}" >
-                             Proposer une convention
-                         </a>
-                    </button>
-
+                     <a href="{{ path('CGEvent_formulaires') }}" class="mdc-button mdc-button--raised">
+                         Proposer une convention
+                     </a>
             </div>
         </div>
 

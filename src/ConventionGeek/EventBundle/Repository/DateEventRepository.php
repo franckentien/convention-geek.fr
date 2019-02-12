@@ -14,12 +14,11 @@ class DateEventRepository extends \Doctrine\ORM\EntityRepository
     {
         $qb = $this->createQueryBuilder('a');
 
-        $qb->where('a.dateFin BETWEEN :start AND :end')
+        $qb->where('a.dateDebut >= :start')
             ->setParameter('start', new \Datetime(date('Y').'-'.date('m').'-'.date('d')))
-            ->setParameter('end',   new \Datetime(date('Y').'-'.(date('m')+1).'-'.date('d')))
+            ->setMaxResults(10)
             ->orderBy('a.dateFin', 'ASC')
             ->orderBy('a.dateDebut', 'ASC')
-
         ;
 
         return $qb

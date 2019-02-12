@@ -5,7 +5,6 @@ $mdc-theme-on-secondary: #ffffff;
 $mdc-theme-background: #ffffff;
 $mdc-theme-surface: #b5b5b5;
 
-
 @import "~@material/button/mdc-button";
 @import "~@material/card/mdc-card";
 @import "~@material/checkbox/mdc-checkbox";
@@ -31,19 +30,10 @@ $mdc-theme-surface: #b5b5b5;
 
 body{margin: auto;}
 
-.mdc-top-app-bar{
-  &__section {
-    padding: 0;
-  }
+.mdc-top-app-bar{&__section {padding: 0;}
 }
 
-@media (max-width: 840px){
-  .mdc-tab-bar{
-    display: none;
-  }
-}
-
-
+@media (max-width: 840px){.mdc-tab-bar{display: none;}}
 
 /* Rules for sizing the icon. */
 .material-icons.md-18 { font-size: 18px;}
@@ -59,117 +49,61 @@ body{margin: auto;}
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
-.material-icons{
-  margin-right: 32px;
+.material-icons{margin-right: 32px;}
+
+.mdc-layout-grid__inner{margin-bottom: 2%;}
+
+.mdc-tab-bar{@include mdc-tab-text-label-color($mdc-theme-on-primary);}
+
+.mdc-drawer__header{background-color: $mdc-theme-primary;}
+
+.mdc-drawer__header-content{align-items: center!important; padding: inherit!important;}
+.mdc-layout-grid__inner{padding: 1%;}
+
+a{ color: $mdc-theme-primary;}
+
+.a-list-item{display: flex; align-items: center; width: 100%; color: inherit; text-decoration: inherit;}
+
+.mdc-button--raised a{ text-decoration: inherit;}
+.mdc-button--raised:enabled a{ color: inherit;}
+
+.one-pc-spacer{padding: 0% 1%;}
+
+.mdc-card{@include mdc-card-fill-color($mdc-theme-background);}
+.card-about{height: 100%;}
+
+.mdc-card__media-content img{width: 90%; padding-top: 3%; padding-left: 5%; padding-right: 5%;}
+
+.mdc-card__media--16-9::before{margin-top: 25%;}
+
+.mdc-card__media-content.archive-title{position: inherit;}
+
+.card-news-title-author{ display: flex; justify-content: flex-end; align-items: center;}
+
+.card-news-title-date{display: flex; justify-content: flex-start; align-items: center;}
+
+.margin-right-flex{display: flex; justify-content: flex-end;}
+
+h1, h2, h3, h4, h5, h6, p{margin: 1%;}
+
+fieldset{border: inherit;}
+
+.form_errors{color: $mdc-theme-primary;}
+
+.mdc-select{ width: 100%;}
+
+.mdc-text-field {width: 100%;}
+.mdc-text-field--textarea {border-top: none; border-right: none; border-left: none;}
+.mdc-text-field--textarea .mdc-floating-label{ margin-left: inherit; padding-left: inherit; background-color: inherit;}
+.mdc-text-field--textarea .mdc-floating-label--float-above{ margin-left: 8px;}
+
+
+.img-news-cg {width: 100%; height: auto;}
+
+@media (min-width: 840px){
+  .img-news-cg-panorama {grid-column-start: 4;}
 }
 
-.mdc-layout-grid__inner{
-  margin-bottom: 2%;
+@media (min-width: 480px) and (max-width: 839px) {
+  .img-news-cg-panorama {grid-column-start: 3;}
 }
-
-.mdc-tab-bar {
-     @include mdc-tab-text-label-color($mdc-theme-on-primary);
-}
-
-.mdc-drawer__header{
-  background-color: $mdc-theme-primary;
-}
-
-.mdc-drawer__header-content{
-  align-items: center!important;
-  padding: inherit!important;
-}
-.mdc-layout-grid__inner{
-  padding: 1%;
-}
-
-a{
-  color: inherit;
-  text-decoration: inherit;
-}
-
-.a-list-item{
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.one-pc-spacer{
-  padding: 0% 1%;
-  }
-
-.mdc-card{
-  @include mdc-card-fill-color($mdc-theme-background);
-  height: 100%;
-}
-
-.mdc-card__media-content img{
-  width: 90%;
-  padding-top: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-
-
-.mdc-card__media--16-9::before{
-  margin-top: 25%;
-}
-
-.mdc-card__media-content.archive-title{
-  position: inherit;
-}
-
-.card-news-title-author{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.card-news-title-date{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.margin-right-flex{
-  display: flex;
-  justify-content: flex-end;
-}
-
-h1, h2, h3, h4, h5, h6, p{
-  margin: 1%;
-}
-
-fieldset{
-  border: inherit;
-}
-
-.form_errors{
-  color: $mdc-theme-primary;
-}
-
-.mdc-text-field {
-   width: 100%;
- }
-
-.mdc-select{
-  width: 100%;
-}
-
-.mdc-text-field--textarea .mdc-floating-label{
-  margin-left: inherit;
-  padding-left: inherit;
-  background-color: inherit;
-}
-
-.mdc-text-field--textarea .mdc-floating-label--float-above{
-  margin-left: 8px;
-}
-
-.mdc-text-field--textarea {
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
-

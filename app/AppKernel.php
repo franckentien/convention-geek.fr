@@ -38,6 +38,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\CKEditorBundle\FOSCKEditorBundle(),
 
+            new FOS\RestBundle\FOSRestBundle(),
 
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),

@@ -13,7 +13,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'web/style.css',
+                            name: 'web/css/style.css',
                         },
                     },
                     {loader: 'extract-loader'},
